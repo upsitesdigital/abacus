@@ -3,7 +3,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import HeroAbout from '~/components/Hero/About';
 import { ModalTeam, Person } from '~/components/Modal';
-import { HORIZONTAL_SPACE } from '~/utils/constants';
+import { HORIZONTAL_SPACE, PADDINGS } from '~/utils/constants';
 
 const Container = styled.div`
   width: 100%;
@@ -13,14 +13,15 @@ const Container = styled.div`
 `;
 
 const TextSectionContainer = styled.section`
-  padding: 129px;
   width: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   background-image: url('/text-section-bg.png');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 100% 100%;
+  height: 488px;
 
   .dash {
     width: 56px;
@@ -36,23 +37,35 @@ const TextSection = styled.p`
   font-size: 28px;
   font-weight: 300;
   text-align: center;
-  max-width: 1124px;
+  max-width: 90%;
   margin: 0 auto;
+  max-width: 1124px;
 `;
 
 const GalleryContainer = styled.div`
-  ${HORIZONTAL_SPACE}
-  padding-top: 59px;
+  padding-top: 63px;
   padding-bottom: 182px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   position: relative;
+  overflow: hidden;
+  width: 100%;
+`;
+
+const GalleryInnerContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1124px;
 `;
 
 const GalleryTitle = styled.h2`
   width: 100%;
   max-width: 1140px;
+  font-size: 32px;
+  font-weight: 400;
 `;
 
 const Gallery = styled.ul`
@@ -72,37 +85,47 @@ const GalleryCard = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 16px;
   background-color: #fff;
 `;
 
 const GalleryCardPic = styled.div`
   width: 452px;
   height: 264px;
-  margin-bottom: 47px;
   background-size: cover;
-  background-position: 10% 10% ;
+  background-position: 10% 10%;
+  margin-bottom: 47px;
 `;
 
 const GalleryCardName = styled.p`
   font-size: 32px;
   font-weight: 400;
+  margin-bottom: 16px;
 `;
 
-const GalleryCardTitle = styled.p`
-  color: #46785c;
-  font-size: 22px;
+const GalleryCardTitle = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  height: 26px;
+  margin-bottom: 16px;
+
+  p {
+    color: #46785c;
+    font-size: 22px;
+    font-weight: 400;
+  }
 
   img {
     width: 26px;
     height: 24px;
     margin-right: 24px;
+    align-self: flex-end;
   }
 `;
 
 const GalleryCardSeeMore = styled.button`
   font-size: 22px;
-  font-weight: 300;
+  font-weight: 600;
   text-decoration: underline;
   color: #46785c;
   border: none;
@@ -144,10 +167,11 @@ export const AboutIllustrationBackground = styled.div`
 
 const teamData: Person[] = [
   {
-    pic: '/mauro-fgerman.png',
+    pic: '/mauro-fgerman.webp',
     shortTitle: 'CEO & CIO',
     name: 'Mauro Ferman',
-    title: '',
+    title:
+      "Mr. Ferman is the founding partner at Abacus Capital Advisors and serves as the firm's CEO.",
     linkdin: 'www.google.com',
     skills: [
       'B.A. Economics - Tufts University',
@@ -160,9 +184,10 @@ const teamData: Person[] = [
           multi-family office located in Miami, FL.`,
   },
   {
-    pic: '/jarvis-johnson.png',
+    pic: '/jarvis-johnson.webp',
     shortTitle: 'CEO & CIO',
-    title: '',
+    title:
+      "Mr. Ferman is the founding partner at Abacus Capital Advisors and serves as the firm's CEO.",
     name: 'Jarvis Johnson',
     linkdin: 'www.google.com',
     skills: [
@@ -176,9 +201,10 @@ const teamData: Person[] = [
           multi-family office located in Miami, FL.`,
   },
   {
-    pic: '/leroi-sanchez.png',
+    pic: '/leroi-sanchez.webp',
     shortTitle: 'CEO & CIO',
-    title: '',
+    title:
+      "Mr. Ferman is the founding partner at Abacus Capital Advisors and serves as the firm's CEO.",
     name: 'Leroi Sanchez',
     linkdin: 'www.google.com',
     skills: [
@@ -192,9 +218,10 @@ const teamData: Person[] = [
           multi-family office located in Miami, FL.`,
   },
   {
-    pic: '/william-smythe.png',
+    pic: '/william-smythe.webp',
     shortTitle: 'CEO & CIO',
-    title: '',
+    title:
+      "Mr. Ferman is the founding partner at Abacus Capital Advisors and serves as the firm's CEO.",
     name: 'William P. Smythe',
     linkdin: 'www.google.com',
     skills: [
@@ -208,9 +235,10 @@ const teamData: Person[] = [
           multi-family office located in Miami, FL.`,
   },
   {
-    pic: '/joel-moran.png',
+    pic: '/joel-moran.webp',
     shortTitle: 'CEO & CIO',
-    title: '',
+    title:
+      "Mr. Ferman is the founding partner at Abacus Capital Advisors and serves as the firm's CEO.",
     name: 'Joel Moran',
     linkdin: 'www.google.com',
     skills: [
@@ -254,26 +282,28 @@ export default function AboutUs() {
             <div className="line" />
           </AboutIllustrationBackground>
 
-          <GalleryTitle>Team</GalleryTitle>
-          <Gallery>
-            {teamData.map((item) => (
-              <GalleryCard key={item.name}>
-                <GalleryCardPic
-                  style={{ backgroundImage: `url(${item.pic})` }}
-                />
-                <GalleryCardName>{item.name}</GalleryCardName>
-                <GalleryCardTitle>
-                  <Link href={item.linkdin}>
-                    <img src="/linkdin.svg" />
-                  </Link>
-                  {item.shortTitle}
-                </GalleryCardTitle>
-                <GalleryCardSeeMore onClick={() => setSelectedPerson(item)}>
-                  Read more
-                </GalleryCardSeeMore>
-              </GalleryCard>
-            ))}
-          </Gallery>
+          <GalleryInnerContainer>
+            <GalleryTitle>Team</GalleryTitle>
+            <Gallery>
+              {teamData.map((item) => (
+                <GalleryCard key={item.name}>
+                  <GalleryCardPic
+                    style={{ backgroundImage: `url(${item.pic})` }}
+                  />
+                  <GalleryCardName>{item.name}</GalleryCardName>
+                  <GalleryCardTitle>
+                    <Link href={item.linkdin}>
+                      <img src="/linkdin.svg" />
+                    </Link>
+                    <p> {item.shortTitle}</p>
+                  </GalleryCardTitle>
+                  <GalleryCardSeeMore onClick={() => setSelectedPerson(item)}>
+                    Read more
+                  </GalleryCardSeeMore>
+                </GalleryCard>
+              ))}
+            </Gallery>
+          </GalleryInnerContainer>
         </GalleryContainer>
       </Container>
     </>

@@ -24,7 +24,7 @@ export const items = {
     },
     {
       icon: '/transparency.svg',
-      title: '',
+      title: 'Transparency',
       text: "Our individual security selection allows our clients to follow with the uttermost transparency the daily evolution of the investment portfolio. <a href=''>More</a>",
     },
     {

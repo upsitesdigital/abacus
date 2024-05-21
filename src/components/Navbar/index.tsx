@@ -19,9 +19,21 @@ const Navbar = () => {
       </NavbarLogoContainer>
 
       <NavbarMenu>
-        {MENU_ITEMS.map((item) => (
+        {MENU_ITEMS.slice(0,3).map((item) => (
           <NavbarMenuItem
             data-aos="fade-down"
+            active={item.route === router.pathname}
+            key={item?.route}
+          >
+            <Link href={item?.route}>{item?.title}</Link>
+          </NavbarMenuItem>
+        ))}
+      </NavbarMenu>
+      <NavbarMenu className='menu-right'>
+        {MENU_ITEMS.slice(3,5).map((item) => (
+          <NavbarMenuItem
+            data-aos="fade-down"
+            className='menu-item'
             active={item.route === router.pathname}
             key={item?.route}
           >

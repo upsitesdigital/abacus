@@ -4,36 +4,46 @@ import { COLORS, HORIZONTAL_SPACE, MENU_ITEMS } from '~/utils/constants';
 
 /* styles.css */
 
-const fadeIn = keyframes`
-  from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-`;
+export const LeftBar = styled.div`
+  top: 0;
+  width: 1px;
+  height: 105%;
+  position: absolute;
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+  opacity: 0.2;
+  left: 234px;
 
-const circleAnimation = keyframes`
-
-  0% {
-    transform: rotate(0deg)
+  @media (max-width: 1800px) {
+    left: 150px;
   }
 
-
-  100% {
-        transform: rotate(360deg)
+  @media (max-width: 1600px) {
+    left: 100px;
   }
 
+  @media (max-width: 1400px) {
+    left: 70px;
+  }
+
+  @media (max-width: 1300px) {
+    left: 50px;
+  }
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
 `;
 
 const HeroContainer = styled.div`
   width: 100%;
   background-color: ${COLORS.navbarHero};
-  padding: 100px 0 160px 0;
   ${HORIZONTAL_SPACE}
-  height: 1000px;
+  height: auto;
   display: flex;
   justify-content: space-between;
+  padding-top: 99px;
+  padding-bottom: 250px;
+  overflow: hidden;
 
   .left-bar {
     top: 0;
@@ -49,8 +59,8 @@ const HeroContainer = styled.div`
     opacity: 0.2;
     left: 200px;
 
-    @media (max-width: 1600px) {
-      left: 50px;
+    @media (max-width: 1800px) {
+      left: 60px;
     }
   }
 
@@ -58,14 +68,13 @@ const HeroContainer = styled.div`
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
   }
+`;
 
-  .animation-circle-right {
-    position: absolute;
-    top: 0;
-    right: -17%;
-  }
+const CircleAnimationRight = styled.div`
+  position: absolute;
+  top: 113px;
+  right: -5%;
 `;
 
 const HeroTitle = styled.h5`
@@ -78,21 +87,38 @@ const HeroTitle = styled.h5`
   img {
     margin-bottom: 58px;
   }
+
+  @media (max-width: 1750px) {
+    max-width: 800px;
+    font-size: 50px;
+  }
+
+  @media (max-width: 1600px) {
+    max-width: 700px;
+    font-size: 45px;
+  }
+
+  @media (max-width: 1500px) {
+    max-width: 550px;
+    font-size: 40px;
+  }
 `;
 
 const Links = styled.div`
   display: flex;
   flex-direction: row;
-  margin-top: 200px;
+  margin-top: 272px;
   list-style: none;
-  gap: 20px;
+  gap: 64px;
 `;
 
-const LinksItem = styled.p`
-  color: ${COLORS.text};
-  font-weight: 300;
-  font-size: 24px;
-  text-decoration: underline;
+const LinksItem = styled.div`
+  a {
+    color: #9fc899;
+    font-weight: 300;
+    font-size: 24px;
+    text-decoration: underline;
+  }
 `;
 
 const IllustrationContainer = styled.div`
@@ -108,7 +134,7 @@ const IllustrationBg = styled.div`
   width: 622px;
   height: 622px;
   border-radius: 100%;
-  background-image: url('/arranha-ceus-de-aco-eletrico-business-metal-sky 1.png');
+  background-image: url('/arranha-ceus-de-aco-eletrico-business-metal-sky 1.webp');
   background-size: cover;
 `;
 
@@ -118,9 +144,10 @@ const IllustrationWordImage = styled.img`
 `;
 
 const IllustrationBigCircle = styled.div`
-  width: 622px;
-  height: 622px;
+  width: 623px;
+  height: 623px;
   border-radius: 100%;
+  background-image: url('/big-circle-border.png');
 `;
 
 const IllustrationSmallCircle = styled.div`
@@ -132,14 +159,9 @@ const IllustrationSmallCircle = styled.div`
   justify-content: center;
   bottom: 0;
   left: 0;
-  border-width: 2px;
-  border-style: solid;
-  border-color: #d2d0d05c;
-  border-radius: 100%;
-  border-image-slice: 1;
   transform: translateY(90px) translateX(-90px);
   z-index: 5;
- 
+  background-image: url('/border-radius.png');
 
   .up-icon {
     position: absolute;
@@ -154,8 +176,6 @@ const IllustrationCircleAnimated = styled.div`
   width: 622px;
   height: 622px;
   border-radius: 100%;
-  background-color: rgb(0, 0, 0, 0.3);
-  background: linear-gradient(0deg, #46785c, rgb(0, 0, 0, 0.3));
   transform: rotate(-80deg);
 `;
 
@@ -172,8 +192,7 @@ const IllustrationCuttedCircle = styled.div`
     rgba(255, 255, 255, 0) 0%,
     ${COLORS.navbarHero} 160%
   );
-  /* opacity: 0; */
-  /* animation: ${fadeIn} 2s forwards; */
+  
 
   .outer-cirlce {
     width: 100%;
@@ -183,36 +202,26 @@ const IllustrationCuttedCircle = styled.div`
     background-color: ${COLORS.navbarHero};
     border-radius: 0 0 311px 311px;
     transform: rotate(-50deg) translate(120px, 55px);
-    /* opacity: 0; */
-    /* animation: ${fadeIn} 2s forwards; */
-    /* animation-delay: 1s; */
   }
 `;
 
 const IllustrationLine = styled.div`
-  width: 1px;
-  height: 1000px;
+  width: 2px;
+  height: 1500px;
   background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
-  transform: translateY(-210px) rotate(41deg);
+  transform: translateY(-450px) rotate(41deg);
   position: absolute;
   top: 0;
-  opacity: 0.7;
+  z-index: 2;
+  opacity: 0.3;
 `;
 
 const IllustrationText = styled.p`
-  max-width: 250px;
+  max-width: 184px;
   font-size: 13px;
-  font-weight: 300;
+  font-weight: 400;
   padding: 0 30px;
   color: #fff;
-  background: linear-gradient(
-    to right,
-    #1a4f317d 10%,
-    #1a4f31 10%,
-    #1a4f31 90%,
-    #1a4f317d 90%
-  );
-  left: -20px;
   position: absolute;
   z-index: 9;
   margin-top: 50px;
@@ -225,28 +234,29 @@ const IllustrationText = styled.p`
 
 const Hero = () => {
   return (
-    <HeroContainer>
-      <div className="left-bar" />
-      <div className="hero-text-container">
-        <HeroTitle data-aos="fade-down">
-          <img src="/arrow-up-right-3.svg" />
-          <br />A Boutique Multi-Family Office focused on helping clients grow
-          their wealth responsibly 
-        </HeroTitle>
+    <>
+      <HeroContainer>
+        <LeftBar />
+        <div className="hero-text-container">
+          <HeroTitle data-aos="fade-down">
+            <img src="/arrow-up-right-3.svg" />
+            <br />A Boutique Multi-Family Office focused on helping clients grow
+            their wealth responsibly 
+          </HeroTitle>
 
-        <Links>
-          <LinksItem data-aos="fade-up">
-            <Link href={MENU_ITEMS[1].route}>Portfolio Management</Link>
-          </LinksItem>
-          <LinksItem data-aos="fade-up">
-            <Link href={MENU_ITEMS[MENU_ITEMS.length - 1].route}>
-              Contact Us
-            </Link>
-          </LinksItem>
-        </Links>
-      </div>
-
-      <div className="animation-circle-right" style={{ position: 'relative' }}>
+          <Links>
+            <LinksItem data-aos="fade-up">
+              <Link href={MENU_ITEMS[1].route}>Portfolio Management</Link>
+            </LinksItem>
+            <LinksItem data-aos="fade-up">
+              <Link href={MENU_ITEMS[MENU_ITEMS.length - 1].route}>
+                Contact Us
+              </Link>
+            </LinksItem>
+          </Links>
+        </div>
+      </HeroContainer>
+      <CircleAnimationRight>
         <IllustrationContainer>
           <IllustrationBigCircle>
             <IllustrationBg />
@@ -262,11 +272,11 @@ const Hero = () => {
           <IllustrationCircleAnimated></IllustrationCircleAnimated>
         </IllustrationContainer>
         <IllustrationText data-aos="fade-up">
-          Proudly serving families throughout <span>North and South</span>
+          Proudly serving families throughout <span> North and South </span>
           America and <span>Europe</span>
         </IllustrationText>
-      </div>
-    </HeroContainer>
+      </CircleAnimationRight>
+    </>
   );
 };
 

@@ -2,33 +2,21 @@ import Link from 'next/link';
 import styled, { keyframes } from 'styled-components';
 import { COLORS, HORIZONTAL_SPACE } from '~/utils/constants';
 import {
-  IllustrationBg,
   IllustrationContainer,
   Links,
-  LinksItem
+  LinksItem,
 } from '../About';
-
-const circleAnimation = keyframes`
-
-  0% {
-    transform: rotate(0deg)
-  }
-
-
-  100% {
-        transform: rotate(360deg)
-  }
-
-`;
+import { LeftBar } from '..';
 
 const HeroOfficeServicesContainer = styled.div`
   width: 100%;
   background-color: ${COLORS.navbarHero};
-  padding: 100px 0 160px 0;
   ${HORIZONTAL_SPACE}
-  height: 1000px;
+  height: auto;
   display: flex;
   justify-content: space-between;
+  padding-top: 63px;
+  padding-bottom: 214px;
 
   .left-bar {
     top: 0;
@@ -69,13 +57,27 @@ const HeroOfficeServicesContainer = styled.div`
   }
 `;
 
-
 const HeroAboutTitle = styled.p`
   width: 1000px;
   color: ${COLORS.white};
   font-weight: 300;
   font-size: 56px;
   line-height: 62.84px;
+
+  @media (max-width: 1750px) {
+    max-width: 800px;
+    font-size: 50px;
+  }
+
+  @media (max-width: 1600px) {
+    max-width: 700px;
+    font-size: 45px;
+  }
+
+  @media (max-width: 1500px) {
+    max-width: 550px;
+    font-size: 40px;
+  }
 `;
 
 const SubTitle = styled.h3`
@@ -92,6 +94,21 @@ export const Text = styled.p`
   margin-top: 24px;
   max-width: 850px;
   line-height: 36px;
+
+  @media (max-width: 1750px) {
+    max-width: 800px;
+    font-size: 18;
+  }
+
+  @media (max-width: 1600px) {
+    max-width: 700px;
+    font-size: 16;
+  }
+
+  @media (max-width: 1500px) {
+    max-width: 550px;
+    font-size: 14;
+  }
 `;
 
 const IllustrationBigCircle = styled.div`
@@ -105,8 +122,7 @@ const IllustrationCircleAnimated = styled.div`
   width: 622px;
   height: 622px;
   border-radius: 100%;
-  background-color: rgb(0, 0, 0, 0.3);
-  background: linear-gradient(0deg, #46785c, rgb(0, 0, 0, 0.2));
+  background-image: url('/big-circle-border.png');
   transform: rotate(-80deg);
 `;
 
@@ -117,13 +133,11 @@ const IllustrationCuttedCircle = styled.div`
   height: 622px;
   width: 622px;
   border-radius: 311px;
-  background-color: transparent;
   background: radial-gradient(
     50% 53.45% at 50% 0%,
     rgba(0, 0, 0, 0) 100%,
     ${COLORS.navbarHero} 150%
   );
-  /* animation: ${circleAnimation} 2s infinite linear; */
 
   .outer-cirlce {
     width: 100%;
@@ -136,6 +150,49 @@ const IllustrationCuttedCircle = styled.div`
   }
 `;
 
+
+export const IllustrationBg = styled.div`
+  width: 622px;
+  height: 622px;
+  border-radius: 100%;
+  background-image: url('/skyscrapper.webp');
+  background-size: cover;
+  background-position-y: 50%;
+  background-position-x: 75%;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .innerCircleBig {
+    width: 346.75px;
+    height: 346.75px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+    background-image: url('/circle-bg.png');
+  }
+
+  .innerSmallCircle {
+    width: 118px;
+    height: 118px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a4f31;
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+  }
+`;
+
+const CircleAnimationRight = styled.div`
+  position: absolute;
+  top: 113px;
+  right: -5%;
+`;
+
 const IllustrationLine = styled.div`
   width: 2px;
   height: 1000px;
@@ -143,34 +200,38 @@ const IllustrationLine = styled.div`
   transform: translateY(-200px) rotate(40deg);
   position: absolute;
   top: 0;
-  opacity: 0.4;
+  z-index: 2;
+  opacity: 0.3;
 `;
 
 const HeroOfficeServices = () => {
   return (
-    <HeroOfficeServicesContainer>
-      <div className="left-bar" />
-      <div className="HeroAbout-text-container">
-        <div>
-          <HeroAboutTitle>
+    <>
+      <HeroOfficeServicesContainer>
+        <LeftBar />
+        <div className="HeroAbout-text-container">
+          <div>
             <SubTitle>Family Office Services</SubTitle>
-            Comprehensive private client services and support for all our
-            families
-          </HeroAboutTitle>
-          <Text>
-            We understand our families have needs beyond the daily investment
-            management services. Through our network of partners and providers,
-            we can facilitate many other services such as estate planning, tax,
-            real estate acquisition, cash management and lending.
-          </Text>
+            <HeroAboutTitle>
+              Comprehensive private client services and support for all our
+              families
+            </HeroAboutTitle>
+            <Text>
+              We understand our families have needs beyond the daily investment
+              management services. Through our network of partners and
+              providers, we can facilitate many other services such as estate
+              planning, tax, real estate acquisition, cash management and
+              lending.
+            </Text>
+          </div>
+          <div style={{ marginTop: '146px' }}>
+            <LinksItem>
+              <Link href="/contact-us">Contact Us</Link>
+            </LinksItem>
+          </div>
         </div>
-        <Links style={{ marginTop: "146px" }}>
-          <LinksItem>
-            <Link href="">Contact Us</Link>
-          </LinksItem>
-        </Links>
-      </div>
-      <div className="animation-circle-right" style={{ position: 'relative' }}>
+      </HeroOfficeServicesContainer>{' '}
+      <CircleAnimationRight>
         <IllustrationContainer>
           <div
             style={{
@@ -187,7 +248,7 @@ const HeroOfficeServices = () => {
           </div>
           <IllustrationLine />
           <IllustrationBigCircle>
-            <IllustrationBg style={{ backgroundImage: 'url("/family.png")' }}>
+            <IllustrationBg style={{ backgroundImage: 'url("/family.webp")' }}>
               <div className="innerCircleBig">
                 <div className="innerSmallCircle">
                   <img src="/family.svg" alt="" />
@@ -200,8 +261,8 @@ const HeroOfficeServices = () => {
           </IllustrationCuttedCircle>
           <IllustrationCircleAnimated></IllustrationCircleAnimated>
         </IllustrationContainer>
-      </div>
-    </HeroOfficeServicesContainer>
+      </CircleAnimationRight>
+    </>
   );
 };
 

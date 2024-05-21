@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { COLORS, HORIZONTAL_SPACE, PADDINGS } from '~/utils/constants';
+import { COLORS, HORIZONTAL_SPACE } from '~/utils/constants';
 
 export const NavbarContainer = styled.nav`
   height: auto;
@@ -7,10 +7,19 @@ export const NavbarContainer = styled.nav`
   display: flex;
   flex-direction: row;
   ${HORIZONTAL_SPACE}
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 44px;
   align-items: center;
   justify-content: space-between;
+
+  .menu-right {
+    gap: 33px;
+
+    .menu-item {
+      &:last-child {
+        text-decoration: underline;
+      }
+    }
+  }
 `;
 
 export const NavbarLogoContainer = styled.div`
@@ -20,33 +29,28 @@ export const NavbarLogoContainer = styled.div`
 `;
 
 export const NavbarLogo = styled.img`
-  width: inherit;
-  height: inherit;
+  width: 236px;
+  height: 70px;
 `;
 
 export const NavbarMenu = styled.ul`
   display: flex;
   flex-direction: row;
-  gap: 20px;
-  margin-left: 65px;
+  gap: 47px;
   list-style: none;
+
+  @media (max-width: 1392px) {
+    margin-left: 35px;
+    gap: 33px;
+  }
 `;
 
-
 interface NavbarMenuItemProps {
-  active?:boolean
+  active?: boolean;
 }
 
 export const NavbarMenuItem = styled.li<NavbarMenuItemProps>`
-  color: ${({ active })=> active ? "#fff" : COLORS.text};
+  color: ${({ active }) => (active ? '#fff' : COLORS.text)};
   font-size: 16px;
   font-weight: 400;
-
-  &:nth-child(4) {
-    margin-left: 100px;
-  }
-
-  &:nth-child(5) {
-    text-decoration: underline;
-  }
 `;

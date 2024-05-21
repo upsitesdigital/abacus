@@ -11,7 +11,6 @@ const ModalOverlay = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.5s;
   z-index: 9;
 `;
 
@@ -27,7 +26,7 @@ export const ModalHeader = styled.div`
   width: 748px;
   height: 114.96px;
   background-color: #46785c;
-  background-image: url('/modal-header-bg.png');
+  background-image: url('/modal-header-bg.webp');
   background-repeat: no-repeat;
   background-position: right;
   position: absolute;
@@ -115,11 +114,6 @@ const modalVariant = {
   initial: { opacity: 0 },
   isOpen: { opacity: 1 },
   exit: { opacity: 0 },
-};
-const containerVariant = {
-  initial: { top: '-50%', transition: { type: 'spring' } },
-  isOpen: { top: '50%' },
-  exit: { top: '-50%' },
 };
 
 export const ModalTeam = ({ data, handleClose }: Props) => {

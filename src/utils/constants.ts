@@ -28,7 +28,7 @@ export const MENU_ITEMS: MENU_ITEMS_TYPE[] = [
 ];
 
 export const PADDINGS = {
-  maxSpace: 300, //250,
+  maxSpace: 395, 
 };
 
 export const HORIZONTAL_SPACE = `
@@ -36,13 +36,28 @@ export const HORIZONTAL_SPACE = `
   padding-right: ${PADDINGS.maxSpace}px;
 
   @media (max-width: 1800px){
-    padding-left: ${PADDINGS.maxSpace - 100}px;
-    padding-right: ${PADDINGS.maxSpace - 100}px;
+    padding-left: ${PADDINGS.maxSpace - 80}px;
+    padding-right: ${PADDINGS.maxSpace - 80}px;
   }
 
-  @media (max-width: 1600px){
-    padding-left: ${PADDINGS.maxSpace - 300}px;
-    padding-right: ${PADDINGS.maxSpace - 300}px;
+  @media (max-width: 1650px){
+    padding-left: ${PADDINGS.maxSpace - 150}px;
+    padding-right: ${PADDINGS.maxSpace - 150}px;
+  }
+
+    @media (max-width: 1500px){
+    padding-left: ${PADDINGS.maxSpace - 200}px;
+    padding-right: ${PADDINGS.maxSpace - 200}px;
+  }
+
+  @media (max-width: 1360px){
+    padding-left: ${PADDINGS.maxSpace - 250}px;
+    padding-right: ${PADDINGS.maxSpace - 250}px;
+  }
+
+  @media (max-width: 1300px){
+    padding-left:70px;
+    padding-right: 70px;
   }
 `;
 

@@ -1,28 +1,18 @@
 import Link from 'next/link';
 import styled, { keyframes } from 'styled-components';
 import { COLORS, HORIZONTAL_SPACE } from '~/utils/constants';
-
-const circleAnimation = keyframes`
-
-  0% {
-    transform: rotate(0deg)
-  }
-
-
-  100% {
-        transform: rotate(360deg)
-  }
-
-`;
+import { LeftBar } from '..';
 
 const HeroAboutContainer = styled.div`
   width: 100%;
   background-color: ${COLORS.navbarHero};
-  padding: 100px 0 160px 0;
   ${HORIZONTAL_SPACE}
-  height: 1000px;
+  height: auto;
   display: flex;
   justify-content: space-between;
+  padding-top: 63px;
+  padding-bottom: 153px;
+  overflow: hidden;
 
   .left-bar {
     top: 0;
@@ -69,6 +59,21 @@ const HeroAboutTitle = styled.p`
   font-weight: 300;
   font-size: 56px;
   line-height: 62.84px;
+
+  @media (max-width: 1750px) {
+    max-width: 850px;
+    font-size: 50;
+  }
+
+  @media (max-width: 1600px) {
+    max-width: 700px;
+    font-size: 45;
+  }
+
+  @media (max-width: 1500px) {
+    max-width: 550px;
+    font-size: 40;
+  }
 `;
 
 const SubTitle = styled.h3`
@@ -97,7 +102,7 @@ export const Links = styled.div`
 
 export const LinksItem = styled.p`
   color: ${COLORS.text};
-  font-weight: 300;
+  font-weight: 400;
   font-size: 24px;
   text-decoration: underline;
 `;
@@ -109,15 +114,24 @@ export const IllustrationContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  .container {
+    width: 20px;
+    height: 20px;
+    left: -200px;
+    bottom: 0;
+    transform: rotate(180deg);
+    margin-bottom: 60px;
+  }
 `;
 
 export const IllustrationBg = styled.div`
   width: 622px;
   height: 622px;
   border-radius: 100%;
-  background-image: url('/florida.png');
+  background-image: url('/florida.webp');
   background-size: cover;
-  background-position: 50%;
+  background-position: 30%;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
@@ -126,13 +140,12 @@ export const IllustrationBg = styled.div`
   .innerCircleBig {
     width: 346.75px;
     height: 346.75px;
-    border: 2px solid #46785c;
-    background: #224f1a87;
     border-radius: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 4;
+    background-image: url('/border-radius.png');
   }
 
   .innerSmallCircle {
@@ -153,15 +166,13 @@ const IllustrationBigCircle = styled.div`
   border-radius: 100%;
 `;
 
-
 const IllustrationCircleAnimated = styled.div`
   position: absolute;
   width: 622px;
   height: 622px;
   border-radius: 100%;
-  background-color: rgb(0, 0, 0, 0.3);
-  background: linear-gradient(0deg, #46785c, rgb(0, 0, 0, 0.2));
   transform: rotate(-80deg);
+  background-image: url('/big-circle-border.png');
 `;
 
 const IllustrationCuttedCircle = styled.div`
@@ -173,7 +184,7 @@ const IllustrationCuttedCircle = styled.div`
   border-radius: 311px;
   background-color: transparent;
   background: radial-gradient(
-    50% 53.45% at 50% 0%,
+    50% 53.45% at 30% 0%,
     rgba(0, 0, 0, 0) 100%,
     ${COLORS.navbarHero} 150%
   );
@@ -196,33 +207,42 @@ const IllustrationLine = styled.div`
   transform: translateY(-200px) rotate(40deg);
   position: absolute;
   top: 0;
-  opacity: 0.4;
+  z-index: 2;
+  opacity: 0.3;
+`;
+
+const CircleAnimationRight = styled.div`
+  position: absolute;
+  top: 113px;
+  right: -5%;
 `;
 
 const HeroAbout = () => {
   return (
-    <HeroAboutContainer>
-      <div className="left-bar" />
-      <div className="HeroAbout-text-container">
-        <div>
-          <HeroAboutTitle>
+    <>
+      <HeroAboutContainer>
+        <LeftBar  />
+        <div className="HeroAbout-text-container">
+          <div>
             <SubTitle>About us</SubTitle>
-            Asset management capabilities with a research-driven approach
-            allowing us to build customized investment portfolios.
-          </HeroAboutTitle>
-          <Text>
-            The client&apos;s portfolio is actively managed with a focus on
-            capital preservation and real-time decision-making allowing us to
-            navigate through ever-changing market conditions.
-          </Text>
+            <HeroAboutTitle>
+              Asset management capabilities with a research-driven approach
+              allowing us to build customized investment portfolios.
+            </HeroAboutTitle>
+            <Text>
+              The client&apos;s portfolio is actively managed with a focus on
+              capital preservation and real-time decision-making allowing us to
+              navigate through ever-changing market conditions.
+            </Text>
+          </div>
+          <Links>
+            <LinksItem>
+              <Link href="">Contact Us</Link>
+            </LinksItem>
+          </Links>
         </div>
-        <Links>
-          <LinksItem>
-            <Link href="">Contact Us</Link>
-          </LinksItem>
-        </Links>
-      </div>
-      <div className="animation-circle-right" style={{ position: 'relative' }}>
+      </HeroAboutContainer>{' '}
+      <CircleAnimationRight className="animation-circle-right">
         <IllustrationContainer>
           <div
             style={{
@@ -252,8 +272,8 @@ const HeroAbout = () => {
           </IllustrationCuttedCircle>
           <IllustrationCircleAnimated></IllustrationCircleAnimated>
         </IllustrationContainer>
-      </div>
-    </HeroAboutContainer>
+      </CircleAnimationRight>
+    </>
   );
 };
 

@@ -3,8 +3,7 @@ import { styled } from 'styled-components';
 import { COLORS, HORIZONTAL_SPACE } from '~/utils/constants';
 
 export const PortfolioManagementContainer = styled.section`
-  /* height: 798px; */
-  padding-top: 100px;
+  padding-top: 128px;
 `;
 
 export const PortfolioManagementHeader = styled.div`
@@ -13,6 +12,7 @@ export const PortfolioManagementHeader = styled.div`
   align-items: center;
   justify-content: space-between;
   ${HORIZONTAL_SPACE}
+  margin-bottom: 32px;
 `;
 
 export const PortfolioManagementTitle = styled.h1`
@@ -24,23 +24,23 @@ export const PortfolioManagementTitle = styled.h1`
 export const PortfolioManagementLink = styled(Link)`
   font-size: 16px;
   text-decoration: underline;
-  color: ${COLORS.text};
-  font-weight: 300;
+  color: #46785c;
+  font-weight: 400;
 `;
 
 export const PortfolioManagementText = styled.p`
   font-size: 20px;
   width: 100%;
-  margin-top: 20px;
   text-align: justify;
   ${HORIZONTAL_SPACE}
   font-weight: 300;
+  line-height: 36px;
 `;
 
 export const PortfolioManagementSliderContainer = styled.div`
   width: 100%;
   ${HORIZONTAL_SPACE}
-  margin-top: 20px;
+  margin-top: 57px;
   border-top: 1px solid #c5c5c5;
   position: relative;
   display: flex;

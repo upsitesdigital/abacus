@@ -16,7 +16,7 @@ const Footer = ({ isContact = false }: { isContact?: boolean }) => {
   return (
     <FooterContainer
       style={{
-        paddingTop: isContact ? 50 : 'auto',
+        paddingTop: isContact ? 45 : 'auto',
       }}
     >
       {!isContact && (
@@ -31,13 +31,14 @@ const Footer = ({ isContact = false }: { isContact?: boolean }) => {
                 Contact us
               </FooterContactInfoTitle>
               <p data-aos="fade-up">
-                8181 West Broward Blvd, Suite 258 Plantation, <br />
+                8181 West Broward Blvd, Suite 258 Plantation, Florida
+                <br />
               </p>
-              <p data-aos="fade-up">Florida 33324 Office:</p>
-              <p data-aos="fade-up">(954) 361-4210 info@abacus-adv.com</p>
+              <p data-aos="fade-up">Office: (954) 361-4210</p>
+              <p data-aos="fade-up">info@abacus-adv.com</p>
             </FooterContactInfo>
           </div>
-          <hr />
+          <hr className='hr-1' />
         </>
       )}
 
@@ -59,7 +60,7 @@ const Footer = ({ isContact = false }: { isContact?: boolean }) => {
         </FooterMenu>
       </div>
 
-      <hr />
+      <hr className='hr-2' />
 
       <FooterCopyRightContainer>
         <FooterCopyRightText>

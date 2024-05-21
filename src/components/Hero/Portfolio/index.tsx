@@ -1,51 +1,18 @@
 import Link from 'next/link';
 import styled, { keyframes } from 'styled-components';
 import { COLORS, HORIZONTAL_SPACE } from '~/utils/constants';
-import {
-  IllustrationContainer,
-  Links,
-  LinksItem,
-} from '../About';
-
-const circleAnimation = keyframes`
-
-  0% {
-    transform: rotate(0deg)
-  }
-
-
-  100% {
-        transform: rotate(360deg)
-  }
-
-`;
+import { IllustrationContainer, Links, LinksItem } from '../About';
+import { LeftBar } from '..';
 
 const HeroPorfolioContainer = styled.div`
   width: 100%;
   background-color: ${COLORS.navbarHero};
-  padding: 100px 0 160px 0;
   ${HORIZONTAL_SPACE}
-  height: 1000px;
+  height: auto;
   display: flex;
   justify-content: space-between;
-
-  .left-bar {
-    top: 0;
-    width: 1px;
-    height: 120%;
-    position: absolute;
-    background: linear-gradient(
-      180deg,
-      #ffffff 0%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    opacity: 0.2;
-    left: 200px;
-
-    @media (max-width: 1600px) {
-      left: 50px;
-    }
-  }
+  padding-top: 63px;
+  padding-bottom: 163px;
 
   .HeroAbout-text-container {
     height: 100%;
@@ -69,11 +36,27 @@ const HeroPorfolioContainer = styled.div`
 `;
 
 const HeroAboutTitle = styled.p`
-  width: 1050px;
+  width: 860px;
   color: ${COLORS.white};
   font-weight: 300;
-  font-size: 56px;
+  font-size: 46px;
   line-height: 62.84px;
+
+  @media (max-width: 1750px) {
+    max-width: 800px;
+    font-size: 40px;
+    line-height: 45px;
+  }
+
+  @media (max-width: 1600px) {
+    max-width: 700px;
+    font-size: 35px;
+  }
+
+  @media (max-width: 1500px) {
+    max-width: 550px;
+    font-size: 30px;
+  }
 `;
 
 const SubTitle = styled.h3`
@@ -91,16 +74,32 @@ export const Text = styled.p`
   max-width: 830px;
   text-align: justify;
   line-height: 36px;
-`;
 
+  @media (max-width: 1750px) {
+    max-width: 800px;
+    font-size: 18px;
+  }
+
+  @media (max-width: 1600px) {
+    max-width: 700px;
+    font-size: 16px;
+    line-height: normal;
+  }
+
+  @media (max-width: 1500px) {
+    max-width: 550px;
+    font-size: 14px;
+  }
+`;
 
 export const IllustrationBg = styled.div`
   width: 622px;
   height: 622px;
   border-radius: 100%;
-  background-image: url('/skyscrapper.jpeg');
+  background-image: url('/skyscrapper.webp');
   background-size: cover;
-  background-position: 50%;
+  background-position-y: 50%;
+  background-position-x: 75%;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
@@ -109,34 +108,32 @@ export const IllustrationBg = styled.div`
   .innerCircleBig {
     width: 346.75px;
     height: 346.75px;
-    border: 2px solid #46785c;
-    background: #224f1a87;
     border-radius: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 4;
+    background-image: url('/circle-bg.png');
   }
 
   .innerSmallCircle {
-    width: 184px;
-    height: 184px;
-    border: 2px solid #46785c;
+    width: 118px;
+    height: 118px;
     border-radius: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #1a4f31;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   }
 `;
-
 
 const IllustrationBigCircle = styled.div`
   width: 622px;
   height: 622px;
   border-radius: 100%;
+  
 `;
-
 
 const IllustrationCircleAnimated = styled.div`
   position: absolute;
@@ -146,6 +143,7 @@ const IllustrationCircleAnimated = styled.div`
   background-color: rgb(0, 0, 0, 0.3);
   background: linear-gradient(0deg, #46785c, rgb(0, 0, 0, 0.2));
   transform: rotate(-80deg);
+  background-image: url('/big-circle-border.png');
 `;
 
 const IllustrationCuttedCircle = styled.div`
@@ -155,13 +153,11 @@ const IllustrationCuttedCircle = styled.div`
   height: 622px;
   width: 622px;
   border-radius: 311px;
-  background-color: transparent;
-  /* background: radial-gradient(
+  background: radial-gradient(
     50% 53.45% at 50% 0%,
     rgba(0, 0, 0, 0) 100%,
     ${COLORS.navbarHero} 150%
-  ); */
-  /* animation: ${circleAnimation} 2s infinite linear; */
+  );
 
   .outer-cirlce {
     width: 100%;
@@ -181,35 +177,44 @@ const IllustrationLine = styled.div`
   transform: translateY(-200px) rotate(40deg);
   position: absolute;
   top: 0;
-  opacity: 0.4;
+  z-index: 2;
+  opacity: 0.3;
+`;
+
+const CircleAnimationRight = styled.div`
+  position: absolute;
+  top: 113px;
+  right: -5%;
 `;
 
 const HeroPorfolio = () => {
   return (
-    <HeroPorfolioContainer>
-      <div className="left-bar" />
-      <div className="HeroAbout-text-container">
-        <div>
-          <HeroAboutTitle>
-            <SubTitle>Family Office Services</SubTitle>
-            Abacus Capital Advisors is a research-driven firm that builds and
-            monitors investment portfolios for entrepreneurs and ultra-high net
-            worth families.
-          </HeroAboutTitle>
-          <Text>
-            With our emphasis on research and individual security selection
-            instead of utilizing funds and ETFs, our differentiated investment
-            strategy presents several advantages to the traditional investment
-            model employed by other wealth managers and banks
-          </Text>
+    <>
+      <HeroPorfolioContainer>
+        <LeftBar  />
+        <div className="HeroAbout-text-container">
+          <div>
+            <SubTitle>Portfolio Management</SubTitle>
+            <HeroAboutTitle>
+              Abacus Capital Advisors is a research-driven firm that builds and
+              monitors investment portfolios for entrepreneurs and ultra-high
+              net worth families.
+            </HeroAboutTitle>
+            <Text>
+              With our emphasis on research and individual security selection
+              instead of utilizing funds and ETFs, our differentiated investment
+              strategy presents several advantages to the traditional investment
+              model employed by other wealth managers and banks
+            </Text>
+          </div>
+          <Links>
+            <LinksItem>
+              <Link href="">Contact Us</Link>
+            </LinksItem>
+          </Links>
         </div>
-        <Links>
-          <LinksItem>
-            <Link href="">Contact Us</Link>
-          </LinksItem>
-        </Links>
-      </div>
-      <div className="animation-circle-right" style={{ position: 'relative' }}>
+      </HeroPorfolioContainer>{' '}
+      <CircleAnimationRight>
         <IllustrationContainer>
           <div
             style={{
@@ -226,11 +231,7 @@ const HeroPorfolio = () => {
           </div>
           <IllustrationLine />
           <IllustrationBigCircle>
-            <IllustrationBg
-              style={{
-                backgroundImage: 'url("/skyscrapper.jpeg")',
-              }}
-            >
+            <IllustrationBg>
               <div className="innerCircleBig">
                 <div className="innerSmallCircle">
                   <img src="/money.svg" alt="" />
@@ -243,8 +244,8 @@ const HeroPorfolio = () => {
           </IllustrationCuttedCircle>
           <IllustrationCircleAnimated></IllustrationCircleAnimated>
         </IllustrationContainer>
-      </div>
-    </HeroPorfolioContainer>
+      </CircleAnimationRight>
+    </>
   );
 };
 
