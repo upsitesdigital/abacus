@@ -1,6 +1,5 @@
 import styled, { keyframes } from 'styled-components';
 import { COLORS, HORIZONTAL_SPACE } from '~/utils/constants';
-import { Text } from '../About';
 
 const HeroContactContainer = styled.div`
   width: 100%;
@@ -33,7 +32,6 @@ const HeroContactTitle = styled.p`
   font-weight: 400;
   font-size: 56px;
   margin-top: 72px;
-  margin-bottom: 26px;
 
   @media (max-width: 1750px) {
     max-width: 800px;
@@ -55,7 +53,6 @@ const SubTitle = styled.h3`
   font-size: 16px;
   font-weight: 400;
   color: #9fc899;
-  margin-bottom: 18px;
 `;
 
 const IllustrationContainer = styled.div`
@@ -109,6 +106,15 @@ export const ContactLine = styled.div`
   @media (max-width: 1300px) {
     left: 50px;
   }
+`;
+
+export const Text = styled.p`
+  font-size: 20px;
+  font-weight: 300;
+  color: #fff;
+  margin-top: 26px;
+  max-width: 650px;
+  line-height: 36px;
 `;
 
 const HeroContact = () => {

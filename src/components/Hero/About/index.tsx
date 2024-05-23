@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import styled, { keyframes } from 'styled-components';
 import { COLORS, HORIZONTAL_SPACE } from '~/utils/constants';
-import { LeftBar } from '..';
+import { HeroDefaultContainer, LeftBar } from '..';
 
 const HeroAboutContainer = styled.div`
   width: 100%;
@@ -57,7 +57,7 @@ const HeroAboutTitle = styled.p`
   width: 950px;
   color: ${COLORS.white};
   font-weight: 300;
-  font-size: 56px;
+  font-size: 46px;
   line-height: 62.84px;
 
   @media (max-width: 1750px) {
@@ -131,7 +131,7 @@ export const IllustrationBg = styled.div`
   border-radius: 100%;
   background-image: url('/florida.webp');
   background-size: cover;
-  background-position: 30%;
+  background-position-y: -50px;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
@@ -184,7 +184,7 @@ const IllustrationCuttedCircle = styled.div`
   border-radius: 311px;
   background-color: transparent;
   background: radial-gradient(
-    50% 53.45% at 30% 0%,
+    70% 60% at 0% 0%,
     rgba(0, 0, 0, 0) 100%,
     ${COLORS.navbarHero} 150%
   );
@@ -213,15 +213,14 @@ const IllustrationLine = styled.div`
 
 const CircleAnimationRight = styled.div`
   position: absolute;
-  top: 113px;
-  right: -5%;
+  right: -15%;
 `;
 
 const HeroAbout = () => {
   return (
     <>
       <HeroAboutContainer>
-        <LeftBar  />
+        <LeftBar />
         <div className="HeroAbout-text-container">
           <div>
             <SubTitle>About us</SubTitle>
@@ -237,42 +236,44 @@ const HeroAbout = () => {
           </div>
           <Links>
             <LinksItem>
-              <Link href="">Contact Us</Link>
+              <Link href="/contact-us">Contact Us</Link>
             </LinksItem>
           </Links>
         </div>
-      </HeroAboutContainer>{' '}
-      <CircleAnimationRight className="animation-circle-right">
-        <IllustrationContainer>
-          <div
-            style={{
-              width: '20px',
-              height: '20px',
-              position: 'absolute',
-              left: '-90px',
-              bottom: 0,
-              transform: 'rotate(180deg)',
-              marginBottom: '60px',
-            }}
-          >
-            <img src="/up.svg" alt="" />
-          </div>
-          <IllustrationLine />
-          <IllustrationBigCircle>
-            <IllustrationBg>
-              <div className="innerCircleBig">
-                <div className="innerSmallCircle">
-                  <img src="/abacus-empty.svg" alt="" />
+      </HeroAboutContainer>
+      <HeroDefaultContainer>
+        <CircleAnimationRight className="animation-circle-right">
+          <IllustrationContainer>
+            <div
+              style={{
+                width: '20px',
+                height: '20px',
+                position: 'absolute',
+                left: '-90px',
+                bottom: 0,
+                transform: 'rotate(180deg)',
+                marginBottom: '60px',
+              }}
+            >
+              <img src="/up.svg" alt="" />
+            </div>
+            <IllustrationLine />
+            <IllustrationBigCircle>
+              <IllustrationBg>
+                <div className="innerCircleBig">
+                  <div className="innerSmallCircle">
+                    <img src="/abacus-empty.svg" alt="" />
+                  </div>
                 </div>
-              </div>
-            </IllustrationBg>
-          </IllustrationBigCircle>
-          <IllustrationCuttedCircle>
-            <div className="outer-cirlce" />
-          </IllustrationCuttedCircle>
-          <IllustrationCircleAnimated></IllustrationCircleAnimated>
-        </IllustrationContainer>
-      </CircleAnimationRight>
+              </IllustrationBg>
+            </IllustrationBigCircle>
+            <IllustrationCuttedCircle>
+              <div className="outer-cirlce" />
+            </IllustrationCuttedCircle>
+            <IllustrationCircleAnimated></IllustrationCircleAnimated>
+          </IllustrationContainer>
+        </CircleAnimationRight>
+      </HeroDefaultContainer>
     </>
   );
 };

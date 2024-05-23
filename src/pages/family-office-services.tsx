@@ -17,6 +17,7 @@ const Title = styled.h2`
   text-align: center;
   font-size: 32px;
   font-weight: 400;
+  line-height: 32px;
 `;
 
 const MenuContainer = styled.div`
@@ -46,6 +47,7 @@ const MenuItem = styled.li`
 
   &:hover > .itemLegend {
     opacity: 1;
+    z-index: 7;
   }
 `;
 
@@ -56,15 +58,23 @@ const MenuItemDot = styled.li`
 `;
 
 const MenuIllustration = styled.div`
-  margin: 0 75px 0 75px;
-  width: 268px;
-  height: 268px;
-  background-color: #1a4f311a;
-  border-radius: 100%;
+  height: 332px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #1a4f311a;
+  z-index: 4;
+
+  .rounded-c {
+    margin: 0 75px 0 75px;
+    width: 268px;
+    height: 268px;
+    background-color: #1a4f311a;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #1a4f311a;
+  }
 
   .circle2 {
     width: 190px;
@@ -88,6 +98,7 @@ const MenuLegend = styled.p`
   margin-left: 20px;
   transition: 0.5s;
   font-size: 14px;
+  font-weight: 400;
 
   p {
     padding: 24px;
@@ -103,10 +114,16 @@ const MenuLegend = styled.p`
     height: 20px;
     background-color: #fff;
     position: absolute;
-    left: -10px;
+    left: -5px;
     top: 40%;
     box-shadow: 0 0 2px #00000040;
     transform: rotate(50deg);
+  }
+
+  .seta2 {
+    right: -10px;
+    left: 93%;
+    right: 0;
   }
 `;
 
@@ -149,9 +166,11 @@ export default function FamilyOfficeServices() {
             ))}
           </Menu>
           <MenuIllustration>
-            <div className="circle2">
-              <div>
-                <img src="/logo.svg" alt="A" />
+            <div className="rounded-c">
+              <div className="circle2">
+                <div>
+                  <img src="/logo.svg" alt="A" />
+                </div>
               </div>
             </div>
           </MenuIllustration>
@@ -160,8 +179,8 @@ export default function FamilyOfficeServices() {
               <MenuItem key={item} style={{ flexDirection: 'row-reverse' }}>
                 <MenuItemDot style={{ marginLeft: '48px' }} />
                 {item}
-                <MenuLegend className="itemLegend">
-                  <div className="seta" />
+                <MenuLegend style={{ left: '-90%' }} className="itemLegend">
+                  <div className="seta seta2" />
                   <p>
                     Simply dummy text of the printing and typesetting industry.
                   </p>

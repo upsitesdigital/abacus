@@ -37,6 +37,7 @@ const TextSection = styled.p`
   font-size: 28px;
   font-weight: 300;
   text-align: center;
+  line-height: 50.4px;
   max-width: 90%;
   margin: 0 auto;
   max-width: 1124px;
@@ -149,9 +150,9 @@ export const AboutIllustrationBackground = styled.div`
     width: 622px;
     height: 622px;
     border-radius: 100%;
-    margin-top: 30px;
+    margin-top: 48px;
     border: 2px solid #737373;
-    opacity: 0.3;
+    opacity: 0.1;
   }
 
   .line {
@@ -167,7 +168,7 @@ export const AboutIllustrationBackground = styled.div`
 
 const teamData: Person[] = [
   {
-    pic: '/mauro-fgerman.webp',
+    pic: '/mauro.png',
     shortTitle: 'CEO & CIO',
     name: 'Mauro Ferman',
     title:
@@ -184,7 +185,7 @@ const teamData: Person[] = [
           multi-family office located in Miami, FL.`,
   },
   {
-    pic: '/jarvis-johnson.webp',
+    pic: '/jarvis.png',
     shortTitle: 'CEO & CIO',
     title:
       "Mr. Ferman is the founding partner at Abacus Capital Advisors and serves as the firm's CEO.",
@@ -201,7 +202,7 @@ const teamData: Person[] = [
           multi-family office located in Miami, FL.`,
   },
   {
-    pic: '/leroi-sanchez.webp',
+    pic: '/lerroi.png',
     shortTitle: 'CEO & CIO',
     title:
       "Mr. Ferman is the founding partner at Abacus Capital Advisors and serves as the firm's CEO.",
@@ -218,7 +219,7 @@ const teamData: Person[] = [
           multi-family office located in Miami, FL.`,
   },
   {
-    pic: '/william-smythe.webp',
+    pic: '/william.png',
     shortTitle: 'CEO & CIO',
     title:
       "Mr. Ferman is the founding partner at Abacus Capital Advisors and serves as the firm's CEO.",
@@ -235,7 +236,7 @@ const teamData: Person[] = [
           multi-family office located in Miami, FL.`,
   },
   {
-    pic: '/joel-moran.webp',
+    pic: '/joel.png',
     shortTitle: 'CEO & CIO',
     title:
       "Mr. Ferman is the founding partner at Abacus Capital Advisors and serves as the firm's CEO.",

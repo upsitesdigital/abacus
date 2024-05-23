@@ -233,7 +233,7 @@ const InvestmentCardTitle = styled.h3`
   width: 100%;
 `;
 
-const items = [
+export const PORTFOLIO_ITEMS = [
   {
     icon: '/customization.svg',
     title: 'Customization',
@@ -313,7 +313,7 @@ export default function PortfolioManagement() {
         </Header>
         <PortfolioBenefitsContainer>
           <PortfolioBenefitsGrid>
-            {items.map((item) => (
+            {PORTFOLIO_ITEMS.map((item) => (
               <PortfolioBenefitsItem key={item.title}>
                 <PortfolioCardHeader style={{ marginBottom: '100px' }}>
                   <PortfolioCardTitle>{item.title}</PortfolioCardTitle>

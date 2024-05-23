@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import PortfolioCard from './Card';
 import {
   PortfolioManagementContainer,
@@ -13,49 +13,35 @@ import {
 } from './styles';
 import { motion } from 'framer-motion';
 import { MENU_ITEMS } from '~/utils/constants';
+import { useMediaQuery } from '~/hooks/use-media-query';
 
-
-export const items = {
-  '0': [
-    {
-      icon: '/customization.svg',
-      title: 'Customization',
-      text: "Our portfolios are highly customizable to meet our client’s long-term investment objectives. <a href=''>More</a>",
-    },
-    {
-      icon: '/transparency.svg',
-      title: 'Transparency',
-      text: "Our individual security selection allows our clients to follow with the uttermost transparency the daily evolution of the investment portfolio. <a href=''>More</a>",
-    },
-    {
-      icon: '/cost.svg',
-      title: 'Cost',
-      text: "By eliminating expensive management fees associated with funds and ETFs, we remove a layer of fees that clients are normally charged by traditional wealth managers and banks. <a href=''>More</a>",
-    },
-  ],
-  '1': [
-    {
-      icon: '/customization.svg',
-      title: 'Customization 2',
-      text: "Our portfolios are highly customizable to meet our client’s long-term investment objectives. <a href=''>More</a>",
-    },
-    {
-      icon: '/transparency.svg',
-      title: '2',
-      text: "Our individual security selection allows our clients to follow with the uttermost transparency the daily evolution of the investment portfolio. <a href=''>More</a>",
-    },
-    {
-      icon: '/cost.svg',
-      title: 'Cost 2',
-      text: "By eliminating expensive management fees associated with funds and ETFs, we remove a layer of fees that clients are normally charged by traditional wealth managers and banks. <a href=''>More</a>",
-    },
-  ],
-};
-
+export const items = [
+  {
+    icon: '/customization.svg',
+    title: 'Customization',
+    text: "Our portfolios are highly customizable to meet our client’s long-term investment objectives. <a href='/portfolio-management'>More</a>",
+  },
+  {
+    icon: '/transparency.svg',
+    title: 'Transparency',
+    text: "Our individual security selection allows our clients to follow with the uttermost transparency. <a href='/portfolio-management'>More</a>",
+  },
+  {
+    icon: '/cost.svg',
+    title: 'Cost',
+    text: "Eliminate expensive management fees from funds and ETFs, utting charges by traditional banks.. <a href='/portfolio-management'>More</a>",
+  },
+  {
+    icon: '/risk-management.svg',
+    title: 'Risk Management',
+    text: 'Our individual security selection approach allows better risk management as different parts of the portfolio can be rapidly adapted to different market conditions and cycles.',
+  },
+];
 
 const PortfolioManagement = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState('next');
+  const { width } = useMediaQuery()
 
   const handlePrev = () => {
     setCurrentSlide(currentSlide - 1);
@@ -66,6 +52,8 @@ const PortfolioManagement = () => {
     setCurrentSlide(currentSlide + 1);
     setDirection('next');
   };
+  
+  const isMobile = width <= 650
 
   return (
     <PortfolioManagementContainer>
@@ -85,6 +73,13 @@ const PortfolioManagement = () => {
         investment strategy presents several advantages to the traditional
         investment model employed by other wealth managers and banks:
       </PortfolioManagementText>
+      <PortfolioManagementLink
+        className="link-mobile"
+        data-aos="fade-up"
+        href={MENU_ITEMS[1].route}
+      >
+        Portfolio Management
+      </PortfolioManagementLink>
       <PortfolioManagementSliderContainer data-aos="fade-up">
         <motion.div
           key={currentSlide}
@@ -108,7 +103,7 @@ const PortfolioManagement = () => {
           }}
         >
           <PortfolioManagementSliderItemList>
-            {items[`${currentSlide}` as keyof typeof items].map((item) => (
+            {items.slice(0, isMobile ? 4 : 3).map((item) => (
               <PortfolioCard
                 key={item.title}
                 icon={<img src={item.icon} />}

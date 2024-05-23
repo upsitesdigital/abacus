@@ -36,16 +36,15 @@ const FormContainer = styled.div`
 
 const FormField = styled.div`
   position: relative;
-  margin: 20px 0;
   width: 543px;
   height: 75px;
+  margin-bottom: 16px;
 
   input {
     width: 100%;
     height: 100%;
-    font-size: 16px;
+    font-size: 22px;
     border: 1px solid #777777;
-    border-radius: 4px;
     color: #1a4f31;
     font-size: 22px;
     font-weight: 500;
@@ -58,7 +57,7 @@ const FormField = styled.div`
     top: 22px;
     left: 10px;
     font-weight: 300;
-    font-size: 22px;
+    font-size: 18px;
     color: #777777;
     padding: 0 5px;
     transition: 0.3s;
@@ -72,10 +71,11 @@ const FormField = styled.div`
 
   input:focus + label,
   input:not(:placeholder-shown) + label {
-    top: -8px;
+    top: -12px;
     left: 10px;
-    font-size: 10px;
+    font-size: 12px;
     color: #000;
+    padding: 4px 10px 4px 10px;
   }
 
   textarea {
@@ -92,8 +92,9 @@ const FormField = styled.div`
 
   textarea:focus + label,
   textarea:not(:placeholder-shown) + label {
-    top: -9px;
-    font-size: 10px;
+    top: -12px;
+    font-size: 12px;
+    padding: 4px 10px 4px 10px;
   }
 `;
 
@@ -107,6 +108,7 @@ const Button = styled.button`
   font-weight: 300;
   color: #fff;
   cursor: pointer;
+  margin-top: 12px;
 `;
 
 const ContactInfoContainer = styled.div`
@@ -119,7 +121,7 @@ const ContactInfoContainer = styled.div`
   .networks {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 14px;
     margin-bottom: 54px;
 
     .icon {
@@ -127,7 +129,6 @@ const ContactInfoContainer = styled.div`
       height: 40px;
       border-radius: 100%;
       background-color: #46785c;
-      padding: 5px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -138,8 +139,8 @@ const ContactInfoContainer = styled.div`
     }
 
     img {
-      width: 20px;
-      height: 20px;
+      width: 24px;
+      height: 24px;
     }
   }
 
@@ -204,7 +205,7 @@ export default function ContactUs() {
             8181 West Broward Blvd, Suite 258 <br />
             Plantation, Florida 33324
           </p>
-          <p>Florida 33324 Office: (954) 361-4210</p>
+          <p>Office: (954) 361-4210</p>
           <p>info@abacus-adv.com</p>
         </ContactInfoContainer>
       </Container>{' '}

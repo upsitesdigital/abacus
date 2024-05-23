@@ -18,7 +18,7 @@ export const ModalContent = styled.div`
   width: 748px;
   height: auto;
   background-color: #fff;
-  padding: 60px;
+  padding: 50px 60px;
   position: relative;
 `;
 
@@ -28,7 +28,8 @@ export const ModalHeader = styled.div`
   background-color: #46785c;
   background-image: url('/modal-header-bg.webp');
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: 107%;
+  background-size:contain;
   position: absolute;
   top: 0;
   left: 0;
@@ -51,6 +52,7 @@ export const HeaderContainer = styled.div`
 export const TeamPic = styled.img`
   width: 163.24px;
   height: 166.31px;
+  object-fit: cover;
 `;
 
 export const TeamName = styled.h4`
@@ -79,7 +81,7 @@ export const Footer = styled.div`
   margin-top: 50px;
 
   p {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 300;
     color: #000;
   }
@@ -90,7 +92,7 @@ const CloseButton = styled.button`
   border: none;
   background-color: transparent;
   position: absolute;
-  right: 27px;
+  right: 37px;
   top: 57px;
   cursor: pointer;
 `;

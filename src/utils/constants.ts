@@ -59,6 +59,16 @@ export const HORIZONTAL_SPACE = `
     padding-left:70px;
     padding-right: 70px;
   }
+
+  @media (max-width: 1115px) {
+    padding-left:50px;
+    padding-right: 50px;
+  }
+
+  @media (max-width: 900px) {
+    padding-left:24px;
+    padding-right: 24px;
+  }
 `;
 
 export const COLORS = {

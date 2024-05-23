@@ -1,12 +1,8 @@
 import Link from 'next/link';
 import styled, { keyframes } from 'styled-components';
 import { COLORS, HORIZONTAL_SPACE } from '~/utils/constants';
-import {
-  IllustrationContainer,
-  Links,
-  LinksItem,
-} from '../About';
-import { LeftBar } from '..';
+import { IllustrationContainer, Links, LinksItem } from '../About';
+import { HeroDefaultContainer, LeftBar } from '..';
 
 const HeroOfficeServicesContainer = styled.div`
   width: 100%;
@@ -61,7 +57,7 @@ const HeroAboutTitle = styled.p`
   width: 1000px;
   color: ${COLORS.white};
   font-weight: 300;
-  font-size: 56px;
+  font-size: 46px;
   line-height: 62.84px;
 
   @media (max-width: 1750px) {
@@ -134,7 +130,7 @@ const IllustrationCuttedCircle = styled.div`
   width: 622px;
   border-radius: 311px;
   background: radial-gradient(
-    50% 53.45% at 50% 0%,
+    70% 60% at 0% 0%,
     rgba(0, 0, 0, 0) 100%,
     ${COLORS.navbarHero} 150%
   );
@@ -150,15 +146,14 @@ const IllustrationCuttedCircle = styled.div`
   }
 `;
 
-
 export const IllustrationBg = styled.div`
   width: 622px;
   height: 622px;
   border-radius: 100%;
-  background-image: url('/skyscrapper.webp');
+  background-image: url('/family.webp');
   background-size: cover;
-  background-position-y: 50%;
-  background-position-x: 75%;
+  background-position-y: -50px;
+  background-position-x: -10px;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
@@ -183,14 +178,13 @@ export const IllustrationBg = styled.div`
     align-items: center;
     justify-content: center;
     background-color: #1a4f31;
-    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   }
 `;
 
 const CircleAnimationRight = styled.div`
   position: absolute;
-  top: 113px;
-  right: -5%;
+  right: -15%;
 `;
 
 const IllustrationLine = styled.div`
@@ -230,38 +224,40 @@ const HeroOfficeServices = () => {
             </LinksItem>
           </div>
         </div>
-      </HeroOfficeServicesContainer>{' '}
-      <CircleAnimationRight>
-        <IllustrationContainer>
-          <div
-            style={{
-              width: '20px',
-              height: '20px',
-              position: 'absolute',
-              left: '-90px',
-              bottom: 0,
-              transform: 'rotate(180deg)',
-              marginBottom: '60px',
-            }}
-          >
-            <img src="/up.svg" alt="" />
-          </div>
-          <IllustrationLine />
-          <IllustrationBigCircle>
-            <IllustrationBg style={{ backgroundImage: 'url("/family.webp")' }}>
-              <div className="innerCircleBig">
-                <div className="innerSmallCircle">
-                  <img src="/family.svg" alt="" />
+      </HeroOfficeServicesContainer>
+      <HeroDefaultContainer>
+        <CircleAnimationRight>
+          <IllustrationContainer>
+            <div
+              style={{
+                width: '20px',
+                height: '20px',
+                position: 'absolute',
+                left: '-90px',
+                bottom: 0,
+                transform: 'rotate(180deg)',
+                marginBottom: '60px',
+              }}
+            >
+              <img src="/up.svg" alt="" />
+            </div>
+            <IllustrationLine />
+            <IllustrationBigCircle>
+              <IllustrationBg>
+                <div className="innerCircleBig">
+                  <div className="innerSmallCircle">
+                    <img src="/family.svg" alt="" />
+                  </div>
                 </div>
-              </div>
-            </IllustrationBg>
-          </IllustrationBigCircle>
-          <IllustrationCuttedCircle>
-            <div className="outer-cirlce" />
-          </IllustrationCuttedCircle>
-          <IllustrationCircleAnimated></IllustrationCircleAnimated>
-        </IllustrationContainer>
-      </CircleAnimationRight>
+              </IllustrationBg>
+            </IllustrationBigCircle>
+            <IllustrationCuttedCircle>
+              <div className="outer-cirlce" />
+            </IllustrationCuttedCircle>
+            <IllustrationCircleAnimated></IllustrationCircleAnimated>
+          </IllustrationContainer>
+        </CircleAnimationRight>
+      </HeroDefaultContainer>
     </>
   );
 };

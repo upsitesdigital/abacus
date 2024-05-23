@@ -1,5 +1,7 @@
 import { MENU_ITEMS } from '~/utils/constants';
 import {
+  HamburgerMenuButton,
+  MenuMobileOverlay,
   NavbarContainer,
   NavbarLogo,
   NavbarLogoContainer,
@@ -8,9 +10,29 @@ import {
 } from './styles';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 
 const Navbar = () => {
-  const router = useRouter()
+  const router = useRouter();
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
+  useEffect(() => {
+    const layoutContent = document.getElementById('layout-body');
+
+    if (layoutContent) {
+      if (menuOpen) {
+        (layoutContent as any).style.overflow = menuOpen ? 'hidden' : 'auto';
+        document.body.style.overflow = menuOpen ? 'hidden' : 'auto';
+      } else {
+        (layoutContent as any).style.overflow = 'auto';
+        document.body.style.overflow = 'auto';
+      }
+    }
+  }, [menuOpen]);
 
   return (
     <NavbarContainer>
@@ -19,7 +41,7 @@ const Navbar = () => {
       </NavbarLogoContainer>
 
       <NavbarMenu>
-        {MENU_ITEMS.slice(0,3).map((item) => (
+        {MENU_ITEMS.slice(0, 3).map((item) => (
           <NavbarMenuItem
             data-aos="fade-down"
             active={item.route === router.pathname}
@@ -29,11 +51,11 @@ const Navbar = () => {
           </NavbarMenuItem>
         ))}
       </NavbarMenu>
-      <NavbarMenu className='menu-right'>
-        {MENU_ITEMS.slice(3,5).map((item) => (
+      <NavbarMenu className="menu-right">
+        {MENU_ITEMS.slice(3, 5).map((item) => (
           <NavbarMenuItem
             data-aos="fade-down"
-            className='menu-item'
+            className="menu-item"
             active={item.route === router.pathname}
             key={item?.route}
           >
@@ -41,6 +63,17 @@ const Navbar = () => {
           </NavbarMenuItem>
         ))}
       </NavbarMenu>
+
+      <HamburgerMenuButton
+        isOpen={menuOpen}
+        onClick={() => setMenuOpen((prev) => !prev)}
+      >
+        <span />
+        <span />
+        <span />
+      </HamburgerMenuButton>
+
+      {menuOpen && <MenuMobileOverlay />}
     </NavbarContainer>
   );
 };

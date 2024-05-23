@@ -11,17 +11,19 @@ import {
   FooterMenuItem,
 } from './styles';
 import Link from 'next/link';
+import { useMediaQuery } from '~/hooks/use-media-query';
 
 const Footer = ({ isContact = false }: { isContact?: boolean }) => {
+  const { width } = useMediaQuery();
+  const isMobile = width <= 650;
+
+  const showInfo = !isContact || isMobile
+
   return (
-    <FooterContainer
-      style={{
-        paddingTop: isContact ? 45 : 'auto',
-      }}
-    >
-      {!isContact && (
+    <FooterContainer isContact={isContact}>
+      {showInfo && (
         <>
-          <div className="container">
+          <div className="container container-1">
             <FooterLogoContainer data-aos="fade-up">
               <FooterLogo src="/logo.png" />
             </FooterLogoContainer>
@@ -31,36 +33,37 @@ const Footer = ({ isContact = false }: { isContact?: boolean }) => {
                 Contact us
               </FooterContactInfoTitle>
               <p data-aos="fade-up">
-                8181 West Broward Blvd, Suite 258 Plantation, Florida
-                <br />
+                8181 West Broward Blvd, Suite 258 Plantation, Florida 33324
               </p>
               <p data-aos="fade-up">Office: (954) 361-4210</p>
               <p data-aos="fade-up">info@abacus-adv.com</p>
             </FooterContactInfo>
           </div>
-          <hr className='hr-1' />
+          <hr className="hr-1" />
         </>
       )}
 
       <div className="container">
         <FooterMenu>
-          {MENU_ITEMS.slice(0, 3).map((item) => (
+          {MENU_ITEMS.slice(0, isMobile ? MENU_ITEMS.length : 3).map((item) => (
             <FooterMenuItem key={item?.route}>
               <Link href={item?.route}>{item?.title}</Link>
             </FooterMenuItem>
           ))}
         </FooterMenu>
 
-        <FooterMenu>
-          {MENU_ITEMS.slice(3, 5).map((item) => (
-            <FooterMenuItem key={item?.route}>
-              <Link href={item?.route}>{item?.title}</Link>
-            </FooterMenuItem>
-          ))}
-        </FooterMenu>
+        {!isMobile && (
+          <FooterMenu>
+            {MENU_ITEMS.slice(3, 5).map((item) => (
+              <FooterMenuItem key={item?.route}>
+                <Link href={item?.route}>{item?.title}</Link>
+              </FooterMenuItem>
+            ))}
+          </FooterMenu>
+        )}
       </div>
 
-      <hr className='hr-2' />
+      <hr className="hr-2" />
 
       <FooterCopyRightContainer>
         <FooterCopyRightText>

@@ -42,25 +42,16 @@ const HeroContainer = styled.div`
   display: flex;
   justify-content: space-between;
   padding-top: 99px;
-  padding-bottom: 250px;
-  overflow: hidden;
+  padding-bottom: 189px;
 
-  .left-bar {
-    top: 0;
-    width: 1px;
-    height: 105%;
+  .hero-mobile-bg {
     position: absolute;
-    background: linear-gradient(
-      180deg,
-      #ffffff 0%,
-      rgba(255, 255, 255, 0) 100%
-    );
+    right: 0;
+    top: 346px;
+    display: none;
 
-    opacity: 0.2;
-    left: 200px;
-
-    @media (max-width: 1800px) {
-      left: 60px;
+    @media (max-width: 750px) {
+      display: block;
     }
   }
 
@@ -68,56 +59,130 @@ const HeroContainer = styled.div`
     height: 100%;
     display: flex;
     flex-direction: column;
+    z-index: 4;
+
+    .IllustrationText-mobile {
+      display: none;
+    }
+
+    @media (max-width: 750px) {
+      height: auto;
+
+      .IllustrationText-mobile {
+        max-width: 171px;
+        font-size: 17px;
+        font-weight: 400;
+        color: #fff;
+        margin-top: 69px;
+        display: block;
+
+        span {
+          color: #1a4f31;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 750px) {
+    padding-top: 58px;
+    padding-bottom: 104px;
   }
 `;
 
 const CircleAnimationRight = styled.div`
   position: absolute;
-  top: 113px;
-  right: -5%;
+  right: -15%;
+
+  @media (max-width: 1050px) {
+    transform: scale(0.7);
+    right: -20%;
+  }
+
+  @media (max-width: 900px) {
+    transform: scale(0.7);
+    right: -23%;
+  }
 `;
 
-const HeroTitle = styled.h5`
-  width: 830px;
-  color: ${COLORS.white};
-  font-weight: 400;
-  font-size: 56px;
-  line-height: 76.5px;
+const HeroTitle = styled.div`
+  h3 {
+    width: 830px;
+    color: ${COLORS.white};
+    font-weight: 400;
+    font-size: 56px;
+    line-height: 76.5px;
+  }
 
   img {
     margin-bottom: 58px;
+
+    @media (max-width: 750px) {
+      margin-bottom: 24px;
+    }
   }
 
   @media (max-width: 1750px) {
-    max-width: 800px;
-    font-size: 50px;
+    h3 {
+      max-width: 800px;
+      font-size: 50px;
+      line-height: 70px;
+    }
   }
 
   @media (max-width: 1600px) {
-    max-width: 700px;
-    font-size: 45px;
+    h3 {
+      max-width: 700px;
+      font-size: 45px;
+      line-height: 60px;
+    }
   }
 
   @media (max-width: 1500px) {
-    max-width: 550px;
-    font-size: 40px;
+    h3 {
+      max-width: 550px;
+      font-size: 40px;
+      line-height: 50px;
+    }
+  }
+
+  @media (max-width: 750px) {
+    h3 {
+      width: 100%;
+      max-width: 340px;
+      font-size: 32px;
+      line-height: 43.71px;
+    }
   }
 `;
 
-const Links = styled.div`
+const Links = styled.ul`
   display: flex;
   flex-direction: row;
-  margin-top: 272px;
   list-style: none;
   gap: 64px;
+  margin-top: 272px;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 56px;
+  }
 `;
 
-const LinksItem = styled.div`
+const LinksItem = styled.li`
   a {
     color: #9fc899;
     font-weight: 300;
     font-size: 24px;
     text-decoration: underline;
+  }
+
+  @media (max-width: 1600px) {
+    a {
+      max-width: 700px;
+      font-size: 20;
+    }
   }
 `;
 
@@ -128,6 +193,11 @@ const IllustrationContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  /* @media (max-width: 750px) {
+    width: 244px;
+    height: 420px;
+  } */
 `;
 
 const IllustrationBg = styled.div`
@@ -136,6 +206,11 @@ const IllustrationBg = styled.div`
   border-radius: 100%;
   background-image: url('/arranha-ceus-de-aco-eletrico-business-metal-sky 1.webp');
   background-size: cover;
+
+  /* @media (max-width: 750px) {
+    width: 244px;
+    height: 244px;
+  } */
 `;
 
 const IllustrationWordImage = styled.img`
@@ -148,6 +223,11 @@ const IllustrationBigCircle = styled.div`
   height: 623px;
   border-radius: 100%;
   background-image: url('/big-circle-border.png');
+
+  /* @media (max-width: 750px) {
+    width: 244px;
+    height: 244px;
+  } */
 `;
 
 const IllustrationSmallCircle = styled.div`
@@ -192,7 +272,6 @@ const IllustrationCuttedCircle = styled.div`
     rgba(255, 255, 255, 0) 0%,
     ${COLORS.navbarHero} 160%
   );
-  
 
   .outer-cirlce {
     width: 100%;
@@ -230,6 +309,25 @@ const IllustrationText = styled.p`
     color: #1a4f31;
     background-color: #fff;
   }
+
+  @media (max-width: 750px) {
+    display: none;
+  }
+`;
+
+export const HeroDefaultContainer = styled.div`
+  width: 680px;
+  height: 90%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  overflow: hidden;
+  z-index: 0;
+  top: 113px;
+
+  @media (max-width: 750px) {
+    display: none;
+  }
 `;
 
 const Hero = () => {
@@ -240,8 +338,11 @@ const Hero = () => {
         <div className="hero-text-container">
           <HeroTitle data-aos="fade-down">
             <img src="/arrow-up-right-3.svg" />
-            <br />A Boutique Multi-Family Office focused on helping clients grow
-            their wealth responsibly 
+            <h3>
+              Boutique Multi-Family Office focused on helping clients grow their
+              wealth responsibly
+            </h3>
+             
           </HeroTitle>
 
           <Links>
@@ -254,28 +355,35 @@ const Hero = () => {
               </Link>
             </LinksItem>
           </Links>
+          <div className="IllustrationText-mobile" data-aos="fade-up">
+            Proudly serving families throughout <span> North and South </span>
+            America and <span>Europe</span>
+          </div>
         </div>
+        <img className="hero-mobile-bg" src="/hero-home-mobile.png" alt="" />
       </HeroContainer>
-      <CircleAnimationRight>
-        <IllustrationContainer>
-          <IllustrationBigCircle>
-            <IllustrationBg />
-          </IllustrationBigCircle>
-          <IllustrationSmallCircle>
-            <img className="up-icon" src="/up.svg" alt="" />
-            <IllustrationWordImage src="/North_America.png" />
-          </IllustrationSmallCircle>
-          <IllustrationLine />
-          <IllustrationCuttedCircle>
-            <div className="outer-cirlce" />
-          </IllustrationCuttedCircle>
-          <IllustrationCircleAnimated></IllustrationCircleAnimated>
-        </IllustrationContainer>
-        <IllustrationText data-aos="fade-up">
-          Proudly serving families throughout <span> North and South </span>
-          America and <span>Europe</span>
-        </IllustrationText>
-      </CircleAnimationRight>
+      <HeroDefaultContainer>
+        <CircleAnimationRight>
+          <IllustrationContainer>
+            <IllustrationBigCircle>
+              <IllustrationBg />
+            </IllustrationBigCircle>
+            <IllustrationSmallCircle>
+              <img className="up-icon" src="/up.svg" alt="" />
+              <IllustrationWordImage src="/North_America.png" />
+            </IllustrationSmallCircle>
+            <IllustrationLine />
+            <IllustrationCuttedCircle>
+              <div className="outer-cirlce" />
+            </IllustrationCuttedCircle>
+            <IllustrationCircleAnimated></IllustrationCircleAnimated>
+          </IllustrationContainer>
+          <IllustrationText data-aos="fade-up">
+            Proudly serving families throughout <span> North and South </span>
+            America and <span>Europe</span>
+          </IllustrationText>
+        </CircleAnimationRight>
+      </HeroDefaultContainer>
     </>
   );
 };

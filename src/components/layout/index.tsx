@@ -3,9 +3,7 @@ import Navbar from '../Navbar';
 import { LayoutContainer } from './styles';
 import Footer from '../Footer';
 import { useRouter } from 'next/router';
-import AOS from 'aos';
 import { useEffect } from 'react';
-// import 'aos/dist/aos.css';
 
 /**
  * `Props` type.
@@ -25,7 +23,7 @@ const Layout: React.FC<Props> = ({ children }) => {
   }, []);
 
   return (
-    <LayoutContainer>
+    <LayoutContainer className="layout-body">
       <Head>
         <link />
       </Head>

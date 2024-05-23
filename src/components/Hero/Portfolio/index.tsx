@@ -2,7 +2,7 @@ import Link from 'next/link';
 import styled, { keyframes } from 'styled-components';
 import { COLORS, HORIZONTAL_SPACE } from '~/utils/constants';
 import { IllustrationContainer, Links, LinksItem } from '../About';
-import { LeftBar } from '..';
+import { HeroDefaultContainer, LeftBar } from '..';
 
 const HeroPorfolioContainer = styled.div`
   width: 100%;
@@ -98,8 +98,8 @@ export const IllustrationBg = styled.div`
   border-radius: 100%;
   background-image: url('/skyscrapper.webp');
   background-size: cover;
-  background-position-y: 50%;
-  background-position-x: 75%;
+  background-position-y: -60px;
+  background-position-x: 70%;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
@@ -132,7 +132,6 @@ const IllustrationBigCircle = styled.div`
   width: 622px;
   height: 622px;
   border-radius: 100%;
-  
 `;
 
 const IllustrationCircleAnimated = styled.div`
@@ -140,8 +139,7 @@ const IllustrationCircleAnimated = styled.div`
   width: 622px;
   height: 622px;
   border-radius: 100%;
-  background-color: rgb(0, 0, 0, 0.3);
-  background: linear-gradient(0deg, #46785c, rgb(0, 0, 0, 0.2));
+  background: linear-gradient(0deg, #46785c, rgb(0, 0, 0, 0.9));
   transform: rotate(-80deg);
   background-image: url('/big-circle-border.png');
 `;
@@ -154,7 +152,7 @@ const IllustrationCuttedCircle = styled.div`
   width: 622px;
   border-radius: 311px;
   background: radial-gradient(
-    50% 53.45% at 50% 0%,
+    50% 60% at 0% 0%,
     rgba(0, 0, 0, 0) 100%,
     ${COLORS.navbarHero} 150%
   );
@@ -183,15 +181,14 @@ const IllustrationLine = styled.div`
 
 const CircleAnimationRight = styled.div`
   position: absolute;
-  top: 113px;
-  right: -5%;
+  right: -15%;
 `;
 
 const HeroPorfolio = () => {
   return (
     <>
       <HeroPorfolioContainer>
-        <LeftBar  />
+        <LeftBar />
         <div className="HeroAbout-text-container">
           <div>
             <SubTitle>Portfolio Management</SubTitle>
@@ -209,42 +206,44 @@ const HeroPorfolio = () => {
           </div>
           <Links>
             <LinksItem>
-              <Link href="">Contact Us</Link>
+              <Link href="/contact-us">Contact Us</Link>
             </LinksItem>
           </Links>
         </div>
-      </HeroPorfolioContainer>{' '}
-      <CircleAnimationRight>
-        <IllustrationContainer>
-          <div
-            style={{
-              width: '20px',
-              height: '20px',
-              position: 'absolute',
-              left: '-90px',
-              bottom: 0,
-              transform: 'rotate(180deg)',
-              marginBottom: '60px',
-            }}
-          >
-            <img src="/up.svg" alt="" />
-          </div>
-          <IllustrationLine />
-          <IllustrationBigCircle>
-            <IllustrationBg>
-              <div className="innerCircleBig">
-                <div className="innerSmallCircle">
-                  <img src="/money.svg" alt="" />
+      </HeroPorfolioContainer>
+      <HeroDefaultContainer>
+        <CircleAnimationRight>
+          <IllustrationContainer>
+            <div
+              style={{
+                width: '20px',
+                height: '20px',
+                position: 'absolute',
+                left: '-90px',
+                bottom: 0,
+                transform: 'rotate(180deg)',
+                marginBottom: '60px',
+              }}
+            >
+              <img src="/up.svg" alt="" />
+            </div>
+            <IllustrationLine />
+            <IllustrationBigCircle>
+              <IllustrationBg>
+                <div className="innerCircleBig">
+                  <div className="innerSmallCircle">
+                    <img src="/money.svg" alt="" />
+                  </div>
                 </div>
-              </div>
-            </IllustrationBg>
-          </IllustrationBigCircle>
-          <IllustrationCuttedCircle>
-            <div className="outer-cirlce" />
-          </IllustrationCuttedCircle>
-          <IllustrationCircleAnimated></IllustrationCircleAnimated>
-        </IllustrationContainer>
-      </CircleAnimationRight>
+              </IllustrationBg>
+            </IllustrationBigCircle>
+            <IllustrationCuttedCircle>
+              <div className="outer-cirlce" />
+            </IllustrationCuttedCircle>
+            <IllustrationCircleAnimated></IllustrationCircleAnimated>
+          </IllustrationContainer>
+        </CircleAnimationRight>
+      </HeroDefaultContainer>
     </>
   );
 };
