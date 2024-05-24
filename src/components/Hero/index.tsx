@@ -193,11 +193,6 @@ const IllustrationContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* @media (max-width: 750px) {
-    width: 244px;
-    height: 420px;
-  } */
 `;
 
 const IllustrationBg = styled.div`
@@ -206,11 +201,6 @@ const IllustrationBg = styled.div`
   border-radius: 100%;
   background-image: url('/arranha-ceus-de-aco-eletrico-business-metal-sky 1.webp');
   background-size: cover;
-
-  /* @media (max-width: 750px) {
-    width: 244px;
-    height: 244px;
-  } */
 `;
 
 const IllustrationWordImage = styled.img`

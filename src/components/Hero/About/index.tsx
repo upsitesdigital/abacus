@@ -2,6 +2,7 @@ import Link from 'next/link';
 import styled, { keyframes } from 'styled-components';
 import { COLORS, HORIZONTAL_SPACE } from '~/utils/constants';
 import { HeroDefaultContainer, LeftBar } from '..';
+import { useMediaQuery } from '~/hooks/use-media-query';
 
 const HeroAboutContainer = styled.div`
   width: 100%;
@@ -14,21 +15,23 @@ const HeroAboutContainer = styled.div`
   padding-bottom: 153px;
   overflow: hidden;
 
-  .left-bar {
-    top: 0;
-    width: 1px;
-    height: 120%;
-    position: absolute;
-    background: linear-gradient(
-      180deg,
-      #ffffff 0%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    opacity: 0.2;
-    left: 200px;
+  @media (max-width: 1000px) {
+    padding-bottom: 200px;
+  }
 
-    @media (max-width: 1600px) {
-      left: 50px;
+  @media (max-width: 850px) {
+    padding-bottom: 350px;
+    padding-top: 58px;
+  }
+
+  .hero-mobile-bg {
+    position: absolute;
+    right: 0;
+    top: 419px;
+    display: none;
+
+    @media (max-width: 750px) {
+      display: block;
     }
   }
 
@@ -62,17 +65,28 @@ const HeroAboutTitle = styled.p`
 
   @media (max-width: 1750px) {
     max-width: 850px;
-    font-size: 50;
+    font-size: 40;
+    line-height: 55.84px;
   }
 
   @media (max-width: 1600px) {
     max-width: 700px;
-    font-size: 45;
+    font-size: 35px;
   }
 
   @media (max-width: 1500px) {
-    max-width: 550px;
-    font-size: 40;
+    font-size: 30px;
+    max-width: 600px;
+    line-height: 43px;
+  }
+
+ 
+
+  @media (max-width: 1000px) {
+    max-width: 290px;
+    width: 100%;
+    font-size: 24px;
+    line-height: 30px;
   }
 `;
 
@@ -90,6 +104,18 @@ export const Text = styled.p`
   margin-top: 24px;
   max-width: 650px;
   line-height: 36px;
+
+  @media (max-width: 1180px) {
+    font-size: 16px;
+    line-height: 20px;
+    max-width: 400px;
+  }
+
+  @media (max-width: 850px) {
+    font-size: 14px;
+    max-width: 323px;
+    width: 100%;
+  }
 `;
 
 export const Links = styled.div`
@@ -98,6 +124,10 @@ export const Links = styled.div`
   margin-top: 67px;
   list-style: none;
   gap: 20px;
+
+  @media (max-width: 850px) {
+    margin-top: 56px;
+  }
 `;
 
 export const LinksItem = styled.p`
@@ -214,9 +244,22 @@ const IllustrationLine = styled.div`
 const CircleAnimationRight = styled.div`
   position: absolute;
   right: -15%;
+
+  @media (max-width: 1080px) {
+    transform: scale(0.7);
+    right: -20%;
+  }
+
+  @media (max-width: 900px) {
+    transform: scale(0.7);
+    right: -23%;
+  }
 `;
 
 const HeroAbout = () => {
+  const { width } = useMediaQuery();
+  const isMobile = width <= 850;
+
   return (
     <>
       <HeroAboutContainer>
@@ -225,13 +268,14 @@ const HeroAbout = () => {
           <div>
             <SubTitle>About us</SubTitle>
             <HeroAboutTitle>
-              Asset management capabilities with a research-driven approach
-              allowing us to build customized investment portfolios.
+              {isMobile
+                ? ' Comprehensive private client services and support for all our families'
+                : ' Asset management capabilities with a research-driven approach allowing us to build customized investment portfolios.'}
             </HeroAboutTitle>
             <Text>
-              The client&apos;s portfolio is actively managed with a focus on
-              capital preservation and real-time decision-making allowing us to
-              navigate through ever-changing market conditions.
+              {!isMobile
+                ? 'The client\'s portfolio is actively managed with a focus on capital preservation and real-time decision-making allowing us to navigate through ever-changing market conditions.'
+                : 'Asset management capabilities with a research-driven approach allowing us to build customized investment portfolios.'}
             </Text>
           </div>
           <Links>
@@ -240,6 +284,7 @@ const HeroAbout = () => {
             </LinksItem>
           </Links>
         </div>
+        <img className="hero-mobile-bg" src="/hero-about-bg.png" alt="" />
       </HeroAboutContainer>
       <HeroDefaultContainer>
         <CircleAnimationRight className="animation-circle-right">

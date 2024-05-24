@@ -29,12 +29,12 @@ export const items = [
   {
     icon: '/cost.svg',
     title: 'Cost',
-    text: "Eliminate expensive management fees from funds and ETFs, utting charges by traditional banks.. <a href='/portfolio-management'>More</a>",
+    text: "Eliminate expensive management fees from funds and ETFs, utting charges by traditional banks. <a href='/portfolio-management'>More</a>",
   },
   {
     icon: '/risk-management.svg',
     title: 'Risk Management',
-    text: 'Our individual security selection approach allows better risk management as different parts of the portfolio can be rapidly adapted to different market conditions and cycles.',
+    text: "Our individual security selection approach allows better risk management as different parts of the portfolio can be rapidly adapted to different market conditions and cycles.  <a href='/portfolio-management'>More</a>",
   },
 ];
 

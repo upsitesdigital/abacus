@@ -23,6 +23,20 @@ const TextSectionContainer = styled.section`
   background-size: 100% 100%;
   height: 488px;
 
+  @media (max-width: 750px) {
+    background-color: #fff;
+    background-image: none;
+    height: auto;
+    padding-top: 65px;
+    padding-bottom: 45px;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    .dash {
+      display: none;
+    }
+  }
+
   .dash {
     width: 56px;
     height: 1px;
@@ -41,6 +55,19 @@ const TextSection = styled.p`
   max-width: 90%;
   margin: 0 auto;
   max-width: 1124px;
+
+  @media (max-width: 750px) {
+    font-size: 22px;
+    line-height: 30.05px;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  @media (max-width: 500px) {
+    text-align: left;
+    max-width: 100%;
+    width: 100%;
+  }
 `;
 
 const GalleryContainer = styled.div`
@@ -52,6 +79,15 @@ const GalleryContainer = styled.div`
   position: relative;
   overflow: hidden;
   width: 100%;
+
+  @media (max-width: 1190px) {
+    padding-bottom: 103px;
+    padding: 63px 24px 103px 24px;
+  }
+
+  @media (max-width: 900px) {
+    padding-top: 0;
+  }
 `;
 
 const GalleryInnerContainer = styled.div`
@@ -60,6 +96,11 @@ const GalleryInnerContainer = styled.div`
   align-items: center;
   width: 100%;
   max-width: 1124px;
+
+  @media (max-width: 1190px) {
+    max-width: 100%;
+    width: 100%;
+  }
 `;
 
 const GalleryTitle = styled.h2`
@@ -67,6 +108,15 @@ const GalleryTitle = styled.h2`
   max-width: 1140px;
   font-size: 32px;
   font-weight: 400;
+
+  @media (max-width: 1190px) {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  @media (max-width: 900px) {
+    display: none;
+  }
 `;
 
 const Gallery = styled.ul`
@@ -78,6 +128,18 @@ const Gallery = styled.ul`
   width: 100%;
   max-width: 1140px;
   z-index: 5;
+
+  @media (max-width: 1195px) {
+    max-width: 100%;
+    width: 100%;
+    /* grid-template-columns: repeat(2, 40%); */
+  }
+
+  @media (max-width: 700px) {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+  }
 `;
 
 const GalleryCard = styled.div`
@@ -87,6 +149,10 @@ const GalleryCard = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #fff;
+
+  @media (max-width: 1195px) {
+    padding: 28px;
+  }
 `;
 
 const GalleryCardPic = styled.div`
@@ -95,18 +161,35 @@ const GalleryCardPic = styled.div`
   background-size: cover;
   background-position: 10% 10%;
   margin-bottom: 47px;
+
+  @media (max-width: 1100px) {
+    width: 100%;
+  }
+
+  @media (max-width: 700px) {
+    margin-bottom: 27px;
+  }
+
+  @media (max-width: 375px) {
+    height: 157.05px;
+  }
 `;
 
 const GalleryCardName = styled.p`
   font-size: 32px;
   font-weight: 400;
   margin-bottom: 16px;
+
+  @media (max-width: 700px) {
+    font-size: 20px;
+    margin-bottom: 9px;
+  }
 `;
 
 const GalleryCardTitle = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: center;
   height: 26px;
   margin-bottom: 16px;
 
@@ -122,6 +205,19 @@ const GalleryCardTitle = styled.div`
     margin-right: 24px;
     align-self: flex-end;
   }
+
+  @media (max-width: 700px) {
+    p {
+      font-size: 14px;
+    }
+    margin-bottom: 9px;
+
+    img {
+      width: 15px;
+      height: 14px;
+      margin-right: 14px;
+    }
+  }
 `;
 
 const GalleryCardSeeMore = styled.button`
@@ -134,6 +230,10 @@ const GalleryCardSeeMore = styled.button`
   align-self: flex-start;
   background-color: transparent;
   cursor: pointer;
+
+  @media (max-width: 700px) {
+    font-size: 16px;
+  }
 `;
 
 export const AboutIllustrationBackground = styled.div`
@@ -145,6 +245,10 @@ export const AboutIllustrationBackground = styled.div`
   top: 0;
   align-items: flex-start;
   justify-content: center;
+
+  @media (max-width: 1190px) {
+    display: none;
+  }
 
   .circle {
     width: 622px;

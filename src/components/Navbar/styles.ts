@@ -9,7 +9,7 @@ export const NavbarContainer = styled.nav`
   ${HORIZONTAL_SPACE}
   padding-top: 44px;
   align-items: center;
-  /* justify-content: space-between; */
+  justify-content: space-between;
 
   .menu-right {
     gap: 33px;
@@ -23,6 +23,7 @@ export const NavbarContainer = styled.nav`
 
   @media (max-width: 900px) {
     padding-top: 28px;
+    justify-content: flex-start;
   }
 `;
 
@@ -90,6 +91,7 @@ export const HamburgerMenuButton = styled.button<HMButtonProps>`
   position: ${({ isOpen }) => (isOpen ? 'fixed' : 'absolute')};
   right: 24px;
   z-index: 12;
+  top: 28px;
   outline: none;
   border: none;
   background-color: transparent;
@@ -131,14 +133,50 @@ export const MenuMobileOverlay = styled.div`
   width: 100%;
   height: 100vh;
   position: fixed;
-  background: red;
+  background: ${COLORS.navbarHero};
   left: 0;
   top: 0;
   z-index: 9;
-  display: none;
+  padding-top: 114px;
+  padding-left: 24px;
+  padding-right: 24px;
+  top: -100%;
+  transition: .3s;
+
+  .logo-mobile {
+    position: fixed;
+    top: 28px;
+    left: 24px;
+  }
 
   @media (max-width: 960px) {
     display: flex;
+  }
+
+  .menu-mobile {
+    width: 100%;
+    list-style: none;
+  }
+
+  .menu-item {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-bottom: 28px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    &:last-child {
+      border: none;
+    }
+  }
+
+  .menu-item .arrow {
+    transform: rotate(-80deg);
   }
 `;
 

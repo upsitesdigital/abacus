@@ -1,4 +1,4 @@
-import { MENU_ITEMS } from '~/utils/constants';
+import { MENU_ITEMS, MENU_ITEMS_MOBILE } from '~/utils/constants';
 import {
   HamburgerMenuButton,
   MenuMobileOverlay,
@@ -36,7 +36,12 @@ const Navbar = () => {
 
   return (
     <NavbarContainer>
-      <NavbarLogoContainer onClick={() => router.push('/')}>
+      <NavbarLogoContainer
+        onClick={() => {
+          closeMenu();
+          router.push('/');
+        }}
+      >
         <NavbarLogo src="/logo.png" />
       </NavbarLogoContainer>
 
@@ -73,7 +78,31 @@ const Navbar = () => {
         <span />
       </HamburgerMenuButton>
 
-      {menuOpen && <MenuMobileOverlay />}
+      <MenuMobileOverlay style={{ top: menuOpen ? '0' : '-150%' }}>
+        {menuOpen && (
+          <NavbarLogoContainer
+            className="logo-mobile"
+            onClick={() => {
+              closeMenu();
+              router.push('/');
+            }}
+          >
+            <NavbarLogo src="/logo.png" />
+          </NavbarLogoContainer>
+        )}
+        <div className="menu-mobile">
+          {MENU_ITEMS_MOBILE.map((item) => (
+            <li
+              onClick={() => closeMenu()}
+              className="menu-item"
+              key={item?.route}
+            >
+              <Link href={item?.route}>{item?.title}</Link>
+              <img className="arrow" src="/arrow-up-right-3.svg" />
+            </li>
+          ))}
+        </div>
+      </MenuMobileOverlay>
     </NavbarContainer>
   );
 };

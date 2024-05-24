@@ -27,6 +27,31 @@ export const MENU_ITEMS: MENU_ITEMS_TYPE[] = [
   },
 ];
 
+export const MENU_ITEMS_MOBILE: MENU_ITEMS_TYPE[] = [
+  {
+    title: 'Home',
+    route: '/',
+  },
+  {
+    title: 'Portfolio Management',
+    route: '/portfolio-management',
+  },
+
+  {
+    title: 'Family Office Services',
+    route: '/family-office-services',
+  },
+  {
+    title: 'About',
+    route: '/about-us',
+  },
+  {
+    title: 'Contact',
+    route: '/contact-us',
+  },
+];
+
+
 export const PADDINGS = {
   maxSpace: 395, 
 };
