@@ -14,6 +14,16 @@ const HeroOfficeServicesContainer = styled.div`
   padding-top: 63px;
   padding-bottom: 214px;
 
+  @media (max-width: 750px) {
+    padding-top: 58px;
+    padding-bottom: 300px;
+  }
+
+  @media (max-width: 650px) {
+    padding-top: 58px;
+    padding-bottom: 320px;
+  }
+
   .left-bar {
     top: 0;
     width: 1px;
@@ -44,12 +54,31 @@ const HeroOfficeServicesContainer = styled.div`
       margin-top: 24px;
       width: 710px;
     }
+
+    .links-div {
+      margin-top: 146px;
+
+      @media (max-width: 750px) {
+        margin-top: 56px;
+      }
+    }
   }
 
   .animation-circle-right {
     position: absolute;
     top: 0;
     right: -8%;
+  }
+
+  .hero-mobile-bg {
+    position: absolute;
+    right: 0;
+    top: 485px;
+    display: none;
+
+    @media (max-width: 1050px) {
+      display: block;
+    }
   }
 `;
 
@@ -62,17 +91,26 @@ const HeroAboutTitle = styled.p`
 
   @media (max-width: 1750px) {
     max-width: 800px;
-    font-size: 50px;
-  }
-
-  @media (max-width: 1600px) {
-    max-width: 700px;
-    font-size: 45px;
+    font-size: 40px;
   }
 
   @media (max-width: 1500px) {
     max-width: 550px;
-    font-size: 40px;
+    font-size: 35px;
+  }
+
+  @media (max-width: 750px) {
+    font-size: 28px;
+    line-height: 38.25px;
+  }
+
+  @media (max-width: 650px) {
+    max-width: 340px;
+  }
+
+  @media (max-width: 350px) {
+    max-width: 100%;
+    width: 100%;
   }
 `;
 
@@ -93,17 +131,29 @@ export const Text = styled.p`
 
   @media (max-width: 1750px) {
     max-width: 800px;
-    font-size: 18;
   }
 
   @media (max-width: 1600px) {
     max-width: 700px;
-    font-size: 16;
   }
 
   @media (max-width: 1500px) {
     max-width: 550px;
-    font-size: 14;
+  }
+
+  @media (max-width: 750px) {
+    font-size: 14px;
+    line-height: 25.2px;
+  }
+
+  @media (max-width: 650px) {
+    max-width: 323px;
+    width: 100%;
+  }
+
+  @media (max-width: 350px){
+    max-width: 100%;
+    width: 100%;
   }
 `;
 
@@ -185,6 +235,14 @@ export const IllustrationBg = styled.div`
 const CircleAnimationRight = styled.div`
   position: absolute;
   right: -15%;
+
+  @media (max-width: 1150px) {
+    transform: scale(0.7);
+  }
+
+  @media (max-width: 1050px) {
+    display: none;
+  }
 `;
 
 const IllustrationLine = styled.div`
@@ -218,12 +276,13 @@ const HeroOfficeServices = () => {
               lending.
             </Text>
           </div>
-          <div style={{ marginTop: '146px' }}>
+          <div className='links-div'>
             <LinksItem>
               <Link href="/contact-us">Contact Us</Link>
             </LinksItem>
           </div>
         </div>
+        <img className="hero-mobile-bg" src="/hero-mobile-family.png" alt="" />
       </HeroOfficeServicesContainer>
       <HeroDefaultContainer>
         <CircleAnimationRight>

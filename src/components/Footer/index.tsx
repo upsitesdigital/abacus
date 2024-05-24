@@ -36,7 +36,9 @@ const Footer = ({ isContact = false }: { isContact?: boolean }) => {
                 8181 West Broward Blvd, Suite 258 Plantation, Florida 33324
               </p>
               <p data-aos="fade-up">Office: (954) 361-4210</p>
-              <p data-aos="fade-up">info@abacus-adv.com</p>
+              <a href="mailto:info@abacus-adv.com">
+                <p data-aos="fade-up">info@abacus-adv.com</p>
+              </a>
             </FooterContactInfo>
           </div>
           <hr className="hr-1" />

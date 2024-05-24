@@ -61,6 +61,7 @@ export const PortfolioManagementText = styled.p`
   @media (max-width: 750px) {
     font-size: 18px;
     line-height: 32.4px;
+    text-align: left;
   }
 `;
 

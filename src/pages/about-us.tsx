@@ -168,6 +168,7 @@ const GalleryCardPic = styled.div`
 
   @media (max-width: 700px) {
     margin-bottom: 27px;
+    background-position: 15px;
   }
 
   @media (max-width: 375px) {
@@ -277,7 +278,7 @@ const teamData: Person[] = [
     name: 'Mauro Ferman',
     title:
       "Mr. Ferman is the founding partner at Abacus Capital Advisors and serves as the firm's CEO.",
-    linkdin: 'www.google.com',
+    linkdin: 'https://www.linkedin.com/company/abacus-capital-advisors/',
     skills: [
       'B.A. Economics - Tufts University',
       'MBA - Tuck School of Business at Dartmouth College',
@@ -294,7 +295,7 @@ const teamData: Person[] = [
     title:
       "Mr. Ferman is the founding partner at Abacus Capital Advisors and serves as the firm's CEO.",
     name: 'Jarvis Johnson',
-    linkdin: 'www.google.com',
+    linkdin: 'https://www.linkedin.com/company/abacus-capital-advisors/',
     skills: [
       'B.A. Economics - Tufts University',
       'MBA - Tuck School of Business at Dartmouth College',
@@ -311,7 +312,7 @@ const teamData: Person[] = [
     title:
       "Mr. Ferman is the founding partner at Abacus Capital Advisors and serves as the firm's CEO.",
     name: 'Leroi Sanchez',
-    linkdin: 'www.google.com',
+    linkdin: 'https://www.linkedin.com/company/abacus-capital-advisors/',
     skills: [
       'B.A. Economics - Tufts University',
       'MBA - Tuck School of Business at Dartmouth College',
@@ -328,7 +329,7 @@ const teamData: Person[] = [
     title:
       "Mr. Ferman is the founding partner at Abacus Capital Advisors and serves as the firm's CEO.",
     name: 'William P. Smythe',
-    linkdin: 'www.google.com',
+    linkdin: 'https://www.linkedin.com/company/abacus-capital-advisors/',
     skills: [
       'B.A. Economics - Tufts University',
       'MBA - Tuck School of Business at Dartmouth College',
@@ -345,7 +346,7 @@ const teamData: Person[] = [
     title:
       "Mr. Ferman is the founding partner at Abacus Capital Advisors and serves as the firm's CEO.",
     name: 'Joel Moran',
-    linkdin: 'www.google.com',
+    linkdin: 'https://www.linkedin.com/company/abacus-capital-advisors/',
     skills: [
       'B.A. Economics - Tufts University',
       'MBA - Tuck School of Business at Dartmouth College',

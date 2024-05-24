@@ -25,20 +25,42 @@ const Header = styled.div`
   background-size: 100%;
   ${HORIZONTAL_SPACE};
   padding-top: 138px;
+
+  @media (max-width: 800px) {
+    background-image: none;
+    padding: 75px 24px 45px 24px;
+    height: auto;
+  }
 `;
 
 const Title = styled.h3`
   font-size: 32px;
   font-weight: 300;
+
+  @media (max-width: 800px) {
+    font-size: 22px;
+  }
 `;
 
 const PortfolioBenefitsContainer = styled.div`
   border-top: 1px solid #c5c5c5;
+
+  @media (max-width: 800px) {
+    border: none;
+  }
 `;
 
 const PortfolioBenefitsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 50%);
+
+  @media (max-width: 800px) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 `;
 const PortfolioBenefitsItem = styled(PortfolioCardContainer)`
   &:first-child {
@@ -164,6 +186,17 @@ const PortfolioBenefitsItem = styled(PortfolioCardContainer)`
       padding-right: 70px;
     }
   }
+
+  @media (max-width: 800px) {
+    &:first-child,
+    &:nth-child(2),
+    &:nth-child(3),
+    &:last-child {
+      padding: 32px 0;
+      border: none;
+      border-top: 1px solid #c5c5c5;
+    }
+  }
 `;
 
 const InvestmentContainer = styled.div`
@@ -174,6 +207,11 @@ const InvestmentContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 750px) {
+    padding-top: 75px;
+    padding-bottom: 81px;
+  }
 `;
 
 const InvestmentInnerContainer = styled.div`
@@ -186,18 +224,37 @@ const InvestmentInnerContainer = styled.div`
     padding-left: 70px;
     padding-right: 70px;
   }
+
+  @media (max-width: 1200px) {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  @media (max-width: 750px) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 `;
 
 const InvestmentTitle = styled.h3`
   font-size: 32px;
   font-weight: 400;
   margin-bottom: 16px;
+
+  @media (max-width: 750px) {
+    margin-bottom: 32px;
+    font-size: 24px;
+  }
 `;
 
 const InvestmentText = styled.p`
   font-size: 20px;
   font-weight: 300;
   max-width: 608px;
+
+  @media (max-width: 750px) {
+    font-size: 18px;
+  }
 `;
 
 const InvestmentGrid = styled.div`
@@ -213,6 +270,24 @@ const InvestmentGrid = styled.div`
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 258px);
   }
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 258px);
+  }
+
+  @media (max-width: 750px) {
+    margin-top: 57px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(11, 258px);
+  }
+
+  @media (max-width: 380px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
 `;
 
 const InvestmentCard = styled.div`
@@ -223,6 +298,15 @@ const InvestmentCard = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
+
+  @media (max-width: 380px) {
+    width: 260px;
+    height: 258px;
+  }
+
+  @media (max-width: 350px) {
+    width: 100%;
+  }
 `;
 
 const InvestmentCardTitle = styled.h3`
@@ -319,7 +403,9 @@ export default function PortfolioManagement() {
                   <PortfolioCardTitle>{item.title}</PortfolioCardTitle>
                   <img src={item.icon} />
                 </PortfolioCardHeader>
-                <PortfolioCardText>{item.text}</PortfolioCardText>
+                <PortfolioCardText className="card-text">
+                  {item.text}
+                </PortfolioCardText>
               </PortfolioBenefitsItem>
             ))}
           </PortfolioBenefitsGrid>

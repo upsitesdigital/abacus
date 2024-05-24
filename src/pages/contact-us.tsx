@@ -190,13 +190,12 @@ export default function ContactUs() {
         <ContactInfoContainer>
           <div className="networks">
             <div className="icon">
-              <Link href={'http://www.google.com'}>
+              <Link href={'https://www.linkedin.com/company/abacus-capital-advisors/'}>
                 <img src="/linkdin-1.svg" alt="" />
               </Link>
             </div>
             <div className="icon">
-              <Link href={'http://www.google.com'}>
-                {' '}
+              <Link href={'https://wa.me/13056761808'}>
                 <img src="/whatsap.svg" alt="" />
               </Link>
             </div>

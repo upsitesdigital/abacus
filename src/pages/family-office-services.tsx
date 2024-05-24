@@ -10,6 +10,11 @@ const Container = styled.div`
   align-items: center;
   padding-top: 117px;
   padding-bottom: 230px;
+
+  @media (max-width: 690px) {
+    padding-top: 65px;
+    padding-bottom: 0;
+  }
 `;
 
 const Title = styled.h2`
@@ -18,6 +23,16 @@ const Title = styled.h2`
   font-size: 32px;
   font-weight: 400;
   line-height: 32px;
+
+  @media (max-width: 690px) {
+    font-size: 22px;
+    line-height: 30.05px;
+  }
+
+  @media (max-width: 390px) {
+    max-width: 329px;
+    text-align: left;
+  }
 `;
 
 const MenuContainer = styled.div`
@@ -25,12 +40,38 @@ const MenuContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top: 98px;
+
+  @media (max-width: 1050px) {
+    flex-direction: column;
+    margin-top: 64px;
+    width: 100%;
+  }
 `;
 
 const Menu = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: column;
+
+  .menu-2 {
+    flex-direction: row-reverse;
+    .dot {
+      margin-left: 48px;
+    }
+  }
+
+  @media (max-width: 690px) {
+    width: 100%;
+
+    .menu-2 {
+      flex-direction: row;
+
+      .dot {
+        margin-left: 0;
+        margin-right: 48px;
+      }
+    }
+  }
 `;
 
 const MenuItem = styled.li`
@@ -49,6 +90,11 @@ const MenuItem = styled.li`
     opacity: 1;
     z-index: 7;
   }
+
+  @media (max-width: 690px) {
+    width: 100%;
+    font-size: 16px;
+  }
 `;
 
 const MenuItemDot = styled.li`
@@ -63,6 +109,11 @@ const MenuIllustration = styled.div`
   align-items: center;
   justify-content: center;
   z-index: 4;
+
+  @media (max-width: 690px) {
+    margin-top: 145px;
+    margin-bottom: 75px;
+  }
 
   .rounded-c {
     margin: 0 75px 0 75px;
@@ -99,6 +150,10 @@ const MenuLegend = styled.p`
   transition: 0.5s;
   font-size: 14px;
   font-weight: 400;
+
+  @media (max-width: 690px) {
+    display: none;
+  }
 
   p {
     padding: 24px;
@@ -176,8 +231,8 @@ export default function FamilyOfficeServices() {
           </MenuIllustration>
           <Menu>
             {menu2.map((item) => (
-              <MenuItem key={item} style={{ flexDirection: 'row-reverse' }}>
-                <MenuItemDot style={{ marginLeft: '48px' }} />
+              <MenuItem className="menu-2" key={item}>
+                <MenuItemDot className="dot" />
                 {item}
                 <MenuLegend style={{ left: '-90%' }} className="itemLegend">
                   <div className="seta seta2" />

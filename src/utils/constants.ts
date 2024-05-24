@@ -33,6 +33,10 @@ export const MENU_ITEMS_MOBILE: MENU_ITEMS_TYPE[] = [
     route: '/',
   },
   {
+    title: 'About',
+    route: '/about-us',
+  },
+  {
     title: 'Portfolio Management',
     route: '/portfolio-management',
   },
@@ -41,19 +45,15 @@ export const MENU_ITEMS_MOBILE: MENU_ITEMS_TYPE[] = [
     title: 'Family Office Services',
     route: '/family-office-services',
   },
-  {
-    title: 'About',
-    route: '/about-us',
-  },
+
   {
     title: 'Contact',
     route: '/contact-us',
   },
 ];
 
-
 export const PADDINGS = {
-  maxSpace: 395, 
+  maxSpace: 395,
 };
 
 export const HORIZONTAL_SPACE = `

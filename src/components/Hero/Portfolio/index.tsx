@@ -14,6 +14,11 @@ const HeroPorfolioContainer = styled.div`
   padding-top: 63px;
   padding-bottom: 163px;
 
+  @media (max-width: 800px) {
+    padding-top: 58px;
+    padding-bottom: 320px;
+  }
+
   .HeroAbout-text-container {
     height: 100%;
     display: flex;
@@ -32,6 +37,17 @@ const HeroPorfolioContainer = styled.div`
     position: absolute;
     top: 0;
     right: -4%;
+  }
+
+  .hero-mobile-bg {
+    position: absolute;
+    right: 0;
+    top: 575px;
+    display: none;
+
+    @media (max-width: 1050px) {
+      display: block;
+    }
   }
 `;
 
@@ -56,6 +72,14 @@ const HeroAboutTitle = styled.p`
   @media (max-width: 1500px) {
     max-width: 550px;
     font-size: 30px;
+  }
+
+  @media (max-width: 800px) {
+    font-size: 28px;
+    line-height: 38.25px;
+    max-width: 340px;
+    width: 100%;
+    text-align: left;
   }
 `;
 
@@ -88,7 +112,21 @@ export const Text = styled.p`
 
   @media (max-width: 1500px) {
     max-width: 550px;
+    line-height: 30px;
+  }
+
+  @media (max-width: 1180px) {
+    font-size: 16px;
+    line-height: 20px;
+    max-width: 400px;
+    width: 100%;
+  }
+
+  @media (max-width: 850px) {
     font-size: 14px;
+    max-width: 323px;
+    width: 100%;
+    text-align: left;
   }
 `;
 
@@ -182,6 +220,14 @@ const IllustrationLine = styled.div`
 const CircleAnimationRight = styled.div`
   position: absolute;
   right: -15%;
+
+  @media (max-width: 1350px) {
+    transform: scale(0.7);
+  }
+
+  @media (max-width: 1050px) {
+    display: none;
+  }
 `;
 
 const HeroPorfolio = () => {
@@ -210,6 +256,11 @@ const HeroPorfolio = () => {
             </LinksItem>
           </Links>
         </div>
+        <img
+          className="hero-mobile-bg"
+          src="/hero-mobile-portfolio.png"
+          alt=""
+        />
       </HeroPorfolioContainer>
       <HeroDefaultContainer>
         <CircleAnimationRight>
