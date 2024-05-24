@@ -14,34 +14,38 @@ import {
 import { motion } from 'framer-motion';
 import { MENU_ITEMS } from '~/utils/constants';
 import { useMediaQuery } from '~/hooks/use-media-query';
+import CustomizationIcon from '~/assets/svgs/customization.svg';
+import TransparencyIcon from '~/assets/svgs/transparency.svg';
+import RiskIcon from '~/assets/svgs/risk-management.svg';
+import CoastIcon from '~/assets/svgs/cost.svg';
 
 export const items = [
   {
-    icon: '/customization.svg',
+    icon: <CustomizationIcon />,
     title: 'Customization',
     text: "Our portfolios are highly customizable to meet our client’s long-term investment objectives. <a href='/portfolio-management'>More</a>",
   },
   {
-    icon: '/transparency.svg',
+    icon: <TransparencyIcon />,
     title: 'Transparency',
     text: "Our individual security selection allows our clients to follow with the uttermost transparency. <a href='/portfolio-management'>More</a>",
   },
   {
-    icon: '/cost.svg',
+    icon: <CoastIcon />,
     title: 'Cost',
     text: "Eliminate expensive management fees from funds and ETFs, utting charges by traditional banks. <a href='/portfolio-management'>More</a>",
   },
   {
-    icon: '/risk-management.svg',
+    icon: <RiskIcon />,
     title: 'Risk Management',
-    text: "Our individual security selection approach allows better risk management as different parts of the portfolio can be rapidly adapted to different market conditions and cycles.  <a href='/portfolio-management'>More</a>",
+    text: "Our security approach improves risk management by adapting the portfolio to market conditions..  <a href='/portfolio-management'>More</a>",
   },
 ];
 
 const PortfolioManagement = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState('next');
-  const { width } = useMediaQuery()
+  const { width } = useMediaQuery();
 
   const handlePrev = () => {
     setCurrentSlide(currentSlide - 1);
@@ -52,8 +56,8 @@ const PortfolioManagement = () => {
     setCurrentSlide(currentSlide + 1);
     setDirection('next');
   };
-  
-  const isMobile = width <= 650
+
+  const isMobile = width <= 650;
 
   return (
     <PortfolioManagementContainer>
@@ -61,14 +65,14 @@ const PortfolioManagement = () => {
         <PortfolioManagementTitle data-aos="fade-up">
           Portfolio Management
         </PortfolioManagementTitle>
-        <PortfolioManagementLink data-aos="fade-up" href={MENU_ITEMS[1].route}>
+        <PortfolioManagementLink  href={MENU_ITEMS[1].route}>
           Portfolio Management
         </PortfolioManagementLink>
       </PortfolioManagementHeader>
       <PortfolioManagementText data-aos="fade-up">
         Abacus Capital Advisors is a research-driven firm that builds and
-        monitors investment portfolios for entrepreneurs and ultra-high net
-        worth families. With our emphasis on research and individual security
+        monitors investment portfolios for entrepreneurs and high net worth
+        families. With our emphasis on research and individual security
         selection instead of utilizing funds and ETFs, our differentiated
         investment strategy presents several advantages to the traditional
         investment model employed by other wealth managers and banks:
@@ -80,7 +84,7 @@ const PortfolioManagement = () => {
       >
         Portfolio Management
       </PortfolioManagementLink>
-      <PortfolioManagementSliderContainer data-aos="fade-up">
+      <PortfolioManagementSliderContainer>
         <motion.div
           key={currentSlide}
           style={{ width: '100%' }}
@@ -103,10 +107,10 @@ const PortfolioManagement = () => {
           }}
         >
           <PortfolioManagementSliderItemList>
-            {items.slice(0, isMobile ? 4 : 3).map((item) => (
+            {items.map((item) => (
               <PortfolioCard
                 key={item.title}
-                icon={<img src={item.icon} />}
+                icon={item.icon}
                 text={item.text}
                 title={item.title}
               />

@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import styled from 'styled-components';
 import HeroPortfolio from '~/components/Hero/Portfolio';
 import {
@@ -8,6 +9,22 @@ import {
   PortfolioCardTitle,
 } from '~/components/PortfolioManagement/Card/styles';
 import { HORIZONTAL_SPACE, PADDINGS } from '~/utils/constants';
+import CustomizationIcon from '~/assets/svgs/customization.svg';
+import TransparencyIcon from '~/assets/svgs/transparency.svg';
+import RiskIcon from '~/assets/svgs/risk-management.svg';
+import CoastIcon from '~/assets/svgs/cost.svg';
+
+import AssetsIcon from '~/assets/svgs/assets.svg';
+import EquityIcon from '~/assets/svgs/equities.svg';
+import FixedIncomeIcon from '~/assets/svgs/fixed-income.svg';
+import AlternativesIcon from '~/assets/svgs/alternatives.svg';
+import PublicMarketIcon from '~/assets/svgs/public-market.svg';
+import LiquidityManagementIcon from '~/assets/svgs/liquidity.svg';
+import PrivateMarketIcon from '~/assets/svgs/cost.svg';
+import PrivateCreditIcon from '~/assets/svgs/private-credit.svg';
+import RealStateIcon from '~/assets/svgs/real-state.svg';
+import CoInvestmentIcon from '~/assets/svgs/co-investments.svg';
+import DirectInvestmentIcon from '~/assets/svgs/direct-investments.svg';
 
 const Container = styled.section`
   width: 100%;
@@ -62,7 +79,15 @@ const PortfolioBenefitsGrid = styled.div`
     padding-right: 24px;
   }
 `;
-const PortfolioBenefitsItem = styled(PortfolioCardContainer)`
+const PortfolioBenefitsItem = styled.li`
+  border-right: 1px solid #c5c5c5;
+  padding: 40px;
+  padding-bottom: 95px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 365px;
+
   &:first-child {
     border-right: 1px solid #c5c5c5;
     border-left: 1px solid #c5c5c5;
@@ -319,22 +344,22 @@ const InvestmentCardTitle = styled.h3`
 
 export const PORTFOLIO_ITEMS = [
   {
-    icon: '/customization.svg',
+    icon: <CustomizationIcon />,
     title: 'Customization',
     text: 'Our portfolios are highly customizable to meet our client’s long-term investment objectives. We can tailor each portfolio to meet the client’s liquidity needs, income distribution and other necessities that can be modified at any given time.',
   },
   {
-    icon: '/transparency.svg',
+    icon: <TransparencyIcon />,
     title: 'Transparency',
     text: 'Our individual security selection allows our clients to follow with the uttermost transparency the daily evolution of the investment portfolio. Our clients are not limited to a fund NAV price but instead can see the daily evolution in the price of each individual bond and equity.',
   },
   {
-    icon: '/cost.svg',
+    icon: <CoastIcon />,
     title: 'Cost',
     text: 'By eliminating expensive management fees associated with funds and ETFs, we remove a layer of fees that clients are normally charged by traditional wealth managers and banks.',
   },
   {
-    icon: '/risk-management.svg',
+    icon: <RiskIcon />,
     title: 'Risk Management',
     text: 'Our individual security selection approach allows better risk management as different parts of the portfolio can be rapidly adapted to different market conditions and cycles.',
   },
@@ -343,53 +368,61 @@ export const PORTFOLIO_ITEMS = [
 const investments = [
   {
     title: 'Real Assets',
-    icon: '/assets.svg',
+    icon: <AssetsIcon />,
   },
   {
     title: 'Equities',
-    icon: '/equities.svg',
+    icon: <EquityIcon />,
   },
   {
     title: 'Fixed Income',
-    icon: '/fixed-income.svg',
+    icon: <FixedIncomeIcon />,
   },
   {
     title: 'Alternatives',
-    icon: '/alternatives.svg',
+    icon: <AlternativesIcon />,
   },
   {
     title: 'Public Markets',
-    icon: '/public-market.svg',
+    icon: <PublicMarketIcon />,
   },
   {
     title: 'Liquidity Management',
-    icon: '/liquidity-management.svg',
+    icon: <LiquidityManagementIcon />,
   },
   {
     title: 'Private Markets',
-    icon: '/private-market.svg',
+    icon: <PrivateMarketIcon />,
   },
   {
     title: 'Private Credit',
-    icon: '/private-credit.svg',
+    icon: <PrivateCreditIcon />,
   },
   {
     title: 'Real Estate',
-    icon: '/real-state.svg',
+    icon: <RealStateIcon />,
   },
   {
     title: 'Co-Investments',
-    icon: '/co-investments.svg',
+    icon: <CoInvestmentIcon />,
   },
   {
     title: 'Direct Investments',
-    icon: '/direct-investments.svg',
+    icon: <DirectInvestmentIcon />,
   },
 ];
 
 export default function PortfolioManagement() {
   return (
     <>
+      <Head>
+        <title>Portfolio Management | Abacus</title>
+        <meta
+          property="og:description"
+          content="Discover portfolio management. Showcasing our expertise in investment management and wealth growth strategies. Be part of our sucessfull clients."
+        />
+        <meta name="keywords" content="Our Portfolio" />
+      </Head>
       <HeroPortfolio />
       <Container>
         <Header>
@@ -401,7 +434,7 @@ export default function PortfolioManagement() {
               <PortfolioBenefitsItem key={item.title}>
                 <PortfolioCardHeader style={{ marginBottom: '100px' }}>
                   <PortfolioCardTitle>{item.title}</PortfolioCardTitle>
-                  <img src={item.icon} />
+                  <div>{item.icon}</div>
                 </PortfolioCardHeader>
                 <PortfolioCardText className="card-text">
                   {item.text}
@@ -422,7 +455,7 @@ export default function PortfolioManagement() {
               {investments.map((item) => (
                 <InvestmentCard key={item.title}>
                   <InvestmentCardTitle>{item.title}</InvestmentCardTitle>
-                  <img src={item.icon} alt="" />
+                  <div className="svg-icon"> {item.icon}</div>
                 </InvestmentCard>
               ))}
             </InvestmentGrid>

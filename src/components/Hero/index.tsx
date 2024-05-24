@@ -106,7 +106,7 @@ const CircleAnimationRight = styled.div`
 `;
 
 const HeroTitle = styled.div`
-  h3 {
+  h1 {
     width: 830px;
     color: ${COLORS.white};
     font-weight: 400;
@@ -123,7 +123,7 @@ const HeroTitle = styled.div`
   }
 
   @media (max-width: 1750px) {
-    h3 {
+    h1 {
       max-width: 800px;
       font-size: 50px;
       line-height: 70px;
@@ -131,7 +131,7 @@ const HeroTitle = styled.div`
   }
 
   @media (max-width: 1600px) {
-    h3 {
+    h1 {
       max-width: 700px;
       font-size: 45px;
       line-height: 60px;
@@ -139,7 +139,7 @@ const HeroTitle = styled.div`
   }
 
   @media (max-width: 1500px) {
-    h3 {
+    h1 {
       max-width: 550px;
       font-size: 40px;
       line-height: 50px;
@@ -147,7 +147,7 @@ const HeroTitle = styled.div`
   }
 
   @media (max-width: 750px) {
-    h3 {
+    h1 {
       width: 100%;
       max-width: 340px;
       font-size: 32px;
@@ -163,6 +163,10 @@ const Links = styled.ul`
   gap: 64px;
   margin-top: 272px;
 
+  @media (max-height: 9200px) {
+    margin-top: 100px;
+  }
+
   @media (max-width: 900px) {
     flex-direction: column;
     gap: 32px;
@@ -171,11 +175,22 @@ const Links = styled.ul`
 `;
 
 const LinksItem = styled.li`
+  transition: 0.5s;
+
   a {
     color: #9fc899;
     font-weight: 300;
     font-size: 24px;
     text-decoration: underline;
+    transition: 0.5s;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  a:hover {
+    color: #fff;
   }
 
   @media (max-width: 1600px) {
@@ -328,32 +343,32 @@ const Hero = () => {
         <div className="hero-text-container">
           <HeroTitle data-aos="fade-down">
             <img src="/arrow-up-right-3.svg" />
-            <h3>
-              Boutique Multi-Family Office focused on helping clients grow their
-              wealth responsibly
-            </h3>
+            <h1>
+              Multi-Family Office focused on providing transparent,
+              comprehensive and objective advice for High-Net-Worth Families
+            </h1>
              
           </HeroTitle>
 
           <Links>
-            <LinksItem data-aos="fade-up">
+            <LinksItem>
               <Link href={MENU_ITEMS[1].route}>Portfolio Management</Link>
             </LinksItem>
-            <LinksItem data-aos="fade-up">
+            <LinksItem>
               <Link href={MENU_ITEMS[MENU_ITEMS.length - 1].route}>
                 Contact Us
               </Link>
             </LinksItem>
           </Links>
           <div className="IllustrationText-mobile" data-aos="fade-up">
-            Proudly serving families throughout <span> North and South </span>
-            America and <span>Europe</span>
+            Proudly serving families throughout{' '}
+            <span> North and South America and Europe</span>
           </div>
         </div>
         <img className="hero-mobile-bg" src="/hero-home-mobile.png" alt="" />
       </HeroContainer>
       <HeroDefaultContainer>
-        <CircleAnimationRight>
+        <CircleAnimationRight data-aos="zoom-in">
           <IllustrationContainer>
             <IllustrationBigCircle>
               <IllustrationBg />
@@ -369,8 +384,8 @@ const Hero = () => {
             <IllustrationCircleAnimated></IllustrationCircleAnimated>
           </IllustrationContainer>
           <IllustrationText data-aos="fade-up">
-            Proudly serving families throughout <span> North and South </span>
-            America and <span>Europe</span>
+            Proudly serving families throughout{' '}
+            <span> North and South America and Europe</span>
           </IllustrationText>
         </CircleAnimationRight>
       </HeroDefaultContainer>

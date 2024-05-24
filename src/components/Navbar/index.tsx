@@ -48,7 +48,6 @@ const Navbar = () => {
       <NavbarMenu>
         {MENU_ITEMS.slice(0, 3).map((item) => (
           <NavbarMenuItem
-            data-aos="fade-down"
             active={item.route === router.pathname}
             key={item?.route}
           >
@@ -59,7 +58,7 @@ const Navbar = () => {
       <NavbarMenu className="menu-right">
         {MENU_ITEMS.slice(3, 5).map((item) => (
           <NavbarMenuItem
-            data-aos="fade-down"
+            // data-aos="fade-down"
             className="menu-item"
             active={item.route === router.pathname}
             key={item?.route}

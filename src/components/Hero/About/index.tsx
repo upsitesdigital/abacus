@@ -80,8 +80,6 @@ const HeroAboutTitle = styled.p`
     line-height: 43px;
   }
 
- 
-
   @media (max-width: 1000px) {
     max-width: 290px;
     width: 100%;
@@ -90,7 +88,7 @@ const HeroAboutTitle = styled.p`
   }
 `;
 
-const SubTitle = styled.h3`
+const SubTitle = styled.h1`
   font-size: 16px;
   font-weight: 400;
   color: #9fc899;
@@ -102,7 +100,7 @@ export const Text = styled.p`
   font-weight: 300;
   color: #fff;
   margin-top: 24px;
-  max-width: 650px;
+  max-width: 790px;
   line-height: 36px;
 
   @media (max-width: 1180px) {
@@ -131,10 +129,24 @@ export const Links = styled.div`
 `;
 
 export const LinksItem = styled.p`
-  color: ${COLORS.text};
-  font-weight: 400;
-  font-size: 24px;
-  text-decoration: underline;
+  transition: 0.5s;
+
+  a {
+    color: ${COLORS.text};
+    font-weight: 400;
+    font-size: 24px;
+    text-decoration: underline;
+    transition: 0.5s;
+    width: 250px;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  a:hover {
+    color: #fff;
+  }
 `;
 
 export const IllustrationContainer = styled.div`
@@ -266,28 +278,45 @@ const HeroAbout = () => {
         <LeftBar />
         <div className="HeroAbout-text-container">
           <div>
-            <SubTitle>About us</SubTitle>
-            <HeroAboutTitle>
-              {isMobile
-                ? ' Comprehensive private client services and support for all our families'
-                : ' Asset management capabilities with a research-driven approach allowing us to build customized investment portfolios.'}
+            <SubTitle
+              data-aos="fade-up"
+              data-aos-anchor-placement="bottom-bottom"
+            >
+              About us
+            </SubTitle>
+            <HeroAboutTitle
+              data-aos="fade-up"
+              data-aos-anchor-placement="bottom-bottom"
+            >
+              Abacus was established in 2020, in order to level the playing
+              field and provide an objective, low cost, performance-focused
+              investment management services for high-net-worth families.
             </HeroAboutTitle>
-            <Text>
+            <Text data-aos="fade-up" data-aos-anchor-placement="top-bottom">
               {!isMobile
-                ? 'The client\'s portfolio is actively managed with a focus on capital preservation and real-time decision-making allowing us to navigate through ever-changing market conditions.'
+                ? 'Mauro Ferman, in his 21+ years of investment experience, including working with $100M families, started the firm as an alternative to the large banks that provided sub-par, high cost, investment advice, as the private wealth banking system was designed to financially incentivize bankers to choose investments not based upon what is best for the client, but what is best for the advisor. '
                 : 'Asset management capabilities with a research-driven approach allowing us to build customized investment portfolios.'}
             </Text>
           </div>
-          <Links>
+          <Links data-aos="fade-up" data-aos-anchor-placement="top-bottom">
             <LinksItem>
               <Link href="/contact-us">Contact Us</Link>
             </LinksItem>
           </Links>
         </div>
-        <img className="hero-mobile-bg" src="/hero-about-bg.png" alt="" />
+        <img
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+          className="hero-mobile-bg"
+          src="/hero-about-bg.png"
+          alt=""
+        />
       </HeroAboutContainer>
       <HeroDefaultContainer>
-        <CircleAnimationRight className="animation-circle-right">
+        <CircleAnimationRight
+          data-aos="zoom-in"
+          className="animation-circle-right"
+        >
           <IllustrationContainer>
             <div
               style={{

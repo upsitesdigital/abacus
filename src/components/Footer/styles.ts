@@ -84,6 +84,15 @@ export const FooterContactInfoTitle = styled.h2`
 export const FooterContactInfo = styled.div`
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+
+  a {
+    transition: .5s;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
 
   p {
     color: ${COLORS.white};
@@ -110,6 +119,12 @@ export const FooterMenuItem = styled.li`
   font-size: 13px;
   font-weight: 400;
   text-transform: uppercase;
+  transition: .5s;
+
+  &:hover {
+    opacity: .7;
+    transform: scale(1.05);
+  }
 `;
 
 export const FooterCopyRightContainer = styled.div`

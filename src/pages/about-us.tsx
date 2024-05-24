@@ -1,8 +1,10 @@
+import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
 import styled from 'styled-components';
 import HeroAbout from '~/components/Hero/About';
 import { ModalTeam, Person } from '~/components/Modal';
+import useClickOutside from '~/hooks/use-click-outside';
 import { HORIZONTAL_SPACE, PADDINGS } from '~/utils/constants';
 
 const Container = styled.div`
@@ -17,11 +19,15 @@ const TextSectionContainer = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   background-image: url('/text-section-bg.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  height: 488px;
+  /* height: 488px; */
+
+  @media (max-width: 950px) {
+    flex-direction: column;
+  }
 
   @media (max-width: 750px) {
     background-color: #fff;
@@ -31,20 +37,82 @@ const TextSectionContainer = styled.section`
     padding-bottom: 45px;
     align-items: flex-start;
     justify-content: flex-start;
-
-    .dash {
-      display: none;
-    }
   }
 
-  .dash {
-    width: 56px;
-    height: 1px;
-    background-color: #46785c;
-    margin-bottom: 51px;
-  }
+  border-bottom: 1px solid #c5c5c5;
 
   ${HORIZONTAL_SPACE}
+
+  .text-card {
+    display: flex;
+    gap: 56px;
+    height: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 101px;
+    padding-bottom: 120px;
+
+    &:first-child {
+      border-right: 1px solid #c5c5c5;
+      padding-right: 94px;
+    }
+
+    &:last-child {
+      padding-left: 94px;
+    }
+
+    @media (max-width: 1360px) {
+      &:first-child {
+        padding-right: 50px;
+      }
+
+      &:last-child {
+        padding-left: 50px;
+      }
+    }
+
+    @media (max-width: 950px) {
+      padding-top: 50px;
+      padding-bottom: 50px;
+
+      &:first-child {
+        padding-right: 0;
+        border: none;
+        border-bottom: 1px solid #c5c5c5;
+      }
+
+      &:last-child {
+        padding-left: 0;
+      }
+    }
+
+    img {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    h3 {
+      padding-top: 18px;
+      font-size: 22px;
+      font-weight: 500;
+      color: #000;
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: 300;
+      color: #000;
+      margin-top: 49px;
+      margin-bottom: 48px;
+    }
+
+    a {
+      font-size: 18px;
+      font-weight: 300;
+      color: #46785c;
+    }
+  }
 `;
 
 const TextSection = styled.p`
@@ -157,7 +225,7 @@ const GalleryCard = styled.div`
 
 const GalleryCardPic = styled.div`
   width: 452px;
-  height: 264px;
+  height: 262px;
   background-size: cover;
   background-position: 10% 10%;
   margin-bottom: 47px;
@@ -169,6 +237,10 @@ const GalleryCardPic = styled.div`
   @media (max-width: 700px) {
     margin-bottom: 27px;
     background-position: 15px;
+  }
+
+  @media (max-width: 550px) {
+    background-position-x: -40px;
   }
 
   @media (max-width: 375px) {
@@ -205,6 +277,12 @@ const GalleryCardTitle = styled.div`
     height: 24px;
     margin-right: 24px;
     align-self: flex-end;
+
+    transition: 0.5s;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 
   @media (max-width: 700px) {
@@ -231,6 +309,11 @@ const GalleryCardSeeMore = styled.button`
   align-self: flex-start;
   background-color: transparent;
   cursor: pointer;
+  transition: 0.5s;
+
+  &:hover {
+    opacity: 0.8;
+  }
 
   @media (max-width: 700px) {
     font-size: 16px;
@@ -278,84 +361,60 @@ const teamData: Person[] = [
     name: 'Mauro Ferman',
     title:
       "Mr. Ferman is the founding partner at Abacus Capital Advisors and serves as the firm's CEO.",
-    linkdin: 'https://www.linkedin.com/company/abacus-capital-advisors/',
+    linkdin: 'https://www.linkedin.com/in/mauro-ferman-744a731/',
     skills: [
       'B.A. Economics - Tufts University',
       'MBA - Tuck School of Business at Dartmouth College',
     ],
-    text: `With over 20 years of portfolio management and research experience,
-          Mr. Ferman has worked at many prestigious banks such as Morgan Stanley, Santander, BTG Pactual and Safra.
-          <br/><br/>
-          His most recent position was a senior member at CV Advisors, a 10B
-          multi-family office located in Miami, FL.`,
-  },
-  {
-    pic: '/jarvis.png',
-    shortTitle: 'CEO & CIO',
-    title:
-      "Mr. Ferman is the founding partner at Abacus Capital Advisors and serves as the firm's CEO.",
-    name: 'Jarvis Johnson',
-    linkdin: 'https://www.linkedin.com/company/abacus-capital-advisors/',
-    skills: [
-      'B.A. Economics - Tufts University',
-      'MBA - Tuck School of Business at Dartmouth College',
-    ],
-    text: `With over 20 years of portfolio management and research experience,
-          Mr. Ferman has worked at many prestigious banks such as Morgan Stanley, Santander, BTG Pactual and Safra.
-          <br/><br/>
-          His most recent position was a senior member at CV Advisors, a 10B
-          multi-family office located in Miami, FL.`,
+    text: `Mauro is the founding partner at Abacus Capital Advisors and serves as the firm's CEO. With over 21 years of portfolio management and research experience, Mauro has worked at many prestigious banks such as Morgan Stanley, Santander, BTG Pactual and Safra. His most recent position was a senior member at a $10B multi-family office located in Miami, FL.`,
   },
   {
     pic: '/lerroi.png',
-    shortTitle: 'CEO & CIO',
-    title:
-      "Mr. Ferman is the founding partner at Abacus Capital Advisors and serves as the firm's CEO.",
-    name: 'Leroi Sanchez',
-    linkdin: 'https://www.linkedin.com/company/abacus-capital-advisors/',
+    shortTitle: 'Portfolio Manager',
+    title: 'Portfolio Manager',
+    name: 'William P. Smythe',
+    linkdin: 'https://www.linkedin.com/in/wsmythe/',
     skills: [
-      'B.A. Economics - Tufts University',
-      'MBA - Tuck School of Business at Dartmouth College',
+      'B.A. - Business Administration / Finance - University of Puerto Rico',
+      'MBA - University of New Orleans',
     ],
-    text: `With over 20 years of portfolio management and research experience,
-          Mr. Ferman has worked at many prestigious banks such as Morgan Stanley, Santander, BTG Pactual and Safra.
-          <br/><br/>
-          His most recent position was a senior member at CV Advisors, a 10B
-          multi-family office located in Miami, FL.`,
+    text: `Will is a portfolio manager at Abacus Capital Advisors and serves as the PM of the Alpha Prime Equity strategy at the firm. With over 10 years of experience, Will founded Alpha Prime Capital and has also worked at The Glenmede Trust Company as a Portfolio Manager.`,
   },
   {
+    name: 'Leroi Sanchez',
     pic: '/william.png',
-    shortTitle: 'CEO & CIO',
-    title:
-      "Mr. Ferman is the founding partner at Abacus Capital Advisors and serves as the firm's CEO.",
-    name: 'William P. Smythe',
-    linkdin: 'https://www.linkedin.com/company/abacus-capital-advisors/',
+    shortTitle: 'Financial Advisor',
+    title: 'Financial Advisor',
+    linkdin: 'https://www.linkedin.com/in/leroi-sanchez-mba-05b13420/',
     skills: [
-      'B.A. Economics - Tufts University',
-      'MBA - Tuck School of Business at Dartmouth College',
+      'B.A. Economics – Case Western Reserve University',
+      'Masters:  Finance – MIT Sloan School of Management',
     ],
-    text: `With over 20 years of portfolio management and research experience,
-          Mr. Ferman has worked at many prestigious banks such as Morgan Stanley, Santander, BTG Pactual and Safra.
-          <br/><br/>
-          His most recent position was a senior member at CV Advisors, a 10B
-          multi-family office located in Miami, FL.`,
+    text: `Leroi is a Financial Advisor at Abacus Capital Advisors.  He has worked for some of the largest banks in the US, like JP Morgan Chase and Bank of America, and as a Financial Advisor in some of the top global premier firms like UBS, Merrill Lynch, Santander Securities and Smith Barney.`,
   },
+  {
+    pic: '/jarvis.png',
+    shortTitle: 'Business Development - Sports ',
+    title: 'Business Development - Sports',
+    name: 'Jarvis Johnson',
+    linkdin: 'https://www.linkedin.com/in/j-johnson-m-s-7a692a140/',
+    skills: [
+      'B.A. Administration of Justice - Rutgers University',
+      'M.S. - Counseling - Tiffin University',
+    ],
+    text: `Jarvis Johnson: Jarvis is solicitor for the firm with a focus on sport clients. With over 15 years of experience in the sports industry, Jarvis played professionally in the N.F.L. for the Baltimore Ravens, coached in the NCAA, worked with over 700 plus former, current and retired N.F.L. players. Currently, Jarvis is an Entrepreneur, Film Producer and provides Business Development with the N.F.L. Alumni Association.`,
+  },
+
   {
     pic: '/joel.png',
-    shortTitle: 'CEO & CIO',
-    title:
-      "Mr. Ferman is the founding partner at Abacus Capital Advisors and serves as the firm's CEO.",
+    shortTitle: 'Business Development - Panama',
+    title: 'Business Development - Panama',
     name: 'Joel Moran',
-    linkdin: 'https://www.linkedin.com/company/abacus-capital-advisors/',
-    skills: [
-      'B.A. Economics - Tufts University',
-      'MBA - Tuck School of Business at Dartmouth College',
-    ],
-    text: `With over 20 years of portfolio management and research experience,
-          Mr. Ferman has worked at many prestigious banks such as Morgan Stanley, Santander, BTG Pactual and Safra.
+    linkdin: 'https://www.linkedin.com/in/joel-moran-121776123/',
+    skills: ['International Business - Universidad Latina de Panamá'],
+    text: `Joel is a Panamanian Investment Advisor with 15 years of experience. He is currently working as a business development professional for the firm soliciting clients from Spanish speaking South American countries 
           <br/><br/>
-          His most recent position was a senior member at CV Advisors, a 10B
-          multi-family office located in Miami, FL.`,
+          He previously worked at HSBC Private Bank, Prival Bank, and most recently at Singular Wealth Management.`,
   },
 ];
 
@@ -364,6 +423,14 @@ export default function AboutUs() {
 
   return (
     <>
+      <Head>
+        <title>About Us | Abacus</title>
+        <meta
+          property="og:description"
+          content="Learn about Abacus Capital Advisors, our team and our services providing exceptional wealth management and financial services."
+        />
+        <meta name="keywords" content="About Us" />
+      </Head>
       <HeroAbout />
       <Container>
         <ModalTeam
@@ -372,15 +439,28 @@ export default function AboutUs() {
         />
 
         <TextSectionContainer>
-          <div className="dash" />
-          <TextSection>
-            We understand that families have other necessities beyond financial
-            returns and we complement our portfolio management with client
-            private services allowing us to holistically service our families
-            with other necessities such as real estate acquisition, asset
-            protection, accounting support and any other services our families
-            may need.
-          </TextSection>
+          <div className="text-card">
+            <img src="/money-1.svg" />
+            <div>
+              <h3>Portfolio Management</h3>
+              <p>
+                Real-time monitoring, research driven investment portfolio
+                construction.
+              </p>
+              <Link href="/portfolio-management">More</Link>
+            </div>
+          </div>
+          <div className="text-card">
+            <img src="/family-1.svg" />
+            <div>
+              <h3>Familly Office</h3>
+              <p>
+                Comprehensive private client services and support for all our
+                families.
+              </p>
+              <Link href="/family-office-services">More</Link>
+            </div>
+          </div>
         </TextSectionContainer>
         <GalleryContainer>
           <AboutIllustrationBackground>
@@ -391,14 +471,19 @@ export default function AboutUs() {
           <GalleryInnerContainer>
             <GalleryTitle>Team</GalleryTitle>
             <Gallery>
-              {teamData.map((item) => (
-                <GalleryCard key={item.name}>
+              {teamData.map((item, index) => (
+                <GalleryCard
+                  // data-aos="fade-up"
+                  // data-aos-anchor-placement="bottom-bottom"
+                  key={item.name}
+                >
                   <GalleryCardPic
+                    className={`pic${index}`}
                     style={{ backgroundImage: `url(${item.pic})` }}
                   />
                   <GalleryCardName>{item.name}</GalleryCardName>
                   <GalleryCardTitle>
-                    <Link href={item.linkdin}>
+                    <Link target="_blank" href={item.linkdin}>
                       <img src="/linkdin.svg" />
                     </Link>
                     <p> {item.shortTitle}</p>

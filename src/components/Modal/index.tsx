@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
+import useClickOutside from '~/hooks/use-click-outside';
 
 const ModalOverlay = styled(motion.div)`
   width: 100%;
@@ -183,6 +184,8 @@ const modalVariant = {
 };
 
 export const ModalTeam = ({ data, handleClose }: Props) => {
+  const ref = useClickOutside(handleClose);
+
   return (
     <AnimatePresence>
       {!!data && (
@@ -192,7 +195,7 @@ export const ModalTeam = ({ data, handleClose }: Props) => {
           exit={'exit'}
           variants={modalVariant}
         >
-          <ModalContent>
+          <ModalContent ref={ref as any}>
             <ModalHeader />
             <Content>
               <HeaderContainer>

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { styled } from 'styled-components';
-import { COLORS, HORIZONTAL_SPACE } from '~/utils/constants';
+import { COLORS, HORIZONTAL_SPACE, PADDINGS } from '~/utils/constants';
 
 export const PortfolioManagementContainer = styled.section`
   padding-top: 128px;
@@ -28,7 +28,7 @@ export const PortfolioManagementHeader = styled.div`
   margin-bottom: 32px;
 `;
 
-export const PortfolioManagementTitle = styled.h1`
+export const PortfolioManagementTitle = styled.h3`
   font-size: 32px;
   color: #000;
   font-weight: 400;
@@ -43,6 +43,21 @@ export const PortfolioManagementLink = styled(Link)`
   text-decoration: underline;
   color: #46785c;
   font-weight: 400;
+  transition: 0.5s;
+  transition: 0.5s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  a {
+    transition: 0.5s;
+
+    &:hover {
+      opacity: 0.5;
+      transform: scale(1.05);
+    }
+  }
 
   @media (max-width: 750px) {
     display: none;
@@ -67,13 +82,13 @@ export const PortfolioManagementText = styled.p`
 
 export const PortfolioManagementSliderContainer = styled.div`
   width: 100%;
-  ${HORIZONTAL_SPACE}
   margin-top: 81px;
   border-top: 1px solid #c5c5c5;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  ${HORIZONTAL_SPACE};
 
   @media (max-width: 750px) {
     margin-top: 71px;
@@ -86,7 +101,7 @@ export const PortfolioManagementSliderContainer = styled.div`
 
 export const PortfolioManagementSliderItemList = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   height: 393px;
 
   @media (max-width: 850px) {
@@ -94,10 +109,13 @@ export const PortfolioManagementSliderItemList = styled.div`
     height: auto;
 
     & .item-card:last-child {
-      border-top: 1px solid #c5c5c5;
-      border-left: 1px solid #c5c5c5;
-      grid-column: 1/3;
+      border: none;
+      border-right: 1px solid #c5c5c5;
       width: 100%;
+    }
+
+    & .item-card:nth-child(3) {
+      border: 1px solid #c5c5c5;
     }
   }
 
@@ -111,12 +129,13 @@ export const PortfolioManagementSliderItemList = styled.div`
       border-top: 1px solid #c5c5c5;
     }
 
-    li {
-      background-color: red;
+    & .item-card:nth-child(3) {
+      border: none;
+      border-top: 1px solid #c5c5c5;
     }
 
-   & .item-card {
-      border-top: 1px solid #c5c5c5 ;
+    & .item-card {
+      border-top: 1px solid #c5c5c5;
     }
   }
 `;

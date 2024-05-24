@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import styled from 'styled-components';
 import HeroOfficeServices from '~/components/Hero/OfficeServices';
 import { HORIZONTAL_SPACE, PADDINGS } from '~/utils/constants';
@@ -144,23 +145,24 @@ const MenuLegend = styled.p`
   position: absolute;
   opacity: 0;
   left: 100%;
-  min-width: 210px;
+  min-width: 250px;
   height: 100px;
   margin-left: 20px;
   transition: 0.5s;
   font-size: 14px;
   font-weight: 400;
+  display: flex;
+  align-items: center;
 
   @media (max-width: 690px) {
     display: none;
   }
 
   p {
-    padding: 24px;
+    padding: 15px;
     z-index: 2;
     position: absolute;
     width: 100%;
-    height: 100%;
     background-color: #fff;
   }
 
@@ -183,22 +185,60 @@ const MenuLegend = styled.p`
 `;
 
 const menu1 = [
-  'Accounting Solutions',
-  'Financial Planning',
-  'Family Governance',
-  'Life Insurance',
+  {
+    title: 'Accounting Solutions',
+    legend:
+      'Tax-efficient portfolio construction with the help of a top notch accountant',
+  },
+  {
+    title: 'Financial Planning',
+    legend: 'Ability to develop a cash management plan for client withdraws',
+  },
+  {
+    title: 'Family Governance',
+    legend:
+      'Structure a family board to facilitate    decisions for family members ',
+  },
+  {
+    title: 'Life Insurance',
+    legend:
+      'Network of Life Insurance experts to integrate life insurance to the client\'s portfolio',
+  },
 ];
 
 const menu2 = [
-  'Concierge Services',
-  'Estate Planning',
-  'Life Insurance',
-  'Real Estate Acquistion',
+  {
+    title: 'Concierge Services',
+    legend: 'Ability to help clients with everday life management services',
+  },
+  {
+    title: 'Estate Planning',
+    legend:
+      'Network of lawyers to help clients with asset protection, and other estate issues',
+  },
+  {
+    title: 'Philatrophic Planning',
+    legend:
+      'Develop charity and other philanthropic  alternatives to improve tax efficiency',
+  },
+  {
+    title: 'Real Estate Acquistion',
+    legend:
+      'Network of top real estate brokers to help the client acquire property throughout the United States ',
+  },
 ];
 
 export default function FamilyOfficeServices() {
   return (
     <>
+      <Head>
+        <title>Familly Office Services | Abacus</title>
+        <meta
+          property="og:description"
+          content="Abacus offers integrated family office services including estate planning, tax management, real estate acquisition, and lot more."
+        />
+        <meta name="keywords" content="Familly Office Services | Abacus" />
+      </Head>
       <HeroOfficeServices />
       <Container>
         <Title>
@@ -208,14 +248,12 @@ export default function FamilyOfficeServices() {
         <MenuContainer>
           <Menu>
             {menu1.map((item) => (
-              <MenuItem key={item}>
+              <MenuItem key={item.title}>
                 <MenuItemDot style={{ marginRight: '48px' }} />
-                {item}
+                {item.title}
                 <MenuLegend className="itemLegend">
                   <div className="seta" />
-                  <p>
-                    Simply dummy text of the printing and typesetting industry.
-                  </p>
+                  <p>{item.legend}</p>
                 </MenuLegend>
               </MenuItem>
             ))}
@@ -231,14 +269,12 @@ export default function FamilyOfficeServices() {
           </MenuIllustration>
           <Menu>
             {menu2.map((item) => (
-              <MenuItem className="menu-2" key={item}>
+              <MenuItem className="menu-2" key={item.title}>
                 <MenuItemDot className="dot" />
-                {item}
+                {item.title}
                 <MenuLegend style={{ left: '-90%' }} className="itemLegend">
                   <div className="seta seta2" />
-                  <p>
-                    Simply dummy text of the printing and typesetting industry.
-                  </p>
+                  <p>{item.legend}</p>
                 </MenuLegend>
               </MenuItem>
             ))}

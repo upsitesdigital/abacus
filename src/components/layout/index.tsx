@@ -15,13 +15,6 @@ type Props = {
 
 const Layout: React.FC<Props> = ({ children }) => {
   const router = useRouter();
-
-  useEffect(() => {
-    // AOS.init({
-    //   delay: 200
-    // });
-  }, []);
-
   return (
     <LayoutContainer className="layout-body">
       <Head>

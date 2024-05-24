@@ -14,7 +14,7 @@ interface PortfolioCardProps {
 
 const PortfolioCard: React.FC<PortfolioCardProps> = ({ icon, text, title }) => {
   return (
-    <PortfolioCardContainer className="item-card">
+    <PortfolioCardContainer data-aos="fade-up" className="item-card">
       <PortfolioCardHeader>
         <PortfolioCardTitle>{title}</PortfolioCardTitle>
         <PortfolioCardIcon>{icon}</PortfolioCardIcon>

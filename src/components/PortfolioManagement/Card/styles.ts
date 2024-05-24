@@ -8,7 +8,7 @@ export const PortfolioCardContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-width: 365px;
+  max-width: 365px;
 
   @media (max-width: 1170px) {
     min-width: 100%;
@@ -59,7 +59,7 @@ export const PortfolioCardHeader = styled.header`
   }
 `;
 
-export const PortfolioCardTitle = styled.h1`
+export const PortfolioCardTitle = styled.h3`
   font-weight: 500;
   font-size: 20px;
   font-weight: 500;
@@ -84,5 +84,10 @@ export const PortfolioCardText = styled.p`
     text-decoration: underline;
     color: ${COLORS.text};
     font-weight: 500;
+    transition: 0.5s;
+
+    &:hover {
+      opacity: 0.5;
+    }
   }
 `;

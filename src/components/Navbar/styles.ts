@@ -80,8 +80,19 @@ export const NavbarMenuItem = styled.li<NavbarMenuItemProps>`
   color: ${({ active }) => (active ? '#fff' : COLORS.text)};
   font-size: 16px;
   font-weight: 400;
-`;
+  transition: 0.3s;
 
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  a {
+    transition: 0.5s;
+    &:hover {
+      color: #fff;
+    }
+  }
+`;
 
 interface HMButtonProps {
   isOpen: boolean;
@@ -128,7 +139,6 @@ export const HamburgerMenuButton = styled.button<HMButtonProps>`
   `}
 `;
 
-
 export const MenuMobileOverlay = styled.div`
   width: 100%;
   height: 100vh;
@@ -141,7 +151,7 @@ export const MenuMobileOverlay = styled.div`
   padding-left: 24px;
   padding-right: 24px;
   top: -100%;
-  transition: .3s;
+  transition: 0.3s;
 
   .logo-mobile {
     position: fixed;
@@ -179,4 +189,3 @@ export const MenuMobileOverlay = styled.div`
     transform: rotate(-80deg);
   }
 `;
-

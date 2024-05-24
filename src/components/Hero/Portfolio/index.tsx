@@ -83,7 +83,7 @@ const HeroAboutTitle = styled.p`
   }
 `;
 
-const SubTitle = styled.h3`
+const SubTitle = styled.h1`
   font-size: 16px;
   font-weight: 400;
   color: #9fc899;
@@ -237,13 +237,13 @@ const HeroPorfolio = () => {
         <LeftBar />
         <div className="HeroAbout-text-container">
           <div>
-            <SubTitle>Portfolio Management</SubTitle>
-            <HeroAboutTitle>
+            <SubTitle data-aos="fade-up">Portfolio Management</SubTitle>
+            <HeroAboutTitle data-aos="fade-up">
               Abacus Capital Advisors is a research-driven firm that builds and
-              monitors investment portfolios for entrepreneurs and ultra-high
+              monitors investment portfolios for entrepreneurs and high
               net worth families.
             </HeroAboutTitle>
-            <Text>
+            <Text data-aos="fade-up">
               With our emphasis on research and individual security selection
               instead of utilizing funds and ETFs, our differentiated investment
               strategy presents several advantages to the traditional investment
@@ -263,7 +263,7 @@ const HeroPorfolio = () => {
         />
       </HeroPorfolioContainer>
       <HeroDefaultContainer>
-        <CircleAnimationRight>
+        <CircleAnimationRight data-aos="zoom-in">
           <IllustrationContainer>
             <div
               style={{

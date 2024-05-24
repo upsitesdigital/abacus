@@ -12,11 +12,17 @@ const HeroContactContainer = styled.div`
   padding-top: 63px;
   justify-content: space-between;
 
+  @media (max-width: 750px) {
+    padding-top: 58px;
+    height: 405px;
+  }
+
   .HeroContact-text-container {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    z-index: 2;
   }
 
   .animation-circle-right {
@@ -47,9 +53,14 @@ const HeroContactTitle = styled.p`
     max-width: 550px;
     font-size: 40px;
   }
+
+  @media (max-width: 750px) {
+    font-size: 28px;
+    margin-top: 24px;
+  }
 `;
 
-const SubTitle = styled.h3`
+const SubTitle = styled.h1`
   font-size: 16px;
   font-weight: 400;
   color: #9fc899;
@@ -65,6 +76,10 @@ const IllustrationContainer = styled.div`
   position: absolute;
   right: 0;
   top: -10%;
+
+  @media (max-width: 1050px) {
+    margin-right: -20px;
+  }
 `;
 
 const IllustrationBg = styled.div`
@@ -73,12 +88,25 @@ const IllustrationBg = styled.div`
   border-radius: 100%;
   background-image: url('/contact-hero.svg');
   background-size: cover;
+
+  @media (max-width: 1050px) {
+    width: 272px;
+    height: 356px;
+    position: absolute;
+    right: 0;
+  
+  }
 `;
 
 const IllustrationBigCircle = styled.div`
   width: 622px;
   height: 622px;
   border-radius: 100%;
+
+  @media (max-width: 1050px) {
+    width: 272px;
+    height: 356px;
+  }
 `;
 
 export const ContactLine = styled.div`
@@ -106,6 +134,10 @@ export const ContactLine = styled.div`
   @media (max-width: 1300px) {
     left: 50px;
   }
+
+  @media (max-width: 1150px) {
+    display: none;
+  }
 `;
 
 export const Text = styled.p`
@@ -115,19 +147,30 @@ export const Text = styled.p`
   margin-top: 26px;
   max-width: 650px;
   line-height: 36px;
+
+  @media (max-width: 690px) {
+    font-size: 14px;
+    margin-top: 24px;
+    max-width: 202px;
+    line-height: 25.2px;
+  }
 `;
 
 const HeroContact = () => {
   return (
     <>
-      <ContactLine  />
+      <ContactLine />
       <HeroContactContainer>
         <div className="HeroContact-text-container">
-          <SubTitle className="subTitle">Contact</SubTitle>
-          <HeroContactTitle>Contact us</HeroContactTitle>
-          <Text>To learn more about us, please reach out below</Text>
+          <SubTitle className="subTitle" data-aos="fade-up">
+            Contact
+          </SubTitle>
+          <HeroContactTitle data-aos="fade-up">Contact us</HeroContactTitle>
+          <Text data-aos="fade-up">
+            To learn more about us, please reach out below
+          </Text>
         </div>
-        <IllustrationContainer>
+        <IllustrationContainer data-aos="zoom-in">
           <IllustrationBigCircle>
             <IllustrationBg></IllustrationBg>
           </IllustrationBigCircle>

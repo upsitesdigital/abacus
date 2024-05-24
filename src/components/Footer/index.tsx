@@ -17,7 +17,7 @@ const Footer = ({ isContact = false }: { isContact?: boolean }) => {
   const { width } = useMediaQuery();
   const isMobile = width <= 650;
 
-  const showInfo = !isContact || isMobile
+  const showInfo = !isContact || isMobile;
 
   return (
     <FooterContainer isContact={isContact}>
@@ -33,9 +33,24 @@ const Footer = ({ isContact = false }: { isContact?: boolean }) => {
                 Contact us
               </FooterContactInfoTitle>
               <p data-aos="fade-up">
-                8181 West Broward Blvd, Suite 258 Plantation, Florida 33324
+                <a
+                  href="https://maps.app.goo.gl/xvnfqhDtgDnnWfm48"
+                  target="_blank"
+                >
+                  8181 West Broward Blvd, Suite 258
+                </a>
               </p>
-              <p data-aos="fade-up">Office: (954) 361-4210</p>
+              <p data-aos="fade-up">
+                <a
+                  href="https://maps.app.goo.gl/xvnfqhDtgDnnWfm48"
+                  target="_blank"
+                >
+                  Plantation, Florida 33324
+                </a>
+              </p>
+              <p data-aos="fade-up">
+                Office: <a href="tel:(954) 361-4210">(954) 361-4210</a>
+              </p>
               <a href="mailto:info@abacus-adv.com">
                 <p data-aos="fade-up">info@abacus-adv.com</p>
               </a>
@@ -72,7 +87,7 @@ const Footer = ({ isContact = false }: { isContact?: boolean }) => {
           Copyright © 2024 Abacus Capital Advisors, LLC
         </FooterCopyRightText>
         <FooterCopyRightText>
-          website development by Upsites
+          <a target='_blank' href="https://upsites.digital/">Website Development by Upsites</a>
         </FooterCopyRightText>
       </FooterCopyRightContainer>
     </FooterContainer>

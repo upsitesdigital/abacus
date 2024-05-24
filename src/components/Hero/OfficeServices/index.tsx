@@ -57,6 +57,7 @@ const HeroOfficeServicesContainer = styled.div`
 
     .links-div {
       margin-top: 146px;
+      z-index: 5;
 
       @media (max-width: 750px) {
         margin-top: 56px;
@@ -114,7 +115,7 @@ const HeroAboutTitle = styled.p`
   }
 `;
 
-const SubTitle = styled.h3`
+const SubTitle = styled.h1`
   font-size: 16px;
   font-weight: 400;
   color: #9fc899;
@@ -128,10 +129,6 @@ export const Text = styled.p`
   margin-top: 24px;
   max-width: 850px;
   line-height: 36px;
-
-  @media (max-width: 1750px) {
-    max-width: 800px;
-  }
 
   @media (max-width: 1600px) {
     max-width: 700px;
@@ -151,7 +148,7 @@ export const Text = styled.p`
     width: 100%;
   }
 
-  @media (max-width: 350px){
+  @media (max-width: 350px) {
     max-width: 100%;
     width: 100%;
   }
@@ -263,29 +260,29 @@ const HeroOfficeServices = () => {
         <LeftBar />
         <div className="HeroAbout-text-container">
           <div>
-            <SubTitle>Family Office Services</SubTitle>
-            <HeroAboutTitle>
+            <SubTitle data-aos="fade-up">Family Office Services</SubTitle>
+            <HeroAboutTitle data-aos="fade-up">
               Comprehensive private client services and support for all our
               families
             </HeroAboutTitle>
-            <Text>
+            <Text data-aos="fade-up">
               We understand our families have needs beyond the daily investment
               management services. Through our network of partners and
               providers, we can facilitate many other services such as estate
               planning, tax, real estate acquisition, cash management and
               lending.
             </Text>
-          </div>
-          <div className='links-div'>
-            <LinksItem>
-              <Link href="/contact-us">Contact Us</Link>
-            </LinksItem>
+            <Links>
+              <LinksItem className="links-div">
+                <Link href="/contact-us">Contact Us</Link>
+              </LinksItem>
+            </Links>
           </div>
         </div>
         <img className="hero-mobile-bg" src="/hero-mobile-family.png" alt="" />
       </HeroOfficeServicesContainer>
       <HeroDefaultContainer>
-        <CircleAnimationRight>
+        <CircleAnimationRight data-aos="zoom-in">
           <IllustrationContainer>
             <div
               style={{
