@@ -19,7 +19,7 @@ export const MENU_ITEMS: MENU_ITEMS_TYPE[] = [
   },
   {
     title: 'Client Login',
-    route: 'https://www.abacuscapitaladvisors.com/clientes',
+    route: '/coming-soon',
   },
   {
     title: 'Contact Us',

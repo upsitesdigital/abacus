@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { ChangeEvent, useState } from 'react';
 import styled from 'styled-components';
 import HeroContact from '~/components/Hero/Contact';
 import { HORIZONTAL_SPACE } from '~/utils/constants';
@@ -207,7 +208,7 @@ const ContactInfoContainer = styled.div`
 
       &:hover {
         background-color: #3a5144;
-        opacity: .7;
+        opacity: 0.7;
       }
     }
 
@@ -229,7 +230,97 @@ const ContactInfoContainer = styled.div`
   }
 `;
 
+export interface EmailBody {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  message: string;
+}
+
+const validateState = (state: EmailBody) => {
+  const errors: any = {};
+
+  if (!state.email) {
+    errors.email = 'Email is required';
+  } else if (!/\S+@\S+\.\S+/.test(state.email)) {
+    errors.email = 'Email address is invalid';
+  }
+
+  if (!state.firstName) {
+    errors.firstName = 'First name is required';
+  } else if (state.firstName.length < 2) {
+    errors.firstName = 'First name must be at least 2 characters';
+  }
+
+  if (!state.lastName) {
+    errors.lastName = 'Last name is required';
+  } else if (state.lastName.length < 2) {
+    errors.lastName = 'Last name must be at least 2 characters';
+  }
+
+  if (!state.message) {
+    errors.message = 'Message is required';
+  } else if (state.message.length < 10) {
+    errors.message = 'Message must be at least 10 characters';
+  }
+
+  if (!state.phone) {
+    errors.phone = 'Phone number is required';
+  }
+
+  return errors;
+};
+
+const initialState = {
+  email: '',
+  firstName: '',
+  lastName: '',
+  message: '',
+  phone: '',
+};
+
 export default function ContactUs() {
+  const [data, setData] = useState<EmailBody>(initialState);
+  const [msgError, setErrorMsg] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const sendEmail = async () => {
+    const errors = validateState(data);
+
+    if (Object.keys(errors).length > 0) {
+      setErrorMsg((Object.values(errors) as string[])[0]);
+    } else {
+      setLoading(true);
+      const response = await fetch('/api/email', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      const json = await response.json();
+      setLoading(false);
+
+      if (json.code === 200) {
+        alert('Email Sent successfully');
+        setData(initialState);
+      }
+    }
+  };
+
+  const handleChange = (event: ChangeEvent) => {
+    const target = event.target as HTMLInputElement;
+
+    setErrorMsg('');
+
+    setData({
+      ...data,
+      [target.name]: target.value,
+    });
+  };
+
   return (
     <>
       <Head>
@@ -248,28 +339,59 @@ export default function ContactUs() {
             Fill out the form below and we will contact you shortly
           </Title>
           <FormField>
-            <input id="first-name" placeholder=" " name="first-name" />
+            <input
+              value={data.firstName}
+              id="first-name"
+              placeholder=" "
+              name="firstName"
+              onChange={handleChange}
+            />
             <label htmlFor="first-name">First name</label>
           </FormField>
           <FormField>
-            <input id="last-name" placeholder=" " name="last-name" />
-            <label htmlFor="last-name">Last name</label>
+            <input
+              id="last-name"
+              value={data.lastName}
+              placeholder=" "
+              name="lastName"
+              onChange={handleChange}
+            />
+            <label htmlFor="lastName">Last name</label>
           </FormField>
           <FormField>
-            <input id="email" placeholder=" " name="email" />
+            <input
+              id="email"
+              value={data.email}
+              onChange={handleChange}
+              placeholder=" "
+              name="email"
+            />
             <label htmlFor="email">Email</label>
           </FormField>
           <FormField>
-            <input id="phone" placeholder=" " name="phone" />
+            <input
+              id="phone"
+              value={data.phone}
+              onChange={handleChange}
+              placeholder=" "
+              name="phone"
+            />
             <label htmlFor="phone">Telephone</label>
           </FormField>
           <FormField className="message-text">
-            <textarea id="message" placeholder=" " name="message" />
+            <textarea
+              value={data.message}
+              onChange={handleChange}
+              id="message"
+              placeholder=" "
+              name="message"
+            />
             <label className="message" htmlFor="message">
               Message
             </label>
           </FormField>
-          <Button>Send</Button>
+          {!!msgError && <p style={{ color: 'red' }}>{msgError}</p>}
+          <Button onClick={sendEmail}>{loading ? "Sending..." :"Send"}</Button>
         </FormContainer>
 
         <ContactInfoContainer>
