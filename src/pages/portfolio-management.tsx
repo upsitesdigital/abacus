@@ -72,6 +72,7 @@ const PortfolioBenefitsGrid = styled.div`
   grid-template-columns: repeat(2, 50%);
 
   @media (max-width: 800px) {
+    max-width: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -87,6 +88,10 @@ const PortfolioBenefitsItem = styled.li`
   flex-direction: column;
   justify-content: space-between;
   min-width: 365px;
+
+    @media (max-width: 380px) {
+      min-width: 100%;
+    }
 
   &:first-child {
     border-right: 1px solid #c5c5c5;

@@ -31,7 +31,8 @@ const Title = styled.h2`
   }
 
   @media (max-width: 390px) {
-    max-width: 329px;
+    max-width: 100%;
+    width: 100%;
     text-align: left;
   }
 `;
@@ -114,11 +115,12 @@ const MenuIllustration = styled.div`
   @media (max-width: 690px) {
     margin-top: 145px;
     margin-bottom: 75px;
+    width: 100%;
   }
 
   .rounded-c {
     margin: 0 75px 0 75px;
-    width: 268px;
+    min-width: 268px;
     height: 268px;
     background-color: #1a4f311a;
     border-radius: 100%;
@@ -126,6 +128,11 @@ const MenuIllustration = styled.div`
     align-items: center;
     justify-content: center;
     border: 1px solid #1a4f311a;
+
+    @media (max-width: 365px) {
+      min-width: 250px;
+      height: 250px;
+    }
   }
 
   .circle2 {
@@ -136,6 +143,11 @@ const MenuIllustration = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: 365px) {
+      width: 170px;
+      height: 170px;
+    }
   }
 `;
 
