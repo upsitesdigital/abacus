@@ -1,4 +1,4 @@
-import { MENU_ITEMS, MENU_ITEMS_MOBILE } from '~/utils/constants';
+import { MENU_ITEMS, MENU_ITEMS_MOBILE } from './../../utils/constants';
 import {
   HamburgerMenuButton,
   MenuMobileOverlay,

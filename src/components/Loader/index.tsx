@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { IllustrationContainer } from '../Hero/About';
-import { COLORS } from '~/utils/constants';
+import { COLORS } from './../../utils/constants';
 
 const l20 = keyframes`
    0%    {clip-path: polygon(50% 50%,0       0,  50%   0%,  50%    0%, 50%    0%, 50%    0%, 50%    0% )}

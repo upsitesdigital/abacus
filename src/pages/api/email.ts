@@ -3,7 +3,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import nodemailer from 'nodemailer';
 import { NextResponse } from 'next/server';
-import { EmailBody } from '~/pages/contact-us';
+import { EmailBody } from './../../pages/contact-us';
 
 const sendEmail = async ({
   name,

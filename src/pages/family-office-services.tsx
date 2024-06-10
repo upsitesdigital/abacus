@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import styled from 'styled-components';
-import HeroOfficeServices from '~/components/Hero/OfficeServices';
-import { HORIZONTAL_SPACE, PADDINGS } from '~/utils/constants';
+import HeroOfficeServices from './../components/Hero/OfficeServices';
+import { HORIZONTAL_SPACE, PADDINGS } from './../utils/constants';
 
 const Container = styled.div`
   width: 100%;

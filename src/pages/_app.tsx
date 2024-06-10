@@ -1,7 +1,7 @@
 import '~/styles/globals.css';
 import type { AppProps } from 'next/app';
-import Layout from '~/components/layout';
-import Loader from '~/components/Loader';
+import Layout from './../components/layout';
+import Loader from './../components/Loader';
 import { useEffect, useState } from 'react';
 import 'aos/dist/aos.css';
 import AOS from 'aos';

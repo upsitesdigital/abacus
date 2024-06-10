@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import { COLORS } from '~/utils/constants';
+import { COLORS } from './../../../utils/constants';
 
 export const PortfolioCardContainer = styled.div`
   border-right: 1px solid #c5c5c5;

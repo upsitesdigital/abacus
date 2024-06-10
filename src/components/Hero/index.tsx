@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import styled, { keyframes } from 'styled-components';
-import { COLORS, HORIZONTAL_SPACE, MENU_ITEMS } from '~/utils/constants';
+import { COLORS, HORIZONTAL_SPACE, MENU_ITEMS } from './../../utils/constants';
 
 /* styles.css */
 

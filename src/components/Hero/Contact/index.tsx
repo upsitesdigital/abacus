@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { COLORS, HORIZONTAL_SPACE } from '~/utils/constants';
+import { COLORS, HORIZONTAL_SPACE } from './../../../utils/constants';
 
 const HeroContactContainer = styled.div`
   width: 100%;

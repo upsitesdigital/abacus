@@ -48,6 +48,7 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Manrope:wght@700&display=swap"
           rel="stylesheet"
         />
+        <meta property="og:image" content="./preview.png" />
       </Head>
       <body>
         <Main />

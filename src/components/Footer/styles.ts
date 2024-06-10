@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import { COLORS, HORIZONTAL_SPACE } from '~/utils/constants';
+import { COLORS, HORIZONTAL_SPACE } from './../../utils/constants';
 
 interface Props {
   isContact: boolean;
