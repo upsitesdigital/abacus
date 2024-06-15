@@ -51,6 +51,21 @@ export default function Document() {
         <meta property="og:image" content="./preview.png" />
       </Head>
       <body>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: `
+          <!-- Google tag (gtag.js) -->
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-5Q292SLYRF"></script>
+          <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-5Q292SLYRF');
+          </script>
+      `,
+          }}
+        />
         <Main />
         <NextScript />
       </body>
