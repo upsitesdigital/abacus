@@ -415,6 +415,18 @@ const teamData: Person[] = [
           <br/><br/>
           He previously worked at HSBC Private Bank, Prival Bank, and most recently at Singular Wealth Management.`,
   },
+  {
+    pic: '/roy.jpg',
+    shortTitle: 'Financial Advisor',
+    title: 'Financial Advisor',
+    name: 'Roy (Todd) Humphrey',
+    linkdin: 'https://www.linkedin.com/in/roy-todd-h-95234687/',
+    skills: [
+      'B.S. – Biological Sciences – Louisiana State University',
+      'MBA – Pepperdine University',
+    ],
+    text: `Roy is a Financial Advisor at Abacus Capital Advisors. He has worked as a Financial Advisor at Singer Wealth Advisors and most recently at Equitable Advisors. Prior to becoming a Financial Advisor, he was a proprietary trader at the NYC-based firm, WTS.`,
+  },
 ];
 
 export default function AboutUs() {
