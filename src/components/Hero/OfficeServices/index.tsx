@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import styled, { keyframes } from 'styled-components';
-import { COLORS, HORIZONTAL_SPACE } from '~/utils/constants';
+import { COLORS, HORIZONTAL_SPACE } from './../../../utils/constants';
 import { IllustrationContainer, Links, LinksItem } from '../About';
 import { HeroDefaultContainer, LeftBar } from '..';
 

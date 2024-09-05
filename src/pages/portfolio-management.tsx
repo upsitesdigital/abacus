@@ -1,30 +1,30 @@
 import Head from 'next/head';
 import styled from 'styled-components';
-import HeroPortfolio from '~/components/Hero/Portfolio';
+import HeroPortfolio from './../components/Hero/Portfolio';
 import {
   PortfolioCardContainer,
   PortfolioCardHeader,
   PortfolioCardIcon,
   PortfolioCardText,
   PortfolioCardTitle,
-} from '~/components/PortfolioManagement/Card/styles';
-import { HORIZONTAL_SPACE, PADDINGS } from '~/utils/constants';
-import CustomizationIcon from '~/assets/svgs/customization.svg';
-import TransparencyIcon from '~/assets/svgs/transparency.svg';
-import RiskIcon from '~/assets/svgs/risk-management.svg';
-import CoastIcon from '~/assets/svgs/cost.svg';
+} from './../components/PortfolioManagement/Card/styles';
+import { HORIZONTAL_SPACE, PADDINGS } from './../utils/constants';
+import CustomizationIcon from './../assets/svgs/customization.svg';
+import TransparencyIcon from './../assets/svgs/transparency.svg';
+import RiskIcon from './../assets/svgs/risk-management.svg';
+import CoastIcon from './../assets/svgs/cost.svg';
 
-import AssetsIcon from '~/assets/svgs/assets.svg';
-import EquityIcon from '~/assets/svgs/equities.svg';
-import FixedIncomeIcon from '~/assets/svgs/fixed-income.svg';
-import AlternativesIcon from '~/assets/svgs/alternatives.svg';
-import PublicMarketIcon from '~/assets/svgs/public-market.svg';
-import LiquidityManagementIcon from '~/assets/svgs/liquidity.svg';
-import PrivateMarketIcon from '~/assets/svgs/cost.svg';
-import PrivateCreditIcon from '~/assets/svgs/private-credit.svg';
-import RealStateIcon from '~/assets/svgs/real-state.svg';
-import CoInvestmentIcon from '~/assets/svgs/co-investments.svg';
-import DirectInvestmentIcon from '~/assets/svgs/direct-investments.svg';
+import AssetsIcon from './../assets/svgs/assets.svg';
+import EquityIcon from './../assets/svgs/equities.svg';
+import FixedIncomeIcon from './../assets/svgs/fixed-income.svg';
+import AlternativesIcon from './../assets/svgs/alternatives.svg';
+import PublicMarketIcon from './../assets/svgs/public-market.svg';
+import LiquidityManagementIcon from './../assets/svgs/liquidity.svg';
+import PrivateMarketIcon from './../assets/svgs/cost.svg';
+import PrivateCreditIcon from './../assets/svgs/private-credit.svg';
+import RealStateIcon from './../assets/svgs/real-state.svg';
+import CoInvestmentIcon from './../assets/svgs/co-investments.svg';
+import DirectInvestmentIcon from './../assets/svgs/direct-investments.svg';
 
 const Container = styled.section`
   width: 100%;

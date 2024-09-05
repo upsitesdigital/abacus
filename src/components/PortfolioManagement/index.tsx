@@ -12,12 +12,12 @@ import {
   PortfolioManagementSliderButton,
 } from './styles';
 import { motion } from 'framer-motion';
-import { MENU_ITEMS } from '~/utils/constants';
-import { useMediaQuery } from '~/hooks/use-media-query';
-import CustomizationIcon from '~/assets/svgs/customization.svg';
-import TransparencyIcon from '~/assets/svgs/transparency.svg';
-import RiskIcon from '~/assets/svgs/risk-management.svg';
-import CoastIcon from '~/assets/svgs/cost.svg';
+import { MENU_ITEMS } from '../../utils/constants';
+import { useMediaQuery } from './../../hooks/use-media-query';
+import CustomizationIcon from './../../assets/svgs/customization.svg';
+import TransparencyIcon from './../../assets/svgs/transparency.svg';
+import RiskIcon from './../../assets/svgs/risk-management.svg';
+import CoastIcon from './../../assets/svgs/cost.svg';
 
 export const items = [
   {

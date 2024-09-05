@@ -2,8 +2,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
 import styled from 'styled-components';
-import HeroContact from '~/components/Hero/Contact';
-import { HORIZONTAL_SPACE } from '~/utils/constants';
+import HeroContact from './../components/Hero/Contact';
+import { HORIZONTAL_SPACE } from './../utils/constants';
 
 const Container = styled.div`
   width: 100%;

@@ -1,4 +1,4 @@
-import { MENU_ITEMS } from '~/utils/constants';
+import { MENU_ITEMS } from './../../utils/constants';
 import {
   FooterContainer,
   FooterContactInfo,
@@ -11,7 +11,7 @@ import {
   FooterMenuItem,
 } from './styles';
 import Link from 'next/link';
-import { useMediaQuery } from '~/hooks/use-media-query';
+import { useMediaQuery } from './../../hooks/use-media-query';
 
 const Footer = ({ isContact = false }: { isContact?: boolean }) => {
   const { width } = useMediaQuery();

@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import styled, { keyframes } from 'styled-components';
-import { COLORS, HORIZONTAL_SPACE } from '~/utils/constants';
+import { COLORS, HORIZONTAL_SPACE } from './../../../utils/constants';
 import { HeroDefaultContainer, LeftBar } from '..';
-import { useMediaQuery } from '~/hooks/use-media-query';
+import { useMediaQuery } from './../../../hooks/use-media-query';
 
 const HeroAboutContainer = styled.div`
   width: 100%;

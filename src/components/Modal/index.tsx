@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
-import useClickOutside from '~/hooks/use-click-outside';
+import useClickOutside from './../../hooks/use-click-outside';
 
 const ModalOverlay = styled(motion.div)`
   width: 100%;

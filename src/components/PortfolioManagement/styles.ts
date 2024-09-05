@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { styled } from 'styled-components';
-import { COLORS, HORIZONTAL_SPACE, PADDINGS } from '~/utils/constants';
+import { COLORS, HORIZONTAL_SPACE, PADDINGS } from './../../utils/constants';
 
 export const PortfolioManagementContainer = styled.section`
   padding-top: 128px;
