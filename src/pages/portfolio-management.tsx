@@ -426,6 +426,10 @@ export default function PortfolioManagement() {
           property="og:description"
           content="Discover portfolio management. Showcasing our expertise in investment management and wealth growth strategies. Be part of our sucessfull clients."
         />
+        <meta
+          property="description"
+          content="Discover portfolio management. Showcasing our expertise in investment management and wealth growth strategies. Be part of our sucessfull clients."
+        />
         <meta name="keywords" content="Our Portfolio" />
       </Head>
       <HeroPortfolio />

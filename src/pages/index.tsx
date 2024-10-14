@@ -15,6 +15,10 @@ export default function Home() {
           property="og:description"
           content="Abacus Capital Advisors provides comprehensive wealth management, investment strategies, and personalized financial planning services."
         />
+        <meta
+          property="description"
+          content="Abacus Capital Advisors provides comprehensive wealth management, investment strategies, and personalized financial planning services."
+        />
         <meta name="keywords" content="capital advisors" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>

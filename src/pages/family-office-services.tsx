@@ -249,6 +249,10 @@ export default function FamilyOfficeServices() {
           property="og:description"
           content="Abacus offers integrated family office services including estate planning, tax management, real estate acquisition, and lot more."
         />
+        <meta
+          property="description"
+          content="Abacus offers integrated family office services including estate planning, tax management, real estate acquisition, and lot more."
+        />
         <meta name="keywords" content="Familly Office Services | Abacus" />
       </Head>
       <HeroOfficeServices />

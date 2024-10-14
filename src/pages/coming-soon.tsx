@@ -61,6 +61,10 @@ export default function ComingSoonPage() {
           property="og:description"
           content="Learn about Abacus Capital Advisors, our team and our services providing exceptional wealth management and financial services."
         />
+        <meta
+          property="description"
+          content="Learn about Abacus Capital Advisors, our team and our services providing exceptional wealth management and financial services."
+        />
         <meta name="keywords" content="About Us" />
       </Head>
       <Container>
