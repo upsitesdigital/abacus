@@ -329,6 +329,10 @@ export default function ContactUs() {
           property="og:description"
           content="Get in touch with Abacus Capital Advisors for personalized financial services and expert wealth management. Reach out to our team today."
         />
+        <meta
+          property="description"
+          content="Get in touch with Abacus Capital Advisors for personalized financial services and expert wealth management. Reach out to our team today."
+        />
         <meta name="keywords" content="Contact Us" />
       </Head>
       <HeroContact />
@@ -391,7 +395,7 @@ export default function ContactUs() {
             </label>
           </FormField>
           {!!msgError && <p style={{ color: 'red' }}>{msgError}</p>}
-          <Button onClick={sendEmail}>{loading ? "Sending..." :"Send"}</Button>
+          <Button onClick={sendEmail}>{loading ? 'Sending...' : 'Send'}</Button>
         </FormContainer>
 
         <ContactInfoContainer>
