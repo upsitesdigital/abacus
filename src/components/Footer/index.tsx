@@ -67,6 +67,9 @@ const Footer = ({ isContact = false }: { isContact?: boolean }) => {
               <Link href={item?.route}>{item?.title}</Link>
             </FooterMenuItem>
           ))}
+          <FooterMenuItem key="privacy-policy">
+            <Link href="/privacy-policy">Privacy Policy</Link>
+          </FooterMenuItem>
         </FooterMenu>
 
         {!isMobile && (
@@ -87,9 +90,12 @@ const Footer = ({ isContact = false }: { isContact?: boolean }) => {
           Copyright © 2024 Abacus Capital Advisors, LLC
         </FooterCopyRightText>
         <FooterCopyRightText>
-          <a target='_blank' href="https://upsites.digital/">Website Development by Upsites</a>
+          <a target="_blank" href="https://upsites.digital/">
+            Website Development by Upsites
+          </a>
         </FooterCopyRightText>
       </FooterCopyRightContainer>
+
     </FooterContainer>
   );
 };
