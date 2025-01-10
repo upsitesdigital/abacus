@@ -14,6 +14,7 @@ const HeroAboutContainer = styled.div`
   padding-top: 63px;
   padding-bottom: 153px;
   overflow: hidden;
+  z-index: 2;
 
   @media (max-width: 1000px) {
     padding-bottom: 200px;
@@ -102,6 +103,10 @@ export const Text = styled.p`
   margin-top: 24px;
   max-width: 790px;
   line-height: 36px;
+
+  @media (max-width: 1500px) {
+    max-width: 600px;
+  }
 
   @media (max-width: 1180px) {
     font-size: 16px;
@@ -293,9 +298,7 @@ const HeroAbout = () => {
               investment management services for high-net-worth families.
             </HeroAboutTitle>
             <Text data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-              {!isMobile
-                ? 'Mauro Ferman, in his 21+ years of investment experience, including working with $100M families, started the firm as an alternative to the large banks that provided sub-par, high cost, investment advice, as the private wealth banking system was designed to financially incentivize bankers to choose investments not based upon what is best for the client, but what is best for the advisor. '
-                : 'Asset management capabilities with a research-driven approach allowing us to build customized investment portfolios.'}
+              {`Mauro Ferman, in his 21+ years of investment experience, including working with $100M families, started the firm as an alternative to the large banks that provided sub-par, high cost, investment advice, as the private wealth banking system was designed to financially incentivize bankers to choose investments not based upon what is best for the client, but what is best for the advisor. `}
             </Text>
           </div>
           <Links data-aos="fade-up" data-aos-anchor-placement="top-bottom">

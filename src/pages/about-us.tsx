@@ -380,18 +380,6 @@ const teamData: Person[] = [
     text: `Will is a portfolio manager at Abacus Capital Advisors and serves as the PM of the Alpha Prime Equity strategy at the firm. With over 10 years of experience, Will founded Alpha Prime Capital and has also worked at The Glenmede Trust Company as a Portfolio Manager.`,
   },
   {
-    name: 'Leroi Sanchez',
-    pic: '/william.png',
-    shortTitle: 'Financial Advisor',
-    title: 'Financial Advisor',
-    linkdin: 'https://www.linkedin.com/in/leroi-sanchez-mba-05b13420/',
-    skills: [
-      'B.A. - Business Administration / Finance - University of Puerto Rico',
-      'MBA - University of New Orleans',
-    ],
-    text: `Leroi is a Financial Advisor at Abacus Capital Advisors.  He has worked for some of the largest banks in the US, like JP Morgan Chase and Bank of America, and as a Financial Advisor in some of the top global premier firms like UBS, Merrill Lynch, Santander Securities and Smith Barney.`,
-  },
-  {
     pic: '/jarvis.png',
     shortTitle: 'Business Development - Sports ',
     title: 'Business Development - Sports',
