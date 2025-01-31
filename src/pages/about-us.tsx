@@ -415,6 +415,15 @@ const teamData: Person[] = [
     ],
     text: `Roy is a Financial Advisor at Abacus Capital Advisors. He has worked as a Financial Advisor at Singer Wealth Advisors and most recently at Equitable Advisors. Prior to becoming a Financial Advisor, he was a proprietary trader at the NYC-based firm, WTS.`,
   },
+  {
+    pic: '/benjamin-martin.webp',
+    shortTitle: 'Financial Advisor',
+    title: 'Financial Advisor',
+    name: 'Benjamin Martin',
+    linkdin: 'https://www.linkedin.com/in/ben-martin-60b935219/',
+    skills: ['B.A. Biopsychology - Tufts University', 'MBA - Loyola Marymount'],
+    text: `Ben is a Financial Advisor at Abacus Capital Advisors, He worked as a financial consultant for 18 years for many of the Fortune 500 companies such as Walt Disney, Warner Brothers, 20th Century Fox and NBC/Universal, before transitioning to a financial advisory role 3 years ago.`,
+  },
 ];
 
 export default function AboutUs() {
