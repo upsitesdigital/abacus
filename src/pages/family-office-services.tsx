@@ -229,7 +229,7 @@ const menu2 = [
       'Network of lawyers to help clients with asset protection, and other estate issues',
   },
   {
-    title: 'Philatrophic Planning',
+    title: 'Philanthropic Planning',
     legend:
       'Develop charity and other philanthropic  alternatives to improve tax efficiency',
   },
