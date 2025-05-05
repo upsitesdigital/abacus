@@ -424,6 +424,16 @@ const teamData: Person[] = [
     skills: ['B.A. Biopsychology - Tufts University', 'MBA - Loyola Marymount'],
     text: `Ben is a Financial Advisor at Abacus Capital Advisors, He worked as a financial consultant for 18 years for many of the Fortune 500 companies such as Walt Disney, Warner Brothers, 20th Century Fox and NBC/Universal, before transitioning to a financial advisory role 3 years ago.`,
   },
+  {
+    pic: '/rodrigo.png',
+    shortTitle: 'Operations',
+    title: 'Operations',
+    name: 'Rodrigo Carvalho',
+    linkdin:
+      'https://www.linkedin.com/in/rodrigo-carvalho-de-ara%C3%BAjo-61748b26/',
+    skills: ['Master Degree - Accounting', 'MBA of Controllership'],
+    text: `Rodrigo is a Brazilian with over 25 years of experience in the financial sector. He has lived in the USA for 5 years and currently works as a business development professional for the company, attracting Brazilian clients.Previously, he worked in Brazil for 18 years at the Pension Fund - FUNCEF and in the USA at BB Americas and, more recently, at Bradesco Bank.`,
+  },
 ];
 
 export default function AboutUs() {
