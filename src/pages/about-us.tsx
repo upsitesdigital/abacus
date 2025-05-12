@@ -425,7 +425,7 @@ const teamData: Person[] = [
     text: `Ben is a Financial Advisor at Abacus Capital Advisors, He worked as a financial consultant for 18 years for many of the Fortune 500 companies such as Walt Disney, Warner Brothers, 20th Century Fox and NBC/Universal, before transitioning to a financial advisory role 3 years ago.`,
   },
   {
-    pic: '/rodrigo.png',
+    pic: '/rodrigo.jpg',
     shortTitle: 'Operations',
     title: 'Operations',
     name: 'Rodrigo Carvalho',
@@ -471,7 +471,7 @@ export default function AboutUs() {
           <div className="text-card">
             <img src="/family-1.svg" />
             <div>
-              <h3>Familly Office</h3>
+              <h3>Family Office</h3>
               <p>
                 Comprehensive private client services and support for all our
                 families.
