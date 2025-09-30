@@ -29,6 +29,13 @@ const Layout: React.FC<Props> = ({ children }) => {
         src="//tag.goadopt.io/injector.js?website_code=47d3010a-adcc-4ac3-aad0-a56ee61b2ca5"
         className="adopt-injector"
       />
+      <Script
+        id="vtag-ai-js"
+        async
+        src="https://r2.leadsy.ai/tag.js"
+        data-pid="7RZfQPtHG2LiKV8b"
+        data-version="062024"
+      />
       <Navbar />
       {children}
       <Footer isContact={router.pathname === '/contact-us'} />
