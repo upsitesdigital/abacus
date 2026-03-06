@@ -245,9 +245,9 @@ const HeroPorfolio = () => {
             </HeroAboutTitle>
             <Text data-aos="fade-up">
               With our emphasis on research and individual security selection
-              instead of utilizing funds and ETFs, our differentiated investment
-              strategy presents several advantages to the traditional investment
-              model employed by other wealth managers and banks
+              instead of utilizing funds and ETFs. We believe our investment
+              philosophy offers clients a disciplined and customized alternative
+              to more standardized portfolio models.
             </Text>
           </div>
           <Links>

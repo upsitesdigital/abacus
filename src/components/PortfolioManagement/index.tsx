@@ -65,7 +65,7 @@ const PortfolioManagement = () => {
         <PortfolioManagementTitle data-aos="fade-up">
           Portfolio Management
         </PortfolioManagementTitle>
-        <PortfolioManagementLink  href={MENU_ITEMS[1].route}>
+        <PortfolioManagementLink href={MENU_ITEMS[1].route}>
           Portfolio Management
         </PortfolioManagementLink>
       </PortfolioManagementHeader>
@@ -73,9 +73,9 @@ const PortfolioManagement = () => {
         Abacus Capital Advisors is a research-driven firm that builds and
         monitors investment portfolios for entrepreneurs and high net worth
         families. With our emphasis on research and individual security
-        selection instead of utilizing funds and ETFs, our differentiated
-        investment strategy presents several advantages to the traditional
-        investment model employed by other wealth managers and banks:
+        selection instead of utilizing funds and ETFs. We believe our
+        investment philosophy offers clients a disciplined and customized
+        alternative to more standardized portfolio models:
       </PortfolioManagementText>
       <PortfolioManagementLink
         className="link-mobile"
