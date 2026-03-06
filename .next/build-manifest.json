@@ -1,0 +1,73 @@
+{
+  "polyfillFiles": [
+    "static/chunks/polyfills-78c92fac7aa8fdd8.js"
+  ],
+  "devFiles": [],
+  "ampDevFiles": [],
+  "lowPriorityFiles": [
+    "static/ChzIa5xeYb0prhH-62Zws/_buildManifest.js",
+    "static/ChzIa5xeYb0prhH-62Zws/_ssgManifest.js"
+  ],
+  "rootMainFiles": [],
+  "pages": {
+    "/": [
+      "static/chunks/webpack-f164db4954bac6ec.js",
+      "static/chunks/framework-ecc4130bc7a58a64.js",
+      "static/chunks/main-48a2be0192cdda09.js",
+      "static/chunks/521-dec3b7f86b850b8f.js",
+      "static/css/627f677844e9fb82.css",
+      "static/chunks/pages/index-b8792fb9887aa421.js"
+    ],
+    "/_app": [
+      "static/chunks/webpack-f164db4954bac6ec.js",
+      "static/chunks/framework-ecc4130bc7a58a64.js",
+      "static/chunks/main-48a2be0192cdda09.js",
+      "static/css/d31a263611d61ea3.css",
+      "static/chunks/pages/_app-89c486d981745362.js"
+    ],
+    "/_error": [
+      "static/chunks/webpack-f164db4954bac6ec.js",
+      "static/chunks/framework-ecc4130bc7a58a64.js",
+      "static/chunks/main-48a2be0192cdda09.js",
+      "static/chunks/pages/_error-77823ddac6993d35.js"
+    ],
+    "/about-us": [
+      "static/chunks/webpack-f164db4954bac6ec.js",
+      "static/chunks/framework-ecc4130bc7a58a64.js",
+      "static/chunks/main-48a2be0192cdda09.js",
+      "static/chunks/521-dec3b7f86b850b8f.js",
+      "static/chunks/pages/about-us-00f3eeffec330846.js"
+    ],
+    "/coming-soon": [
+      "static/chunks/webpack-f164db4954bac6ec.js",
+      "static/chunks/framework-ecc4130bc7a58a64.js",
+      "static/chunks/main-48a2be0192cdda09.js",
+      "static/chunks/pages/coming-soon-cd09c3ce183d4bd5.js"
+    ],
+    "/contact-us": [
+      "static/chunks/webpack-f164db4954bac6ec.js",
+      "static/chunks/framework-ecc4130bc7a58a64.js",
+      "static/chunks/main-48a2be0192cdda09.js",
+      "static/chunks/pages/contact-us-467707857207bdda.js"
+    ],
+    "/family-office-services": [
+      "static/chunks/webpack-f164db4954bac6ec.js",
+      "static/chunks/framework-ecc4130bc7a58a64.js",
+      "static/chunks/main-48a2be0192cdda09.js",
+      "static/chunks/pages/family-office-services-d7cf8b89f84986fd.js"
+    ],
+    "/portfolio-management": [
+      "static/chunks/webpack-f164db4954bac6ec.js",
+      "static/chunks/framework-ecc4130bc7a58a64.js",
+      "static/chunks/main-48a2be0192cdda09.js",
+      "static/chunks/pages/portfolio-management-1b97bc69b59b1289.js"
+    ],
+    "/privacy-policy": [
+      "static/chunks/webpack-f164db4954bac6ec.js",
+      "static/chunks/framework-ecc4130bc7a58a64.js",
+      "static/chunks/main-48a2be0192cdda09.js",
+      "static/chunks/pages/privacy-policy-d69e37296be33c84.js"
+    ]
+  },
+  "ampFirstPages": []
+}
