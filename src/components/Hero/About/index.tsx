@@ -298,11 +298,12 @@ const HeroAbout = () => {
               cost awareness, and alignment with client goals.
             </HeroAboutTitle>
             <Text data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-              Mauro Ferman founded the firm with a desire to provide clients
-              with transparent fee structures and personalized investment
-              guidance. Drawing on his prior experience in larger financial
-              institutions, he sought to build a firm centered on fiduciary
-              principles and client alignment.
+              Mauro Ferman, in his 23 years of investment experience, including
+              working with $100M families, founded the firm with a desire to
+              provide clients with transparent fee structures and personalized
+              investment guidance. Drawing on his prior experience in larger
+              financial institutions, he sought to build a firm centered on
+              fiduciary principles and client alignment.
             </Text>
           </div>
           <Links data-aos="fade-up" data-aos-anchor-placement="top-bottom">
