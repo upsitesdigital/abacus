@@ -345,7 +345,7 @@ const Hero = () => {
             <img src="/arrow-up-right-3.svg" />
             <h1>
               Multi-Family Office focused on providing transparent,
-              comprehensive and objective advice for High-Net-Worth Families 
+              comprehensive and objective advice for High-Net-Worth Families test
             </h1>
              
           </HeroTitle>
