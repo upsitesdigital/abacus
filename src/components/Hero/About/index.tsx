@@ -293,12 +293,10 @@ const HeroAbout = () => {
               data-aos="fade-up"
               data-aos-anchor-placement="bottom-bottom"
             >
-              Abacus was established in 2020, in order to level the playing
-              field and provide an objective, low cost, performance-focused
-              investment management services for high-net-worth families.
+              Abacus was established in 2020 with a mission to expand access to transparent and thoughtfully constructed investment management solutions. Our approach emphasizes disciplined portfolio design, cost awareness, and alignment with client goals.
             </HeroAboutTitle>
             <Text data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-              {`Mauro Ferman, in his 21+ years of investment experience, including working with $100M families, started the firm as an alternative to the large banks that provided sub-par, high cost, investment advice, as the private wealth banking system was designed to financially incentivize bankers to choose investments not based upon what is best for the client, but what is best for the advisor. `}
+              {`Mauro Ferman, in his 23 years of investment experience, including working with $100M families, founded the firm with a desire to provide clients with transparent fee structures and personalized investment guidance. Drawing on his prior experience in larger financial institutions, he sought to build a firm centered on fiduciary principles and client alignment.`}
             </Text>
           </div>
           <Links data-aos="fade-up" data-aos-anchor-placement="top-bottom">

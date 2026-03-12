@@ -1,1 +1,8 @@
-{"/_app":"pages/_app.js","/_document":"pages/_document.js","/_error":"pages/_error.js","/api/email":"pages/api/email.js","/coming-soon":"pages/coming-soon.html","/contact-us":"pages/contact-us.html","/family-office-services":"pages/family-office-services.html","/":"pages/index.html","/privacy-policy":"pages/privacy-policy.html","/portfolio-management":"pages/portfolio-management.html","/about-us":"pages/about-us.html","/404":"pages/404.html"}
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/": "pages/index.js",
+  "/about-us": "pages/about-us.js",
+  "/portfolio-management": "pages/portfolio-management.js"
+}
