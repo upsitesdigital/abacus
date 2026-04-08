@@ -70,6 +70,9 @@ const Footer = ({ isContact = false }: { isContact?: boolean }) => {
           <FooterMenuItem key="privacy-policy">
             <Link href="/privacy-policy">Privacy Policy</Link>
           </FooterMenuItem>
+          <FooterMenuItem key="form-crs">
+            <a href="/form-crs.pdf" target="_blank" rel="noopener noreferrer">Form CRS</a>
+          </FooterMenuItem>
         </FooterMenu>
 
         {!isMobile && (
