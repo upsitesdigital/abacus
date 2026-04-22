@@ -5,6 +5,7 @@ import Loader from './../components/Loader';
 import { useEffect, useState } from 'react';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
+import Head from 'next/head';
 
 export default function App({ Component, pageProps }: AppProps) {
   const [isLoading, setIsLoading] = useState(false);
@@ -47,6 +48,9 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       {isLoading ? (
         <Loader />
       ) : (

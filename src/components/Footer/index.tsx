@@ -20,7 +20,7 @@ const Footer = ({ isContact = false }: { isContact?: boolean }) => {
   const showInfo = !isContact || isMobile;
 
   return (
-    <FooterContainer isContact={isContact}>
+    <FooterContainer $isContact={isContact}>
       {showInfo && (
         <>
           <div className="container container-1">

@@ -73,11 +73,11 @@ export const NavbarMenu = styled.ul`
 `;
 
 interface NavbarMenuItemProps {
-  active?: boolean;
+  $active?: boolean;
 }
 
 export const NavbarMenuItem = styled.li<NavbarMenuItemProps>`
-  color: ${({ active }) => (active ? '#fff' : COLORS.text)};
+  color: ${({ $active }) => ($active ? '#fff' : COLORS.text)};
   font-size: 16px;
   font-weight: 400;
   transition: 0.3s;
@@ -95,11 +95,11 @@ export const NavbarMenuItem = styled.li<NavbarMenuItemProps>`
 `;
 
 interface HMButtonProps {
-  isOpen: boolean;
+  $isOpen: boolean;
 }
 
 export const HamburgerMenuButton = styled.button<HMButtonProps>`
-  position: ${({ isOpen }) => (isOpen ? 'fixed' : 'absolute')};
+  position: ${({ $isOpen }) => ($isOpen ? 'fixed' : 'absolute')};
   right: 24px;
   z-index: 12;
   top: 28px;
@@ -124,8 +124,8 @@ export const HamburgerMenuButton = styled.button<HMButtonProps>`
     border-radius: 5px;
   }
 
-  ${({ isOpen }) =>
-    isOpen &&
+  ${({ $isOpen }) =>
+    $isOpen &&
     `
     span:nth-child(1) {
       transform: rotate(45deg) translate(6px, 6px);

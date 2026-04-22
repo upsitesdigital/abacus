@@ -48,7 +48,7 @@ const Navbar = () => {
       <NavbarMenu>
         {MENU_ITEMS.slice(0, 3).map((item) => (
           <NavbarMenuItem
-            active={item.route === router.pathname}
+            $active={item.route === router.pathname}
             key={item?.route}
           >
             <Link href={item?.route}>{item?.title}</Link>
@@ -60,7 +60,7 @@ const Navbar = () => {
           <NavbarMenuItem
             // data-aos="fade-down"
             className="menu-item"
-            active={item.route === router.pathname}
+            $active={item.route === router.pathname}
             key={item?.route}
           >
             <Link href={item?.route}>{item?.title}</Link>
@@ -69,7 +69,7 @@ const Navbar = () => {
       </NavbarMenu>
 
       <HamburgerMenuButton
-        isOpen={menuOpen}
+        $isOpen={menuOpen}
         onClick={() => setMenuOpen((prev) => !prev)}
       >
         <span />

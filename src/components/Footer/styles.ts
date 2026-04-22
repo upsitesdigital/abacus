@@ -2,7 +2,7 @@ import { styled } from 'styled-components';
 import { COLORS, HORIZONTAL_SPACE } from './../../utils/constants';
 
 interface Props {
-  isContact: boolean;
+  $isContact: boolean;
 }
 
 export const FooterContainer = styled.footer<Props>`
@@ -11,7 +11,7 @@ export const FooterContainer = styled.footer<Props>`
   background-position: bottom;
   background-repeat: no-repeat;
   ${HORIZONTAL_SPACE};
-  padding-top: ${({ isContact }) => (isContact ? '45px' : '136px')};
+  padding-top: ${({ $isContact }) => ($isContact ? '45px' : '136px')};
   padding-bottom: 177px;
   display: flex;
   flex-direction: column;
