@@ -1,6 +1,14 @@
 {
+  "/": "pages/index.html",
   "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js"
+  "/_error": "pages/_error.js",
+  "/about-us": "pages/about-us.html",
+  "/api/email": "pages/api/email.js",
+  "/coming-soon": "pages/coming-soon.html",
+  "/contact-us": "pages/contact-us.html",
+  "/family-office-services": "pages/family-office-services.html",
+  "/portfolio-management": "pages/portfolio-management.html",
+  "/privacy-policy": "pages/privacy-policy.html",
+  "/404": "pages/404.html"
 }

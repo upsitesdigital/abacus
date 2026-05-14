@@ -1,1 +1,10 @@
-{"pages":{"/":["static/media/e4af272ccee01ff0-s.p.woff2"]},"app":{},"appUsingSizeAdjust":false,"pagesUsingSizeAdjust":true}
+{
+  "app": {},
+  "appUsingSizeAdjust": false,
+  "pages": {
+    "/": [
+      "static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2"
+    ]
+  },
+  "pagesUsingSizeAdjust": true
+}

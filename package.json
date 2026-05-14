@@ -9,10 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@babel/plugin-transform-modules-systemjs": "^7.29.4",
     "aos": "^2.3.4",
     "framer-motion": "^11.1.7",
-    "next": "^16.2.4",
+    "next": "^16.2.6",
     "nodemailer": "^8.0.5",
+    "postcss": "^8.5.10",
     "react": "^18",
     "react-dom": "^18",
     "styled-components": "^6.1.8"
@@ -31,7 +33,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^9.39.4",
-    "eslint-config-next": "^16.2.4",
+    "eslint-config-next": "^16.2.6",
     "prettier": "3.2.5",
     "react-svg-loader": "^3.0.3",
     "typescript": "^5"
