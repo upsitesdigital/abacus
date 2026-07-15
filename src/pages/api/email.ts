@@ -2,16 +2,13 @@
 
 import { NextApiRequest, NextApiResponse } from 'next';
 import nodemailer from 'nodemailer';
-import { NextResponse } from 'next/server';
 import { EmailBody } from './../../pages/contact-us';
 
 const sendEmail = async ({
   name,
-  emails,
   text,
 }: {
   name: string;
-  emails: string[];
   text: string;
 }): Promise<any> => {
   try {
@@ -23,6 +20,8 @@ const sendEmail = async ({
         pass: process.env.MAIL_PASSWORD,
       },
       secure: false,
+      disableFileAccess: true,
+      disableUrlAccess: true,
     });
 
     const mailOptions: nodemailer.SendMailOptions = {
@@ -40,6 +39,20 @@ const sendEmail = async ({
   }
 };
 
+const htmlEntities: Record<string, string> = {
+  '&': '&amp;',
+  '<': '&lt;',
+  '>': '&gt;',
+  '"': '&quot;',
+  "'": '&#39;',
+};
+
+const escapeHtml = (value: unknown) =>
+  String(value ?? '').replace(
+    /[&<>"']/g,
+    (character) => htmlEntities[character],
+  );
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
@@ -47,16 +60,14 @@ export default async function handler(
   if (req.method === 'POST') {
     const requestData = (await req.body) as EmailBody;
 
-    console.log('requestData', requestData);
-
     const htmlContent = `
       <html>
         <body>
           <h1>Abacus Contact</h1>
-          <p><strong>Name:</strong> ${requestData.firstName} ${requestData.lastName}</p>
-          <p><strong>Email:</strong>${requestData.email}</p>
-          <p><strong>Phone:</strong>${requestData.phone}</p>
-          <p><strong>Message:</strong>${requestData.message}</p>
+          <p><strong>Name:</strong> ${escapeHtml(requestData.firstName)} ${escapeHtml(requestData.lastName)}</p>
+          <p><strong>Email:</strong>${escapeHtml(requestData.email)}</p>
+          <p><strong>Phone:</strong>${escapeHtml(requestData.phone)}</p>
+          <p><strong>Message:</strong>${escapeHtml(requestData.message)}</p>
         </body>
       </html>
     `;
@@ -64,7 +75,6 @@ export default async function handler(
     try {
       if (requestData.email) {
         await sendEmail({
-          emails: [requestData.email],
           text: htmlContent,
           name: requestData.firstName,
         });
