@@ -36,7 +36,6 @@
     "eslint": "^9.39.4",
     "eslint-config-next": "^16.2.6",
     "prettier": "3.2.5",
-    "react-svg-loader": "^3.0.3",
     "typescript": "^5"
   }
 }
